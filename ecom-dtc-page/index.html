@@ -1302,28 +1302,29 @@
 
     .bundle-box {
       display: grid;
-      gap: 8px;
+      gap: 12px;
       margin-top: 8px;
     }
 
     .bundle-option {
       position: relative;
       display: grid;
-      grid-template-columns: 20px 104px minmax(120px, 1fr) auto;
-      gap: 9px;
+      grid-template-columns: 22px minmax(142px, 178px) minmax(94px, 1fr) auto;
+      gap: 12px;
       align-items: center;
-      min-height: 78px;
+      min-height: 82px;
       border: 1px solid #d5d7dd;
       border-radius: 9px;
       background: #f5f5f6;
-      padding: 11px 10px;
+      padding: 12px 12px;
       cursor: pointer;
     }
 
-    .bundle-option.is-selected {
+    .bundle-option.is-featured {
       border: 2px solid #e4a400;
       background: #ffe8a5;
       box-shadow: none;
+      min-height: 124px;
     }
 
     .bundle-radio {
@@ -1334,44 +1335,55 @@
       background: #ffffff;
     }
 
-    .bundle-option.is-selected .bundle-radio {
+    .bundle-option input:checked + .bundle-radio {
       border: 5px solid #b07b00;
     }
 
+    .bundle-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .bundle-plus {
+      color: #000000;
+      font-size: 1.55rem;
+      font-weight: 1000;
+      line-height: 1;
+    }
+
     .bundle-img {
-      width: 100%;
-      height: 56px;
+      width: auto;
+      height: 58px;
+      max-width: 62px;
       object-fit: contain;
       filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.12));
+    }
+
+    .bundle-option.is-featured .bundle-img {
+      height: 78px;
+      max-width: 74px;
+    }
+
+    .bundle-copy {
+      min-width: 0;
     }
 
     .bundle-name {
       color: #000000;
       display: block;
-      font-size: 0.83rem;
+      font-size: 0.92rem;
       font-weight: 1000;
       line-height: 1.05;
       text-transform: uppercase;
     }
 
-    .bundle-save {
-      color: #123023;
-      display: block;
-      margin-top: 3px;
-      font-size: 0.72rem;
-      font-weight: 900;
-    }
-
-    .stock {
-      display: inline-flex;
-      margin-top: 4px;
-      border-radius: 4px;
-      background: #dff7d6;
-      padding: 2px 9px;
-      color: #000000;
-      font-size: 0.66rem;
-      font-weight: 1000;
-      text-transform: uppercase;
+    .bundle-option.is-featured .bundle-name,
+    .bundle-option[data-bundle="popular"] .bundle-name {
+      font-size: clamp(1.28rem, 2vw, 1.62rem);
+      line-height: 0.98;
     }
 
     .bundle-price {
@@ -1380,15 +1392,9 @@
       align-self: center;
     }
 
-    .old-price {
-      color: #cc001f;
-      font-size: 0.68rem;
-      text-decoration: line-through;
-    }
-
     .current-price {
       color: #000000;
-      font-size: 1.02rem;
+      font-size: 1.12rem;
       font-weight: 1000;
       line-height: 1;
     }
@@ -1399,6 +1405,8 @@
     }
 
     .free-ship {
+      display: block;
+      margin-top: 5px;
       color: #000000;
       font-size: 0.66rem;
       font-weight: 800;
@@ -1415,159 +1423,7 @@
       box-shadow: 0 6px 16px rgba(216, 29, 79, 0.34);
       font-size: 0.66rem;
       font-weight: 1000;
-    }
-
-    .discount {
-      display: inline-flex;
-      margin-bottom: 4px;
-      border-radius: 999px;
-      background: #d81d4f;
-      color: #ffffff;
-      padding: 3px 7px;
-      font-size: 0.63rem;
-      font-weight: 1000;
-    }
-
-    .gifts-box {
-      position: relative;
-      margin-top: 12px;
-      border: 1px solid #d7dbe2;
-      border-radius: 9px;
-      padding: 28px 12px 12px;
-      background: #ffffff;
-    }
-
-    .gifts-label {
-      position: absolute;
-      top: -11px;
-      left: 16px;
-      border: 1px solid #d7dbe2;
-      border-radius: 5px;
-      background: #ffffff;
-      padding: 2px 10px;
-      color: #202836;
-      font-size: 0.65rem;
-      font-weight: 1000;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-
-    .gifts-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      text-align: center;
-      align-items: start;
-    }
-
-    .gift {
-      position: relative;
-      display: grid;
-      grid-template-rows: 64px 17px minmax(25px, auto) 14px;
-      gap: 3px;
-      justify-items: center;
-      color: #9b9b9b;
-      min-width: 0;
-      font-size: 0.61rem;
-      font-weight: 900;
-      line-height: 1.08;
-    }
-
-    .gift:not(:last-child)::after {
-      content: "+";
-      position: absolute;
-      top: 28px;
-      right: -15px;
-      width: 15px;
-      height: 15px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #d7dbe2;
-      border-radius: 50%;
-      color: #9aa1ad;
-      background: #ffffff;
-      font-size: 0.66rem;
-      font-weight: 700;
-      z-index: 1;
-    }
-
-    .gift-icon {
-      width: 64px;
-      height: 64px;
-      display: grid;
-      place-items: center;
-      color: #207b5a;
-      font-size: 0.72rem;
-      font-weight: 1000;
-      filter: grayscale(1);
-      opacity: 0.45;
-    }
-
-    .gift-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .gift:not(.is-unlocked) .gift-icon img {
-      width: 58px;
-      height: 58px;
-    }
-
-    .gift.is-unlocked .gift-icon img {
-      max-width: 58px;
-      max-height: 56px;
-    }
-
-    .gift > span:nth-child(3) {
-      display: block;
-      max-width: 100%;
-      min-height: 24px;
-      overflow-wrap: anywhere;
-    }
-
-    .gift small {
-      color: #a2a2a2;
-      font-size: 0.58rem;
-      line-height: 1;
-    }
-
-    .gift.is-unlocked {
-      color: #d6001c;
-    }
-
-    .gift.is-unlocked .gift-icon {
-      filter: none;
-      opacity: 1;
-    }
-
-    .gift-value {
-      color: #8d8d8d;
-      font-weight: 700;
-      text-decoration: line-through;
-      line-height: 1;
-      align-self: center;
-    }
-
-    .sell-risk {
-      margin-top: 14px;
-      border: 1px solid #d7dbe2;
-      border-radius: 6px;
-      padding: 8px 10px;
-      color: #4d4d4d;
-      text-align: center;
-      font-size: 0.78rem;
-    }
-
-    .sell-risk strong {
-      color: #d6001c;
-    }
-
-    .refill-note {
-      margin-top: 10px;
-      color: #697180;
-      text-align: center;
-      font-size: 0.72rem;
     }
 
     .cart-button {
@@ -2696,15 +2552,19 @@
       }
 
       .bundle-option {
-        grid-template-columns: 20px 78px minmax(0, 1fr);
+        grid-template-columns: 20px 112px minmax(0, 1fr);
         gap: 8px;
-        min-height: 78px;
+        min-height: 80px;
         padding: 10px 9px;
+      }
+
+      .bundle-option.is-featured {
+        min-height: 108px;
       }
 
       .bundle-price {
         grid-column: 3;
-        text-align: left;
+        text-align: right;
         margin-top: 3px;
       }
 
@@ -2717,59 +2577,35 @@
       }
 
       .bundle-name {
-        font-size: 0.76rem;
+        font-size: 0.75rem;
       }
 
-      .bundle-save,
       .free-ship,
-      .old-price,
-      .stock {
+      .per {
         font-size: 0.62rem;
       }
 
       .current-price {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+      }
+
+      .bundle-option.is-featured .bundle-name,
+      .bundle-option[data-bundle="popular"] .bundle-name {
+        font-size: 1.1rem;
       }
 
       .bundle-img {
-        height: 50px;
+        height: 48px;
+        max-width: 50px;
       }
 
-      .gifts-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+      .bundle-option.is-featured .bundle-img {
+        height: 56px;
+        max-width: 58px;
       }
 
-      .gift {
-        grid-template-rows: 50px 15px minmax(24px, auto) 12px;
-        font-size: 0.51rem;
-      }
-
-      .gift-icon {
-        width: 50px;
-        height: 50px;
-      }
-
-      .gift:not(.is-unlocked) .gift-icon img {
-        width: 46px;
-        height: 46px;
-      }
-
-      .gift.is-unlocked .gift-icon img {
-        max-width: 46px;
-        max-height: 44px;
-      }
-
-      .gift:not(:last-child)::after {
-        right: -9px;
-        top: 22px;
-        width: 12px;
-        height: 12px;
-        font-size: 0.52rem;
-      }
-
-      .gift small {
-        font-size: 0.5rem;
+      .bundle-plus {
+        font-size: 1.05rem;
       }
 
       .thumb-grid,
@@ -2795,53 +2631,45 @@
       }
 
       .bundle-option {
-        grid-template-columns: 18px 64px minmax(0, 1fr);
+        grid-template-columns: 18px 96px minmax(0, 1fr);
+        gap: 7px;
       }
 
       .bundle-img {
-        height: 44px;
+        height: 42px;
+        max-width: 44px;
       }
 
       .bundle-name {
-        font-size: 0.68rem;
+        font-size: 0.66rem;
       }
 
-      .bundle-save {
-        font-size: 0.58rem;
+      .bundle-option.is-featured .bundle-name,
+      .bundle-option[data-bundle="popular"] .bundle-name {
+        font-size: 0.92rem;
       }
 
-      .stock {
-        padding: 1px 6px;
+      .bundle-option.is-featured .bundle-img {
+        height: 48px;
+        max-width: 50px;
       }
 
-      .gifts-grid {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 14px;
-        column-gap: 16px;
+      .current-price {
+        font-size: 0.78rem;
       }
 
-      .gift {
-        grid-template-rows: 56px 15px minmax(22px, auto) 12px;
-        font-size: 0.58rem;
+      .per,
+      .free-ship {
+        font-size: 0.54rem;
       }
 
-      .gift-icon {
-        width: 56px;
-        height: 56px;
+      .bundle-plus {
+        font-size: 0.92rem;
       }
 
-      .gift:not(.is-unlocked) .gift-icon img {
-        width: 52px;
-        height: 52px;
-      }
-
-      .gift.is-unlocked .gift-icon img {
-        max-width: 52px;
-        max-height: 50px;
-      }
-
-      .gift:not(:last-child)::after {
-        display: none;
+      .bundle-badge {
+        font-size: 0.56rem;
+        padding: 4px 9px;
       }
     }
 
@@ -2893,20 +2721,20 @@
 
           <div class="bundle-box" role="radiogroup" aria-label="Choose bundle discount">
             <div class="bundle-step-title">Step 1: Choose Bundle Discount</div>
-            <label class="bundle-option is-selected" data-bundle="best">
+            <label class="bundle-option is-featured is-selected" data-bundle="best">
               <input type="radio" name="bundle" value="best" checked hidden>
               <span class="bundle-radio"></span>
-              <img class="bundle-img" src="images/bundle-2plus1.webp" alt="">
-              <span>
-                <span class="bundle-name">Buy 3 Get 2 Bonus</span>
-                <span class="bundle-save">You save $248.00</span>
-                <span class="stock">Low Stock</span>
+              <span class="bundle-visual">
+                <img class="bundle-img" src="images/bundle-bottle-3.webp" alt="Three Linfaflow bottles">
+                <span class="bundle-plus">+</span>
+                <img class="bundle-img" src="images/bundle-bottle-3.webp" alt="Three free Linfaflow bottles">
+              </span>
+              <span class="bundle-copy">
+                <span class="bundle-name">Buy 3<br>Get 3 Free</span>
               </span>
               <span class="bundle-price">
-                <span class="bundle-badge">&#9733; Lower Price Ever</span>
-                <span class="discount">71% OFF</span><br>
-                <span class="old-price">$347.50</span>
-                <span class="current-price">$19.90<span class="per">/each</span></span>
+                <span class="bundle-badge">&#9733; Lowest Price Ever</span>
+                <span class="current-price">$19.99<span class="per">/each</span></span>
                 <span class="free-ship">FREE Shipping</span>
               </span>
             </label>
@@ -2914,14 +2742,15 @@
             <label class="bundle-option" data-bundle="single">
               <input type="radio" name="bundle" value="single" hidden>
               <span class="bundle-radio"></span>
-              <img class="bundle-img" src="images/gift-1linfa-1multi.webp" alt="">
-              <span>
-                <span class="bundle-name">Buy 1 Get 1 Bonus</span>
-                <span class="bundle-save">You save $69.50</span>
+              <span class="bundle-visual">
+                <img class="bundle-img" src="images/bundle-bottle-1.webp" alt="One Linfaflow bottle">
+                <span class="bundle-plus">+</span>
+                <img class="bundle-img" src="images/bundle-bottle-1.webp" alt="One free Linfaflow bottle">
+              </span>
+              <span class="bundle-copy">
+                <span class="bundle-name">Buy 1 Get 1 Free</span>
               </span>
               <span class="bundle-price">
-                <span class="discount" style="background:#9aa0ad">50% OFF</span><br>
-                <span class="old-price">$139.00</span>
                 <span class="current-price">$34.75<span class="per">/each</span></span>
                 <span class="free-ship">FREE Shipping</span>
               </span>
@@ -2930,28 +2759,21 @@
             <label class="bundle-option" data-bundle="popular">
               <input type="radio" name="bundle" value="popular" hidden>
               <span class="bundle-radio"></span>
-              <img class="bundle-img" src="images/bundle-2plus1.webp" alt="">
-              <span>
-                <span class="bundle-name">Buy 2 Get 1 Bonus</span>
-                <span class="bundle-save">You save $118.53</span>
-                <span class="stock">Low Stock</span>
+              <span class="bundle-visual">
+                <img class="bundle-img" src="images/bundle-bottle-2.webp" alt="Two Linfaflow bottles">
+                <span class="bundle-plus">+</span>
+                <img class="bundle-img" src="images/bundle-bottle-2.webp" alt="Two free Linfaflow bottles">
+              </span>
+              <span class="bundle-copy">
+                <span class="bundle-name">Buy 2<br>Get 2 Free</span>
               </span>
               <span class="bundle-price">
                 <span class="bundle-badge">&#9733; Most Popular</span>
-                <span class="discount">57% OFF</span><br>
-                <span class="old-price">$208.50</span>
-                <span class="current-price">$29.99<span class="per">/each</span></span>
+                <span class="current-price">$27.49<span class="per">/each</span></span>
                 <span class="free-ship">FREE Shipping</span>
               </span>
             </label>
           </div>
-
-          <div class="gifts-box">
-            <span class="gifts-label">Gifts Unlocked</span>
-            <div class="gifts-grid" id="giftsGrid"></div>
-            <div class="sell-risk">Sell-Out Risk: <strong>High</strong> &nbsp;|&nbsp; Only <strong>141 Bottles Left</strong> Today</div>
-          </div>
-          <div class="refill-note">Refills Ship Every 30 Days &nbsp;|&nbsp; Stop or Cancel Anytime</div>
 
           <a class="button cart-button" href="https://cc.linfaflow.com/dtcnew/checkout.php?hid=b2lkPW9mZl8wMDQyMzQ2JmFpZD1hZmZfMDc5MTk4NiZ1aWQ9YmxfNjY2ODExMQ%3D%3D&amp;affid=aff_0791986">Add To Cart</a>
           <div class="guarantee-bar">&#9829; 90 Day Money Back Guarantee!</div>
@@ -3418,48 +3240,7 @@
       });
     });
 
-    const giftSets = {
-      best: [
-        { image: "images/gift-shipping.svg", value: "$9.00", name: "FREE Shipping", unlocked: true },
-        { image: "images/gift-1linfa-1multi.webp", value: "$34.75", name: "FREE MULTI+ Bottle", unlocked: true },
-        { image: "images/bundle-2plus1.webp", value: "$34.75", name: "FREE 2nd MULTI+ Bottle", unlocked: true },
-        { image: "images/gift-ebook.webp", value: "$14.00", name: "FREE Book of Lymph", unlocked: true },
-      ],
-      single: [
-        { image: "images/gift-shipping.svg", value: "$9.00", name: "FREE Shipping", unlocked: true },
-        { image: "images/gift-1linfa-1multi.webp", value: "$34.75", name: "FREE MULTI+ Bottle", unlocked: false, note: "2+ bottles" },
-        { image: "images/bundle-2plus1.webp", value: "$34.75", name: "FREE 2nd MULTI+ Bottle", unlocked: false, note: "3+ bottles" },
-        { image: "images/gift-ebook.webp", value: "$14.00", name: "FREE Book of Lymph", unlocked: false, note: "3+ bottles" },
-      ],
-      popular: [
-        { image: "images/gift-shipping.svg", value: "$9.00", name: "FREE Shipping", unlocked: true },
-        { image: "images/gift-1linfa-1multi.webp", value: "$34.75", name: "FREE MULTI+ Bottle", unlocked: true },
-        { image: "images/bundle-2plus1.webp", value: "$34.75", name: "FREE 2nd MULTI+ Bottle", unlocked: false, note: "3+ bottles" },
-        { image: "images/gift-ebook.webp", value: "$14.00", name: "FREE Book of Lymph", unlocked: false, note: "3+ bottles" },
-      ],
-    };
-
-    const giftsGrid = document.querySelector("#giftsGrid");
     const bundleOptions = document.querySelectorAll(".bundle-option");
-
-    function renderGifts(bundle) {
-      giftsGrid.innerHTML = giftSets[bundle].map((gift) => `
-        <div class="gift ${gift.unlocked ? "is-unlocked" : ""}">
-          <span class="gift-icon">${gift.unlocked ? giftIcon(gift) : '<img src="images/blocked.webp" alt="Locked">'}</span>
-          <span class="gift-value">${gift.value}</span>
-          <span>${gift.name}</span>
-          ${gift.note ? `<small>${gift.note}</small>` : ""}
-        </div>
-      `).join("");
-    }
-
-    function giftIcon(gift) {
-      if (gift.image) {
-        return `<img src="${gift.image}" alt="">`;
-      }
-
-      return `<span>${gift.icon}</span>`;
-    }
 
     bundleOptions.forEach((option) => {
       option.addEventListener("click", () => {
@@ -3470,11 +3251,8 @@
 
         option.classList.add("is-selected");
         option.querySelector("input").checked = true;
-        renderGifts(option.dataset.bundle);
       });
     });
-
-    renderGifts("best");
 
     const saleTimer = document.querySelector("#saleTimer");
     let secondsLeft = (21 * 60 * 60) + (57 * 60) + 33;

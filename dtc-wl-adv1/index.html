@@ -1,0 +1,866 @@
+<!DOCTYPE html> <html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Original Recipe · SlimSoda®</title>
+<meta content="noindex" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,800;1,400&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/><style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;padding:0;overflow-x:hidden;
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  background:#fff;color:#333;font-size:16px;line-height:1.4;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+p{margin:0 0 14px}
+
+:root{
+  --cta:#479C1A; --cta-d:#3B8215; --cta-sh:rgba(71,156,26,.35);
+  --teal:#0C2E5C; --green:#479C1A; --green-hi:#019E3F; --mark:#FDCC5E;
+  --star:#FF8C00; --ink:#333; --ink-h:#111; --line:#e5e5e5;
+  --acc:var(--green); --btn:var(--teal);
+}
+
+
+.header-bar{background:var(--teal);padding:14px 20px;display:flex;align-items:center;
+  justify-content:center;flex-wrap:wrap;gap:10px;text-align:center}
+.header-bar .logo{color:#fff;font-family:'Bitter',serif;font-size:15px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase}
+.header-bar .divider{color:rgba(255,255,255,.4);font-size:13px}
+.header-bar .sub{color:rgba(255,255,255,.7);font-size:13px;font-weight:500}
+.ad-disclosure{background:#f7f7f7;border-bottom:1px solid #ececec;padding:7px 20px;text-align:center;
+  font-size:11px;font-weight:600;letter-spacing:.09em;color:#9a9a9a;text-transform:uppercase}
+@media(max-width:430px){
+  .header-bar{padding:12px 14px;gap:8px}
+  .header-bar .logo{font-size:13.5px;letter-spacing:1.1px}
+  .header-bar .sub{font-size:12px}
+}
+
+
+
+.wrap{display:block}
+.page{max-width:900px;margin:0 auto;padding:28px 20px 40px;background:#fff}
+.rail{display:none}
+.mast,.kicker{display:none}
+
+
+h1{font-family:'Bitter',serif;font-size:23px;font-weight:800;line-height:1.16;
+  color:var(--ink-h);margin:0 0 16px;letter-spacing:0}
+.deck-wrap{margin:0 0 18px}
+.deck{display:inline;background:var(--mark);box-shadow:0 0 0 3px var(--mark);
+  color:#111;font-weight:700;font-size:17px;line-height:1.35}
+.article-meta,.dateline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:0 0 18px;margin:0 0 24px;border:0;border-bottom:2px solid var(--teal);
+  font-size:13px;color:#888;font-weight:500}
+.byline{display:flex!important;align-items:center;gap:8px;margin:0;
+  font-size:13px;font-weight:700;color:var(--teal)}
+.av-b{flex:0 0 30px;height:30px;border-radius:50%;background:#E4EAF6;color:var(--teal);
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.bl-name{margin:0;font-size:13px;font-weight:700;color:var(--teal)}
+.bl-role{margin:0;font-size:12px;font-weight:500;color:#888}
+
+
+h2{font-family:'Bitter',serif;font-size:21px;font-weight:800;line-height:1.2;
+  color:var(--teal);margin:28px 0 11px;border:0;padding:0;letter-spacing:0}
+.lead{font-size:17px;line-height:1.38;font-weight:700;color:#111;margin:0 0 16px}
+b,strong{font-weight:700;color:#111}
+.fig{margin:12px 0;overflow:hidden}
+.fig img,.fig video{width:100%;border-radius:0;display:block}
+figure.hero{max-width:100%;margin:18px 0}
+figure.hero video{width:100%;height:auto;aspect-ratio:43 / 24;object-fit:cover;background:#000}
+figure.media-video video{width:100%;height:auto;aspect-ratio:43 / 24;object-fit:cover;background:#000}
+.as-seen-on-strip{margin:18px 0 22px;text-align:center}
+.as-seen-on-strip img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto}
+
+.fig.seal{overflow:visible}
+.fig.seal img{max-width:170px;margin:0 auto;border-radius:0}
+figcaption{font-size:13px;color:#888;margin-top:8px;line-height:1.5;padding:0 2px}
+blockquote{border-left:4px solid var(--teal);background:#F2F5FC;margin:20px 0;
+  padding:14px 18px;font-style:italic;color:#333;border-radius:0 6px 6px 0;
+  font-size:16px;line-height:1.42;font-weight:400}
+.cred{font-size:13px;color:#888;font-weight:700;margin:-12px 0 20px;padding-left:18px}
+
+
+.opt{border-left:4px solid var(--teal);background:#F2F5FC;padding:13px 16px;margin:0 0 12px;
+  font-size:16px;line-height:1.35;color:#111;border-radius:0 6px 6px 0}
+.opt b{color:#111}
+
+
+.mech{background:#f0fae8;border:1px solid #cfe6bb;border-radius:8px;
+  padding:13px 16px 13px 44px;margin:0 0 10px;position:relative;
+  font-size:16px;line-height:1.35;color:#111}
+.mech::before{content:"";position:absolute;left:14px;top:1.05em;width:18px;height:18px;
+  border-radius:50%;background:var(--green)}
+.mech::after{content:"";position:absolute;left:20px;top:1.35em;width:5px;height:9px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.mech .pill{display:none}
+
+
+.alert{background:#FEF9E7;border:2px dashed #D0021B;border-radius:8px;
+  padding:20px 20px 6px;margin:26px 0}
+.alert h2{margin-top:0;color:#111}
+.alert p{color:#333}
+
+
+ul.chk,ul.cost,ol.tl,ol.steps{margin:0 0 24px;padding:0;list-style:none}
+ul.chk li{position:relative;padding:8px 0 8px 34px;font-size:16px;line-height:1.4;
+  border-bottom:1px solid #eee}
+ul.chk li:last-child{border-bottom:0}
+ul.chk li::before{content:"";position:absolute;left:1px;top:.6em;width:19px;height:19px;border-radius:5px;background:var(--green)}ul.chk li::after{content:"";position:absolute;left:7px;top:calc(.6em + 4px);width:7px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+ul.chk li::after{content:none}
+ul.cost li{padding:7px 0;border-bottom:1px dashed #e2e0da;font-size:16px;line-height:1.35}
+ul.cost li:last-child{border-bottom:0}
+.cost-box{background:#F2F5FC;border-radius:8px;padding:20px 22px;margin:16px 0 18px;color:#1b2230}
+.cost-box h3{font-family:'Bitter',serif;font-size:16px;font-weight:800;line-height:1.25;margin:0 0 14px;color:#111}
+.cost-box ul{margin:0 0 14px;padding-left:24px}
+.cost-box li{font-size:15px;line-height:1.45;margin:0 0 9px;color:#1b2230}
+.cost-box li:last-child{margin-bottom:0}
+.cost-box .total{font-weight:800;color:#111}
+.cost-box .note{font-style:italic;margin:14px 0 0;font-size:15px;line-height:1.45;color:#1b2230}
+ol.tl{padding-left:26px;margin-left:5px;border-left:2px solid #DDE3F0}
+ol.tl li{position:relative;padding:0 0 20px}
+ol.tl li:last-child{padding-bottom:0}
+ol.tl li::before{content:"";position:absolute;left:-33px;top:.42em;width:12px;height:12px;
+  border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px #fff}
+ol.tl b{display:block;font-family:'Bitter',serif;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal);margin:0 0 3px}
+ol.tl span{display:block;font-size:16px;line-height:1.4}
+ol.steps{counter-reset:st}
+ol.steps li{counter-increment:st;position:relative;padding:8px 0 8px 46px;
+  font-size:16px;line-height:1.4}
+ol.steps li::before{content:counter(st);position:absolute;left:0;top:8px;width:30px;height:30px;
+  border-radius:50%;background:var(--teal);color:#fff;font-size:15px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+
+
+.tcard{border:1px solid var(--line);overflow:hidden;
+  margin:16px 0 22px;background:#fafafa}
+.tcard>img{width:100%;display:block}
+.tcard .tb{padding:16px 18px}
+.tcard .obj{margin:0 0 6px;padding:0;border:0;font-size:14px;font-weight:700;
+  color:var(--teal);line-height:1.45;font-style:normal}
+.tcard .tq{margin:0 0 10px;font-size:14px;line-height:1.45;color:#444;font-style:normal}
+.tcard .tm{margin:0;padding:0;border:0;font-size:12px;font-weight:600;color:var(--green)}
+
+
+
+.copy-gap{display:block;margin:0 0 12px;padding:11px 13px;border:1px dashed #d33;
+  border-radius:6px;background:#fdecec;color:#a11;font-size:12px;font-weight:700;
+  letter-spacing:.03em;font-style:normal}
+
+
+.warn{background:#FEF9E7;border:2px dashed #D0021B;border-radius:8px;
+  padding:18px 20px;margin:22px 0;font-size:15px;font-weight:600;color:#333;line-height:1.35}
+
+
+.pricepop{background:#f8f9fa;border:2px solid var(--teal);border-radius:12px;
+  padding:20px 24px;margin:24px 0;text-align:center;font-family:'Bitter',serif;
+  font-size:22px;line-height:1.22;font-weight:800;color:#111}
+
+
+.panel{border:3px solid var(--green);border-radius:14px;background:#f0fae8;
+  padding:22px 24px 6px;margin:28px 0}
+.panel h2{margin-top:0;font-size:19px;color:#111}
+.panel p{font-size:15px;color:#555;line-height:1.4}
+
+
+.cta-wrap{margin:28px 0;text-align:center}
+
+.cta,.ssq-continue,.ssq-cta{display:flex;align-items:center;justify-content:center;
+  text-align:center;box-sizing:border-box;width:100%;max-width:540px;
+  margin-left:auto;margin-right:auto;min-height:0;
+  font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  font-size:18px;font-weight:800;line-height:1.25;letter-spacing:.3px;
+  padding:19px 22px;border:0;border-radius:8px;cursor:pointer;
+  background:var(--cta);color:#fff;box-shadow:0 6px 22px var(--cta-sh);
+  text-decoration:none;transition:background .15s ease,box-shadow .15s ease}
+.cta:hover,.ssq-continue:hover,.ssq-cta:hover{background:var(--cta-d);
+  box-shadow:0 8px 26px var(--cta-sh)}
+.cta:active,.ssq-continue:active,.ssq-cta:active{transform:translateY(1px)}
+.cta-sub,.cta-subtext{font-size:13px;color:#777;margin-top:8px;text-align:center}
+.cta-wrap.mid{margin:26px 0;padding:22px 18px;background:#F2F5FC;
+  border:1px solid #DAE1F0;border-radius:12px}
+.cta-wrap.mid .hd{font-family:'Bitter',serif;font-size:20px;line-height:1.3;
+  font-weight:800;color:var(--teal);text-align:center;margin:0 0 14px}
+
+
+.scarcity{margin:0 0 22px}
+.scarcity .bar{height:10px;background:#eceae5;border-radius:99px;overflow:hidden}
+.scarcity .bar i{display:block;width:82%;height:100%;background:var(--green);border-radius:99px}
+.scarcity span{display:block;font-size:13px;color:#2f6a10;font-weight:700;
+  margin-top:7px;text-align:center}
+
+
+.signoff{margin:26px 0 0;line-height:1.4}
+.signoff b{display:block;font-family:'Bitter',serif;font-size:17px;color:#111}
+.signoff span{display:block;font-size:13px;color:#888}
+.ps-wrap{margin:32px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
+.ps-wrap p{line-height:1.4}
+.ps-wrap p:last-child{margin-bottom:0}
+
+  text-align:center;background:#fafafa}
+  font-size:16px;font-weight:800;padding:15px 12px;
+  box-shadow:0 6px 18px rgba(71,156,26,.3)}
+
+  background:#fff;border-top:3px solid var(--green);
+  box-shadow:0 -4px 20px rgba(0,0,0,.15);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  transform:translateY(130%);transition:transform .28s ease}
+  font-size:16px;font-weight:800;padding:14px 24px;width:100%;max-width:440px;
+  text-align:center;white-space:normal}
+
+
+.fbx{margin:28px 0}
+.fbx-h{display:flex;align-items:center;gap:14px;padding:14px 0 16px;
+  border-bottom:2px solid #1877f2;margin-bottom:18px}
+.fbx-t{font-size:14px;font-weight:800;color:#1877f2;padding:0}
+.fbx-t::before{display:none}
+.fbx-ct{font-size:14px;color:#666;font-weight:600}
+.fbx-sort{font-size:13px;color:#1877f2;font-weight:600;margin-left:auto}
+.fbx-c{margin:0 0 14px}
+.fbx-c.fbx-r{margin-left:46px}
+.fbx-b{background:#f0f2f5;border-radius:14px;padding:10px 14px}
+.fbx-nm{margin:0 0 3px;font-size:13px;font-weight:700;color:#050505}
+.fbx-tx{margin:0;font-size:14px;line-height:1.55;color:#333}
+.fbx-m{margin:5px 0 0;font-size:12px;color:#888}
+.fbx-a{color:#1877f2;font-weight:700}
+
+
+.foot{background:#f7f7f7;border-top:1px solid #e8e8e8;padding:20px;margin:36px -20px 0;
+  font-size:11px;color:#999;line-height:1.6;text-align:center}
+.foot p{margin:0 0 10px}
+.foot b{color:#777}
+
+
+
+
+.tcard{display:grid;grid-template-columns:56% 1fr;align-items:start;margin:0 0 20px}
+.tcard.solo{display:block}
+.tcard>img{width:100%;height:auto;display:block}
+.tcard .tb{padding:10px 13px 13px}
+.tcard .tq{margin:0 0 8px;font-size:13px;line-height:1.4}
+.tcard .tm{margin:0;padding-top:8px;font-size:11px}
+@media(min-width:768px){
+  .tcard{grid-template-columns:40% 1fr}
+  .tcard .tb{padding:16px 20px}
+  .tcard .tq{font-size:15px;line-height:1.5}
+  .tcard .tm{font-size:12px}
+}
+
+.spec{display:none!important}
+
+@media(min-width:768px){
+  h1{font-size:28px}
+  h2{font-size:24px}
+  .page{padding:28px 20px 48px}
+  .foot{margin-left:0;margin-right:0;border-radius:10px}
+}
+
+</style><script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y6q81gaar4");
+</script></head><body>
+<div class="header-bar"><span class="logo">Metabolism Report</span><span class="divider">|</span><span class="sub">Metabolic Health</span></div><div class="ad-disclosure">Advertorial</div>
+<div class="page">
+<div class="kicker">THE ORIGINAL RECIPE</div> <h1>The “Baking Soda Water Shot” Everyone’s Talking About Is Real. But They’re Doing It Wrong.</h1>
+<div class="deck-wrap"><span class="deck">If you have tried the baking soda water shot and felt nothing, you are not doing it wrong on purpose, you are missing two of the three steps.</span></div>
+<div class="article-meta"><div class="byline"><div class="av-b">DW</div><div><p class="bl-name">By Dana Whitfield</p><p class="bl-role">Formulator &amp; Researcher</p></div></div><span class="meta-date">August 2026</span></div>
+<figure class="fig hero"><video aria-label="The Baking Soda Water Shot Everyone is Talking About" autoplay muted loop playsinline preload="auto" width="1152" height="668" src="images/hero-video.mp4"></video></figure>
+<p>You’ve already seen the videos, and I need to tell you this.</p>
+<p>Stop.</p>
+<p>Before you mix another glass of baking soda water, I need you to understand something.</p>
+<p>Famous faces, talk show couches, and women suddenly talking about a baking soda shot that supposedly changes the way your body handles food.</p>
+<p>But almost every version online, in videos, sales presentations, news articles, and even from TikTok influencers, leaves out the most important part of the recipe.</p>
+<p>Baking soda is only one of three steps.</p>
+<p>On its own, it won’t give you the result you’re expecting.</p>
+<p>Use it by itself, or use the ingredients in the wrong order, and you may feel absolutely nothing.</p>
+<p>My name is Dana Whitfield, the formulator behind the original recipe.</p>
+<p>I’ve shared this recipe on several podcasts, including “The Oprah Podcast,” and many people copied it, explained it incorrectly, or left out important parts.</p>
+<p>And before I show you what the three steps really are, I need to take you back to the moment I discovered why my own sister could eat less than I did…</p>
+<p>and still gain weight.</p> <h2>If You Eat Less Than Your Skinny Friend and Still Gain Weight, This Is the Article You’ve Been Waiting For</h2> <figure class="fig media-video mounjaro-video"><video aria-label="Mounjaro comparison video" autoplay muted loop playsinline preload="metadata" width="860" height="480" src="images/mounjaro-video.mp4"></video></figure>
+<p>Let me guess what your life looks like right now.</p>
+<p>You’ve tried everything. The programs. The shakes. The gummies. The weight loss pens.</p>
+<p>The treadmill that’s now just a very expensive clothes rack.</p>
+<p>You eat less than that friend who seems to eat junk all the time and somehow never gains a single pound.</p>
+<p>You move more than she ever has.</p>
+<p>And your body seems to hold onto and store every pound as if its life depended on it.</p>
+<p>Then your doctor says the two most insulting words in the English language:</p>
+<p>“Eat less.”</p>
+<p>As if you weren’t already trying.</p>
+<p>As if you weren’t giving it everything you had every single day.</p>
+<p>As if it were really that simple.</p>
+<p>I know exactly how much it hurts to hear that.</p>
+<p>Because those are the exact same two words I once said to my own sister.</p>
+<p>And I have never been more wrong about anything in my life.</p>
+<p>But before I tell you that story, I need to talk about what may be happening inside your head right now.</p>
+<p>Because this is WHY nothing has worked until now.</p>
+<p>It was never your willpower.</p>
+<p>It was never your fault.</p>
+<p>This isn’t hunger.</p>
+<p>This isn’t weakness.</p>
+<p>This isn’t a lack of discipline.</p>
+<p>Your body was fighting against you. Every time you resisted, it seemed to push back even harder.</p>
+<p>And the label people gave that struggle was:</p>
+<p>“Lack of discipline.”</p>
+<p>Lately, your entire feed has been filled with famous women talking about a “baking soda water shot.”</p>
+<p>You’ve heard about it so many times that it’s starting to feel real.</p>
+<p>Here’s what they’re leaving out.</p>
+<p>Baking soda is only one of three parts.</p>
+<p>Do it by itself, or do the steps in the wrong order, and you may feel absolutely nothing.</p>
+<p>Do it the right way, and the weight may start coming off so quickly that you’ll wonder what finally woke up inside your body.</p>
+<p>I’m going to show you exactly how.</p>
+<p>Because I’m the woman who discovered the recipe in the first place.</p>
+<p>Read this before you spend another penny on anything else.</p> <h2>I Was the Skinny Sister. I Told Her to Eat Less and Try Harder. I Was Dead Wrong.</h2>
+<p>My name is Dana.</p>
+<p>I’m a formulator. I’m not a celebrity. I’m not a doctor on a stage. I’m not a face on a talk show.</p>
+<p>My work has always been the unglamorous kind. Tiny scoops. Messy notebooks. A kitchen scale covered in powder. Testing the same thing over and over until the results stopped looking like luck.</p>
+<p>And for most of my life, I was the “lucky” one. The naturally slim sister who could eat whatever she wanted and never think twice about it.</p>
+<p>I used to believe that was because of something I was doing right. Some kind of discipline other people simply didn’t have.</p>
+<p>So when my younger sister, Rachel, couldn’t lose the weight after having her kids, I told her the same lie your doctor tells you.</p>
+<p>Eat less. Move more. Try harder.</p>
+<p>I need to confess that, because it’s the entire reason I’m writing this.</p>
+<p>I judged my own sister. Quietly, I believed that if she really wanted it badly enough, she could do it.</p>
+<p>I was wrong.</p>
+<p>Not a little wrong.</p>
+<p>Completely, shamefully wrong.</p>
+<p>Rachel ate less than I did. That’s a fact. I saw it with my own eyes.</p>
+<p>She cut carbs. She cut sugar. She cut her portions.</p>
+<p>And the day I finally discovered just how wrong I had been, it sent me down a path that ended with the exact recipe these videos are now based on.</p>
+<p>They just left out the part that actually makes it work.</p>
+<figure class="fig media-video"><video aria-label="Conversation at a kitchen table" autoplay muted loop playsinline preload="metadata" width="860" height="480" src="images/kitchen-video.mp4"></video></figure> <h2>So I Measured Every Bite She Ate for Two Weeks. What I Found Stopped Me Cold.</h2>
+<p>Rachel is my little sister. Three kids, a job, a husband, and a body she didn’t recognize anymore.</p>
+<p>Her youngest was three years old and she still looked, in her words, “five months pregnant.”</p>
+<p>She got dressed in the closet so her husband wouldn’t see her. She had stopped being in photos with her own kids.</p>
+<p>And there I was, the skinny older sister, telling her to eat less and walk more.</p>
+<p>One day she looked at me with tears in her eyes and said, “Dana, I AM. I swear to God, I am.”</p>
+<p>So I decided to prove it, one way or the other.</p>
+<p>For two weeks, I measured and logged every single thing we both ate. I counted our steps. I wrote all of it down.</p>
+<p>I will never forget the moment I looked at those two columns of numbers.</p>
+<p>My little sister was eating less than me. She was moving more than me. And she was gaining weight, while I stayed thin doing half of what she did.</p>
+<p>That’s when the shame hit me. She wasn’t lazy. She wasn’t lying. She wasn’t weak.</p>
+<p>Something inside her body was doing the exact opposite of mine with the very same food.</p>
+<p>No diet on earth was ever going to fix a problem that nobody had correctly named.</p>
+<p>That was the night I stopped trusting everything I’d been taught, and started looking at what her body was actually doing with what she ate.</p>
+<figure class="fig"><img alt="" decoding="async" height="402" loading="lazy" src="images/inline-image-504b72c0cf8a.webp" width="720"/></figure> <h2>At 1 A.M. I Found the Study That Explained What Was Happening to My Sister</h2>
+<p>It took me months of digging through research most people never see.</p>
+<p>Then one night, her kids asleep, my coffee cold, I found it.</p>
+<p>A study on the cells in your gut that make the hormones controlling hunger, fullness, and what your body does with every bite you eat.</p>
+<p>Burn it for energy, or store it as fat.</p>
+<p>The paper had a line I read five times.</p>
+<p>It said these cells can go dormant. They fall asleep when the environment in your gut becomes too acidic.</p>
+<p>I sat there with my heart pounding.</p>
+<p>Acidic gut. Sleeping cells. No signal.</p>
+<p>That was Rachel. That was every woman I knew who ate like a bird and still couldn’t lose a single pound.</p>
+<p>What I read next explained not just why she was stuck, but exactly how to wake those cells back up.</p>
+<p>And it was simpler than you could possibly imagine.</p>
+<figure class="fig"><img alt="Dana researching at 1 a.m." decoding="async" height="390" loading="lazy" src="images/inline-image-f1612e8d7d32.webp" width="680"/></figure>
+<h2>It’s Not That You Eat Too Much. Your Body Is Storing Food It Should Be Burning.</h2>
+<p>Here’s what’s actually happening inside you. Plain and simple.</p>
+<p>Every bite you eat has to go one of two places.</p>
+<figure class="fig"><img alt="" decoding="async" height="720" loading="lazy" src="images/inline-image-bea317c5c490.webp" width="720"/></figure>
+<p>It gets burned for energy, or it gets stored.</p>
+<p>That decision is not random. One set of signals tells your body: burn it. Another silence tells it: store it.</p>
+<p>When the signal is working, you feel full. Food leaves your mind. Your body burns what you eat instead of clinging to it.</p>
+<p>That is the ‘lucky’ metabolism thin women seem to have. They are not always eating less than you. Their bodies are simply doing something completely different with the same plate of food.</p>
+<p>But when those cells fall asleep, your body never gets the message.</p>
+<p>You can finish dinner and still want something sweet. You can eat a full lunch and think about snacks an hour later. You can do everything “right” and still feel like your body is holding on.</p>
+<p>Now you can see why eating less never solved the whole problem.</p>
+<p>You were trying to eat less while your body was still screaming: STORE EVERYTHING.</p>
+<p class="lead">Same food. Opposite response.</p>
+<p><b>And there’s a second thief.</b></p>
+<p>Even when your gut makes some of these hormones, an enzyme called DPP 4 breaks them down quickly.</p>
+<p class="lead">So hear me clearly.</p>
+<p>It is not in your head. It is not a character flaw. Your body’s ‘stop eating’ signal has gone quiet.</p>
+<p>And quiet cells can be woken back up.</p> <div class="alert">
+<h2>Before You Read Another Word, See How Many of These Sound Like You</h2>
+<p>Maybe you’re thinking, “That explains Rachel. But how do I know this has anything to do with me?”</p>
+<p class="lead">Fair question.</p>
+<p>The women who responded best to the original recipe did not all look the same. Some needed to lose 15 pounds. Some needed to lose 50. Some were mothers. Some were long past menopause. Some had tried injections. Some had spent decades dieting.</p>
+<p>But they kept describing the same body response.</p>
+<p>If four or more of these sound familiar, the problem may not be how hard you are trying.</p>
+<ul class="chk"><li>You eat less than people who stay naturally thin but your body holds on anyway.</li><li>You wake up flatter and end the day feeling swollen, heavy, or bigger around the middle.</li><li>You think about food even when you know you are not physically hungry.</li><li>Your body seemed to “change the rules” after 40, pregnancy, menopause, stress, or years of dieting.</li><li>You can lose weight through restriction or injections, but it returns the moment you stop.</li><li>Your doctor says your labs look “fine,” yet you know your body is not responding normally.</li><li>Your belly, waist, face, or arms seem to hold weight first and release it last.</li><li>You are tired of starting over every Monday.</li></ul>
+<p>That was Rachel’s response.</p>
+<p>And once I understood it, there were only four ways to approach it.</p>
+</div> <h2>There Are Only Four Ways to Fix This. Three of Them Will Fail You.</h2>
+<p>Once I understood the real cause, the question got simple.</p>
+<p>How do you wake the cells back up and get your body burning again?</p>
+<p>There are only four ways anyone has ever tried. Let me save you years.</p>
+<figure class="fig"><img alt="" decoding="async" height="538" loading="lazy" src="images/inline-image-0e13fe18fb6d.webp" width="720"/></figure>
+<div class="opt"><b>Way #1: Diet.</b></div>
+<p>You already know how this ends. Eating less does not automatically restore a weak fullness signal.</p>
+<p>You can white knuckle your way through hunger for a while. But if your body still acts like it never got the message, the battle starts again.</p>
+<div class="opt"><b>Way #2: Exercise.</b></div>
+<p>Movement is good for you. But exercise alone cannot silence food noise or fix every hormonal signal.</p>
+<p>Remember, Rachel moved more than me and still gained.</p>
+<div class="opt"><b>Way #3: The injections.</b></div>
+<p>Ozempic. Wegovy. They can force the signal while you are using them. But the bill never stops, the needle never stops, and for many women the hunger comes roaring back the moment the shots do.</p>
+<p>You lose the weight while you rent the signal. Then you stop paying and your body goes right back to the same broken instructions.</p>
+<div class="opt"><b>Way #4: The three part natural recipe.</b></div>
+<p>Baking soda. Ginger. Berberine.</p>
+<p>Maybe you’ve already tried one of them on its own and “felt nothing.” Of course you did. One ingredient can only do one job.</p>
+<p>Berberine alone cannot wake the cells, protect the hormone, and flip your body from STORE to BURN.</p>
+<p>But all three together, in the right forms, the right ratio, and the right order? That was the combination that changed everything for Rachel.</p>
+<p>And it’s the one thing those viral videos never explain.</p>
+<p>Let me show you why the order matters.</p> <h2>Wake the Cells. Protect the Hormone. Flip the Switch. In That Order.</h2>
+<p>The recipe has three ingredients. Each one has one job.</p>
+<p>Miss one, and the whole thing weakens. That’s why plain baking soda by itself is not the full answer.</p>
+<div class="mech"><b>Step One. Wake the cells. (Baking soda.)</b></div>
+<p>Baking soda helps neutralize the acidic environment that keeps those gut cells asleep.</p>
+<p>Think of it like opening the curtains in a dark room. The cells that had gone quiet finally get the conditions they need to wake up and start signaling again.</p>
+<div class="mech"><b>Step Two. Protect the hormone. (Ginger.)</b></div>
+<p>Remember DPP 4, the enzyme that breaks down GLP 1 and GIP?</p>
+<p>Gingerol helps block the enzyme that chews through your fullness hormones before they ever reach your brain.</p>
+<p>In plain English: the ‘stop eating’ message finally survives long enough for your brain to hear it.</p>
+<div class="mech"><b>Step Three. Flip the switch. (Berberine.)</b></div>
+<p>Berberine flips AMPK, the switch that tells your body whether to burn what you eat or stack it on your waist for later.</p>
+<figure class="fig"><img alt="Wake. Protect. Flip." decoding="async" height="390" loading="lazy" src="images/inline-image-8ea5863fac53.webp" width="680"/></figure>
+<p>When that switch flips, food starts becoming fuel again instead of another layer around your stomach.</p>
+<p>Wake. Protect. Flip. That is the entire recipe.</p>
+<p>Not one ingredient. Three, in the right forms, in the right amounts.</p>
+<p>But knowing the ingredients was the easy part.</p>
+<p>Actually getting them to work together in real life almost broke me.</p> <h2>Knowing the Recipe Wasn’t Enough. It Took Me Almost a Year to Make It Actually Work.</h2>
+<p>Maybe you are already reaching for your phone and thinking exactly what I thought.</p>
+<blockquote>“If it’s just baking soda, ginger, and berberine, I’ll grab all three and mix them myself.”</blockquote>
+<p>I tried that first. It was a disaster.</p>
+<figure class="fig"><img alt="" decoding="async" height="402" loading="lazy" src="images/inline-image-286e051820f6.webp" width="720"/></figure>
+<p>Here’s what nobody tells you. The three ingredients are only as good as the dose, the form, the ratio, and the way they are combined.</p>
+<p>The ratio problem: Too much of one ingredient overwhelms the rest. Too little and the full system never comes together.</p>
+<p>The form problem: Grocery store spice is not the same as a concentrated extract. Cheap berberine and inconsistent powders do not behave like controlled, standardized forms.</p>
+<p>The sequence problem: The formula has to support the environment, protect the signal, and then support the metabolic response. Throwing random amounts into a glass is not the same thing.</p>
+<p>I spent months measuring tiny amounts on a digital scale.</p>
+<p>I changed one variable at a time. I wrote down taste, tolerance, timing, and what repeated.</p>
+<p>I threw out far more than I kept.</p>
+<p>Most mornings I felt nothing.</p>
+<p>Then one morning, I noticed the difference. Calm. Clear. No frantic search for breakfast. No mid morning pull toward the pantry.</p>
+<p>I made it again the next day to be sure. And the next.</p>
+<p>The response repeated.</p>
+<p>That was the formula. Not “baking soda and some spices.”</p>
+<p>An exact mixture. In exact forms. In a repeatable ratio.</p>
+<p>That’s what I finally handed my sister.</p> <h2>I Watched My Sister Come Back to Life. One Week at a Time.</h2>
+<p>I gave Rachel that exact mix. One scoop in water, every morning.</p>
+<figure class="fig"><img alt="" decoding="async" height="402" loading="lazy" src="images/inline-image-e1f4fd61e3d5.webp" width="720"/></figure>
+<p>No crash diet. No new gym plan. Just one simple ritual.</p>
+<p>She called me a week later. Not crying this time.</p>
+<blockquote>“Dana… the noise is gone.”</blockquote>
+<p>That constant chatter about food… what can I eat, what can’t I, how much, when can I eat again had gone quiet.</p>
+<p>Then the rest began to follow.</p>
+<ol class="tl"><li><b>Days 1 to 3</b><span>She stopped prowling the kitchen between meals. She kept waiting for the usual afternoon craving. It never arrived with the same force.</span></li><li><b>Week 1</b><span>Her portions began shrinking without a fight. She would put the fork down and realize she was done… not deprived, just satisfied.</span></li><li><b>Week 2</b><span>The tight, swollen feeling around her middle started easing. Her rings fit better. Her face looked less puffy in the morning.</span></li><li><b>Week 4</b><span>The scale was moving, but the bigger surprise was how differently her clothes fit. Jeans that had punished her waist finally buttoned.</span></li><li><b>Month 2</b><span>Other people noticed. Her husband asked what had changed. Her friends said she looked “lighter,” even before they knew the number on the scale.</span></li><li><b>Months 3 to 4</b><span>The weight loss became the visible proof of something deeper: her body was no longer fighting every meal.</span></li></ol>
+<p>She wasn’t forcing herself to eat less. She finally felt satisfied on less.</p>
+<p>The scale started moving because the daily battle around food was changing first.</p>
+<p>She lost the first several pounds quickly enough that I told her to slow down and take breaks when needed.</p>
+<p>More is not better. This is not a race. Use the formula exactly as directed and give your body time to respond.</p>
+<p>Four months later, Rachel was down 41 pounds.</p>
+<p>But the number on the scale isn’t the part that still makes me cry.</p>
+<p>For three years she got dressed in the closet so her husband wouldn’t see her. She stopped letting anyone photograph her.</p>
+<p class="lead">Now look at her.</p>
+<p>She went to the lake and didn’t reach for a cover up. She’s in every single photo with her kids now.</p>
+<p>That is the part I would pay any amount of money for.</p> <h2>The Weight Was Only the Part Everyone Could See</h2>
+<p>Rachel expected the scale to change.</p>
+<p>She did not expect the rest of her life to change with it.</p>
+<p>The 4 PM crash she had built her day around stopped controlling her afternoons.</p>
+<p>She woke up less swollen.</p>
+<p>Her face looked clearer and less tired.</p>
+<p>She stopped feeling guilty every time she ate something she enjoyed.</p>
+<p>She had energy to play with her kids instead of watching from the couch.</p>
+<p>She slept more peacefully because she was not ending every night angry at herself.</p>
+<p>Her skin looked brighter. Her clothes sat differently. Her posture changed.</p>
+<p>And the strangest part?</p>
+<p>Food stopped being the loudest voice in the room.</p>
+<p>That is what women mean when they say they “feel like themselves again.”</p>
+<p>Not just smaller.</p>
+<p>Present. Clear. Comfortable. In control.</p> <h2>So I Made the Real Thing. The Original Powder, Dosed Correctly. I Call It SlimSoda.</h2>
+<p>I couldn’t keep mixing it by hand for the whole country. So I did it properly.</p>
+<p>I took the formula I had spent nearly a year refining to an FDA registered manufacturing facility.</p>
+<p>Baking soda to wake the cells. Concentrated gingerol to protect the hormone. Bioactive berberine to flip the switch.</p>
+<p>In controlled forms. In a consistent ratio. In the powdered format the ritual was built around.</p>
+<p>One scoop in a glass of water each morning. Three seconds. That’s the whole ritual.</p>
+<p>I call it SlimSoda.</p> <figure class="fig"><img alt="SlimSoda bottle with ingredients" decoding="async" height="402" loading="lazy" src="images/bottlebranding.webp" width="720"></figure>
+<figure class="fig as-seen-on-strip"><img alt="As seen on NBC, ABC, CBS, Fox News, USA Today and Digital Journal" decoding="async" loading="lazy" src="images/as-seen-on.webp" width="753" height="203"></figure> <p>Let me be clear about what it is NOT.</p>
+<p>It’s not a drug. It’s not an injection. It’s not a starvation plan.</p>
+<p>It’s not another single ingredient trick that asks one compound to do three jobs.</p>
+<p>It is the complete three part recipe in one repeatable morning scoop.</p>
+<p>And I made it for the women I had been mixing it for all along. Not for a celebrity markup.</p> <h2>What a Normal Day Can Start Feeling Like Again</h2>
+<p>This is the part that is hard to understand until you feel it.</p>
+<p>You take one scoop in water in the morning.</p>
+<p>Then you go live your life.</p>
+<p>At breakfast, you eat and the meal feels finished when it is finished.</p>
+<p>At 11 AM, you realize you have not been negotiating with yourself about a snack.</p>
+<p>At lunch, you stop because you are satisfied, not because an app told you the portion was over.</p>
+<p>At 3 PM, the vending machine, pantry, or leftover cake is no longer screaming your name.</p>
+<p>At dinner, you enjoy your food without turning the entire evening into guilt and compensation.</p>
+<p>At night, the refrigerator stays closed.</p>
+<p>And the next morning, you wake up feeling a little less heavy, a little less puffy, and a lot more in control.</p>
+<p>One day like that feels good.</p>
+<p>Weeks of days like that can change a body.</p> <h2>Real Women. Real Before and Afters. Different Bodies. The Same Response.</h2>
+<p>Rachel was just the beginning. These women matter because each one had a different reason to believe SlimSoda would not work for her.</p>
+<figure class="tcard"><img alt="Miriam — before and after" decoding="async" height="720" loading="lazy" src="images/inline-image-e7917ceef83a.webp" width="720"/><div class="tb"><p class="tq">“I hit 172 lbs and felt terrible. In 3 months, I'm down to 148 lbs. My thighs dropped 2 sizes, my face is less puffy, and I'm back to wearing shorts. I have actual energy to work out now and no longer feel that heavy sluggishness.”</p><p class="tm">Miriam ★★★★★ Verified Purchase</p></div></figure><figure class="tcard"><img alt="Vanessa — before and after" decoding="async" height="720" loading="lazy" src="images/inline-image-361fbaec938a.webp" width="720"/><div class="tb"><p class="tq">“I used to lose weight only if I starved myself. SlimSoda actually helped regulate my body for real. I lost 38.5 lbs in 3 months, my belly shrank significantly, even my stretch marks lightened, and now I fit into size 40 with no squeezing. It changed my life.”</p><p class="tm">Vanessa ★★★★★ Verified Purchase</p></div></figure><figure class="tcard"><img alt="Melinda — before and after" decoding="async" height="720" loading="lazy" src="images/inline-image-07b8dc80e335.webp" width="720"/><div class="tb"><p class="tq">“I lost 18.2 lbs in the first month alone, and I didn't even change my diet drastically. My belly bloating decreased, my skin feels firmer, and I can finally wear jeans without feeling ashamed of my midsection.”</p><p class="tm">Melinda ★★★★★ Verified Purchase</p></div></figure><figure class="tcard"><img alt="Vicki — before and after" decoding="async" height="720" loading="lazy" src="images/inline-image-5aa9b074d9e3.webp" width="720"/><div class="tb"><p class="tq">“I used to step on the scale every week crying. Now, 5 months later, I'm 33 lbs lighter. My double chin is gone, my legs are slimmer, and I fit into clothes that had been stored away for 4 years. I look in the mirror and barely recognize myself.”</p><p class="tm">Vicki ★★★★★ Verified Purchase</p></div></figure><figure class="tcard solo"><div class="tb"><p class="tq">“I lost 14 lbs in 6 weeks and the difference is insane. My love handles are practically gone, my thighs don't rub together as much, and I actually have a jawline again. I didn't even exercise, just took this daily.”</p><p class="tm">Shannon ★★★★★ Verified Purchase</p></div></figure> <h2>Would SlimSoda Make Sense for a Body Like Yours?</h2>
+<p>You do not need to be Rachel.</p>
+<p>You do not need to be a certain age, a certain size, or someone who has never tried anything before.</p>
+<ul class="chk"><li>Women over 40 whose bodies seem to have changed the rules.</li><li>Mothers who never felt like their metabolism came back after pregnancy.</li><li>Women in perimenopause or menopause who feel hungrier, puffier, and less responsive than before.</li><li>Women exhausted by food noise and the constant mental negotiation around eating.</li><li>Women who lost weight with injections but do not want an expensive lifetime dependency.</li><li>Women who have tried berberine, ginger, or baking soda alone and felt nothing.</li><li>Women who want a simple morning ritual instead of another complicated program.</li></ul>
+<p>This is not for someone looking for a one day miracle.</p>
+<p>It is for the woman who is ready to give a complete system enough time and consistency to work.</p> <h2>The Celebrity Capsule Is $100. The Injections Can Cost $1,000 a Month. Here Is What Staying Stuck Has Already Cost You.</h2> <figure class="fig"><img alt="Mounjaro, a $100 capsule, and SlimSoda cost comparison" decoding="async" height="402" loading="lazy" src="images/cost-comparison.webp" width="720"></figure>
+<p>Let’s talk honestly about money.</p>
+<p>Not just the price of SlimSoda.</p>
+<p>The price of continuing the way things are.</p>
+<div class="cost-box">
+<h3>The 'Injection' Route:</h3>
+<ul>
+<li>Ozempic / Wegovy / Mounjaro: $500 to $1,300+ per month (without insurance)</li>
+<li>Refills that never end, stop paying, the weight comes back</li>
+<li>Nausea, muscle loss, and a body that forgets how to do the job on its own</li>
+<li class="total">Annual total: $6,000 to $15,600+</li>
+</ul>
+<p class="note">(For a signal you're renting, not fixing.)</p>
+</div>
+<div class="cost-box">
+<h3>The 'Supplement Graveyard' Route:</h3>
+<ul>
+<li>$49 for gummies that tasted like candy and worked like candy</li>
+<li>$59 for a metabolism powder that did nothing but turn your water green</li>
+<li>$100 for trendy capsules built around one piece of the idea</li>
+<li>$129 for a program you stopped opening after week two</li>
+<li class="total">Total: $300 to $500+ per round… and you've done this more than once.</li>
+</ul>
+<p class="note">(The average American woman spends over $2,000 on weight loss products before finding something that works.)</p>
+</div>
+<div class="cost-box">
+<h3>The 'Just Trying to Stay Afloat' Route:</h3>
+<ul>
+<li>A gym membership you kept paying because canceling felt like admitting defeat</li>
+<li>New jeans in a larger size. Then another size.</li>
+<li>Takeout after a day of restricting so hard that you finally broke at night</li>
+<li>A "fresh start" every January, every Monday, every time you saw a photo of yourself you hated</li>
+<li class="total">Total: It's not one number. It's $30 here, $80 there, over and over for years.</li>
+</ul>
+</div>
+<p>And then there is the cost nobody puts on a receipt.</p>
+<p>Another summer in a cover up.</p>
+<p>Another family photo you volunteer to take instead of standing inside.</p>
+<p>Another year of telling yourself you will deal with it later.</p>
+<p>Doing nothing is not free. You have been paying for it every morning in the mirror.</p>
+<p>It may be the most expensive thing you keep buying without ever pulling out your credit card.</p> <h2>Rachel Didn’t Get Her Body Back in Two Weeks. She Got It Back in Four Months. That Changes What You Should Order.</h2>
+<figure class="fig"><img alt="One scoop of SlimSoda stirred into a glass of water" decoding="async" height="558" loading="lazy" src="images/inline-image-c24adf2aba55.webp" width="1000"/></figure>
+<p>I need to be honest with you about something before you see the offer below.</p>
+<p>When Rachel called me in week one and said the food noise was gone, that was real.</p>
+<p>Week two, the scale started moving.</p>
+<p>But the woman in that lake photo… the one standing in the water with her kids instead of hiding behind the camera… that was month four.</p>
+<p>Not because the recipe is slow.</p>
+<p>Because your body has been running the same instructions for years. And a response that has been repeating that long does not change because you tried something for a few mornings.</p>
+<p>Here is what actually happens across the three steps.</p>
+<p>The baking soda starts waking the cells first. That is what you notice early. It is why the food noise can start getting quieter.</p>
+<p>The gingerol protects the hormone once those cells begin producing it again. That is what helps the effect hold instead of fading by the afternoon.</p>
+<p>And the berberine works on the switch itself, the instruction that decides whether what you eat gets burned or stored. That is the slowest of the three. And it is the one that decides whether the change lasts.</p>
+<p class="lead">Wake. Protect. Flip.</p>
+<p>The first signs can come quickly. Consistency is what gives the complete recipe a fair chance to do its work.</p>
+<p>This is exactly why women who tried baking soda alone felt nothing. And why the ones who tried something for two or three weeks and quit felt like failures.</p>
+<p>They were not failures. They were early.</p>
+<p>So when women ask me how much SlimSoda they should order, I stopped being gentle about it.</p>
+<p>Order enough to finish what you start.</p>
+<figure class="fig"><img alt="Holding the SlimSoda tub" decoding="async" height="558" loading="lazy" src="images/inline-image-8d9e42aab855.webp" width="1000"/></figure> <h2>So I Made the Decision My Business Team Hated</h2>
+<p>Every SlimSoda formula is personalized. And right now, demand is way higher than what we can produce.</p>
+<p>We managed to reserve 300 kits for this audience. But honestly, they won't last until tomorrow. And I'm not saying that to pressure anyone. It's just the truth.</p>
+<p>So here's the deal. You won't find Slimsoda in pharmacies, and there's a reason for that.</p>
+<p>If Big Pharma got their hands on this, they'd mark it up 6 times higher. And honestly, that's just wrong.</p>
+<p>You also won't find it on Amazon or eBay. Why? Too many counterfeits, too many fakes, and I refuse to risk your health with something you're putting inside your body every single day.</p>
+<p>Every ingredient inside Slimsoda is pharmaceutical grade, made in the same type of facility that produces prescription drugs.</p>
+<p>That's the only way I can guarantee what you're getting is real.</p>
+<p>Now, that level of Quality makes production expensive. When we first launched, one tub cost $185, and people were happy to pay it because it worked.</p>
+<p>But then Oprah and other celebrities talked about it publicly, and overnight everything changed.</p>
+<h2>They wanted me to sell SlimSoda one tub at a time because the demand is too high.</h2> <figure class="fig"><img alt="Dana discussing SlimSoda on The Oprah Podcast" decoding="async" height="402" loading="lazy" src="images/podcastoprah.webp" width="720"></figure>
+<p class="lead">I refused.</p>
+<p>Because I know exactly what happens when a woman finally finds something her body responds to.</p>
+<p>She starts with one tub.</p>
+<p>The food noise gets quieter.</p>
+<p>Her jeans feel different.</p>
+<p>Then the tub gets low. She skips a few mornings to make it last. The routine breaks. And she wonders whether her body stopped responding when the truth is, she simply ran out.</p>
+<p>I did not want that to happen with the original recipe.</p>
+<p>After all, I didn't create this to help a few. I created it to reach every woman who needs it.</p>
+<p>So until those 300 tubs run out, I'm doing something I've never done before. I'll personally cover the cost of 3 tubs for you.</p>
+<p>Today and only today, you can secure a full 6 month supply of Slimsoda for the price of just 3 tubs, all paid upfront.</p> <figure class="fig media-video bottle-video"><video aria-label="SlimSoda bottles video" autoplay muted loop playsinline preload="metadata" width="860" height="480" src="images/bottle-video.mp4"></video></figure>
+<p class="pricepop">That brings your cost down from $59.99 to just $19.99 per tub.</p>
+<p>The price you see above is reserved for qualified readers only.</p>
+<p>Because here's the thing,</p>
+<p>Not every body profile matches the SlimSoda protocol.</p>
+<p>Here's how it works.</p>
+<ol class="steps"><li>First, you fill out a quick health profile so I can personalize your formula. Takes about 30 seconds.</li><li>I need to know about your age, current weight range, body response, food noise, and what you have already tried.</li><li>At the end, you will see whether this is the right fit for you, If it does, your $19.99 per tub reader price and three free tubs will be unlocked on your result.</li></ol>
+<p class="lead">So don't wait, click the button right now and grab your kit before these 300 spots are gone.</p>
+<div class="cta-wrap"><a class="cta" href="#quiz">CHECK IF I QUALIFY FOR BUY 3, GET 3 FREE</a><p class="cta-sub">90 day money back guarantee · empty tubs accepted</p></div>
+<div class="scarcity"><div class="bar"><i></i></div><span>82% of this allocation of 300 units already reserved</span></div> <p class="warn">WARNING: By The Time You’ll Be Reading This, This Offer May Already Be Sold Out!</p>
+<p>I do not make SlimSoda the way trend products get made.</p>
+<p>The entire point is consistent forms, controlled ratios, and a formula that repeats from scoop to scoop.</p>
+<p>That means production is slower than dumping generic powders into capsules.</p>
+<p>The launch inventory was made in a limited run.</p>
+<p>And the free tub allocation specifically, the batch set aside for the three free tub offer is finite. I cannot simply add more to it because traffic went up.</p>
+<p>We have already seen what happens when this spreads between women. Rachel told her friends. Her friends told theirs. Hundreds of small kitchen batches became impossible for me to keep up with.</p>
+<p>The same thing is happening now, at a scale I did not plan for.</p>
+<p>If you click and still see the six tub offer, there are allocations left in this batch.</p>
+<p>If it is gone, it is gone. I am not going to fake a countdown and insult your intelligence.</p> <div class="panel">
+<h2>Use the Whole Supply. If the Scale Doesn’t Move, I’ll Give You Every Penny Back.</h2>
+<figure class="fig seal"><img alt="" decoding="async" height="560" loading="lazy" src="images/90day-seal.png" width="560"/></figure>
+<p>I know you’ve been burned. So I’m taking the risk off you.</p>
+<p>Try SlimSoda for a full 90 days. Use the tubs.</p>
+<p>Watch the first signs. The food noise goes quiet. You stop prowling the kitchen. Your stomach looks less swollen. Your jeans stop fighting you. Then watch what happens on the scale.</p>
+<p>If the scale does not move, if the food noise does not quiet down, or if you do not feel your body finally responding, email my team and ask for your money back.</p>
+<p>Empty tubs. No store credit nonsense. No interrogation. No one is telling you that you “did it wrong.”</p>
+<p>If you don’t get what you’re looking for or you think there's a better solution on the market for your condition, the customer support team will return 100% of your purchase price.</p>
+<p>And no this is not a type of guarantee that every other company does nowadays.</p>
+<p>This is no gimmick.</p>
+<p class="lead">Want proof?</p>
+<p>Try emailing or calling SlimSodas ’s customer service.</p>
+<p>You can literally reach them 24/7.</p>
+<p>Simply call their support team at <b>(323) 332 1649</b> or email them at support@slimsodapowder.com</p>
+<p>You can also find this information on their official encrypted website.</p>
+<p>You keep the results or you keep your money. The only thing you cannot do is stay trapped in the same place.</p>
+</div> <h2>Here Is Exactly What Happens After You Click</h2>
+<ol class="steps"><li>Tap the button below and answer five quick questions about your age, current weight range, body response, food noise, and previous attempts.</li><li>Check if you get approval for SlimSoda personalized formula.</li><li>Unlock today’s reader only Buy 3, Get 3 Free offer if the allocation is still available.</li><li>Confirm your recommended package on the secure checkout page.</li><li>Begin the simple morning ritual when your SlimSoda arrives.</li></ol>
+<p>One scoop. One glass of water. Three seconds.</p>
+<figure class="fig"><img alt="" decoding="async" height="402" loading="lazy" src="images/inline-image-9b256dd1d64d.webp" width="720"/></figure>
+<div class="cta-wrap"><a class="cta" href="#quiz">UNLOCK TODAY’S BUY 3, GET 3 FREE</a><p class="cta-sub">90 day money back guarantee · empty tubs accepted</p></div>
+<div class="scarcity"><div class="bar"><i></i></div><span>82% of this allocation of 300 units already reserved</span></div>
+<p>Then get on with your day and give the complete recipe the consistency it was designed for.</p> <h2>Three Months From Now, You’ll Be Living One of Two Stories</h2>
+<p>Here’s the truth no one likes to say.</p>
+<p>This pattern rarely fixes itself because you read one more article.</p>
+<p>Path one is familiar.</p>
+<p>Another Monday. Another restriction plan. Another expensive tub with one trendy ingredient. Another burst of motivation followed by the same hunger, the same food noise, and the same feeling that your body is betraying you.</p>
+<p>Or the version where you did start something and ran out before the third step finished its work, and never found out what consistent mornings could have looked like.</p>
+<p>Another summer in a cover up.</p>
+<p>Another photo you are not in.</p>
+<p>Another year of saying, “I wish I had started sooner.”</p>
+<p>Path two is different.</p>
+<p>You stop treating the problem like a moral failure.</p>
+<p>You wake the cells. You protect the hormone. You flip the switch.</p>
+<p>Three seconds every morning. Simple enough to actually do. Powerful enough to finally change the instructions your body has been following.</p>
+<p>And for the first time in years, you give your body a chance to burn what you eat instead of storing every bite like an emergency.</p>
+<p>Picture the food noise quieter.</p>
+<p>Getting dressed with the door open.</p>
+<p>Your husband looking at you the way he used to.</p>
+<p>Being in the photo with your kids instead of always behind the camera.</p>
+<p class="lead">That is not vanity.</p>
+<p><b>That is you, coming back.</b></p>
+<figure class="fig"><img alt="" decoding="async" height="402" loading="lazy" src="images/inline-image-31b8d73bb793.webp" width="720"/></figure>
+<p>You gave your body to your children, your work, your family, and everyone who needed you.</p>
+<p>It is okay to want a piece of yourself back.</p>
+<p>SlimSoda is the complete morning recipe I wish I had understood before I judged my own sister.</p>
+<p>Now you get to decide whether you keep managing the same struggle or finally test a different system without carrying all the risk.</p>
+<p>You have spent enough time trying random solutions and hoping one of them finally sticks.</p>
+<p>Now you can see your SlimSoda body profile, understand what your answers are pointing to, and unlock the package recommended for the way your body is responding.</p>
+<p>Answer the five questions below. Your result is ready in less than a minute.</p>
+<div class="cta-wrap"><a class="cta" href="#quiz">SEE MY SLIMSODA PROFILE &amp; UNLOCK MY OFFER →</a><p class="cta-sub">5 questions · 60 seconds · 90 day guarantee</p></div>
+<div class="signoff"><p>With hope,<b>Dana Whitfield</b><span>Formulator and Researcher</span></p></div> <div class="ps-wrap"><p>P.S. Rachel just sent me another lake photo. She was not standing behind the camera. She was in the water with her kids, laughing. That is the transformation I care about most.</p><p>P.P.S. Plain baking soda is not the recipe. It only does the first job. SlimSoda does all three, in order: Wake the cells. Protect the hormone. Flip the switch. That is the part every viral video leaves out.</p><p>P.P.P.S. The three free tubs are tied to the limited reader allocation. Take the quiz to see whether the six tub offer is still available for your profile today.</p></div>
+<section class="fbx"><div class="fbx-h"><span class="fbx-hl"><span class="fbx-t">Community</span><span class="fbx-ct">1,342 comments</span></span><span class="fbx-sort">Top Comments ▾</span></div><div class="fbx-c"><div class="fbx-b"><p class="fbx-nm">Corinne Vasquez</p><p class="fbx-tx">The “burn vs store” diagram FINALLY made me understand what my body has been doing for the last 12 years. I’m a physical therapist. I’ve told hundreds of patients “calories in, calories out” my whole career. Ordering this today and I owe every single one of my patients an apology.</p></div><div class="fbx-m"><span class="fbx-a">Like</span> · <span class="fbx-a">Reply</span> · 567 · 2h</div></div><div class="fbx-c fbx-r"><div class="fbx-b"><p class="fbx-nm">Dana Whitfield</p><p class="fbx-tx">Corinne, don’t beat yourself up. You were taught what everyone was taught. The fact that you’re open to updating is what makes you a good clinician. Welcome to the new understanding. ♥</p></div><div class="fbx-m"><span class="fbx-a">Like</span> · <span class="fbx-a">Reply</span> · 128 · 1h</div></div><div class="fbx-c"><div class="fbx-b"><p class="fbx-nm">Michelle Ostrander</p><p class="fbx-tx">I already tried the “DIY” version. Bought baking soda, ginger powder, and berberine capsules for like $30 at Whole Foods. Did it for 5 weeks. NOTHING. Now I read the section about how the ratios and forms have to be exact and I feel like an idiot. Ordering the real thing.</p></div><div class="fbx-m"><span class="fbx-a">Like</span> · <span class="fbx-a">Reply</span> · 489 · 3h</div></div><div class="fbx-c fbx-r"><div class="fbx-b"><p class="fbx-nm">Amber J. Woolworth</p><p class="fbx-tx">Michelle SAME. I did the DIY version for 2 months. Cheap ginger from the grocery store has almost zero gingerol in it, I finally looked it up. That’s exactly what she said in the article. Wasted 8 weeks. Not making that mistake twice.</p></div><div class="fbx-m"><span class="fbx-a">Like</span> · <span class="fbx-a">Reply</span> · 142 · 2h</div></div><div class="fbx-c"><div class="fbx-b"><p class="fbx-nm">Katrina Bienvenida</p><p class="fbx-tx">2 kids. 47. 38 pounds up from my wedding weight. Have not been in a photo with my kids in probably 4 years. Just ordered the 3 tub. Coming back in 90 days with a family photo. Screenshot this.</p></div><div class="fbx-m"><span class="fbx-a">Like</span> · <span class="fbx-a">Reply</span> · 312 · 1h</div></div></section>
+<div class="cta-wrap"><a class="cta" href="#quiz">SEE IF I QUALIFY FOR THE MORNING RECIPE</a><p class="cta-sub">5 questions · 60 seconds · 90 day guarantee</p></div>
+<div class="foot"><p><b>ADVERTISEMENT.</b> This page is a paid advertisement produced for SlimSoda®. Individuals featured are compensated for their stories; results vary from person to person.</p><p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p><p><b>SlimSoda Powder</b> · support@slimsodapowder.com · (323) 332 1649<br/>© 2026 SlimSoda®. All rights reserved.</p></div>
+</div> <style id="ssq-css">
+.ssq-overlay{position:fixed;inset:0;z-index:99999;display:none;background:rgba(12,10,35,.72);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:24px 12px}
+.ssq-overlay.open{display:block}
+.ssq-card{position:relative;max-width:560px;margin:4vh auto;background:#fff;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.4);padding:34px 26px 30px;font-family:'Poppins',Arial,Helvetica,sans-serif;color:#1D254B}
+.ssq-close{position:absolute;top:10px;right:14px;border:0;background:none;font-size:26px;line-height:1;color:#9AA8BB;cursor:pointer;padding:6px}
+.ssq-close:hover{color:#0A1C4E}
+.ssq-progress{height:8px;background:#EEF2F8;border-radius:99px;overflow:hidden;margin:0 0 22px}
+.ssq-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1D254B,#0A1C4E);border-radius:99px;transition:width .35s ease}
+.ssq-kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E19626;margin:0 0 8px}
+.ssq-q{font-family:'Bitter',Georgia,serif;font-size:23px;font-weight:800;line-height:1.25;color:#0A1C4E;margin:0 0 6px}
+.ssq-hint{font-size:13.5px;color:#657D96;margin:0 0 18px}
+.ssq-opts{display:flex;flex-direction:column;gap:10px}
+.ssq-opt{display:block;width:100%;text-align:left;background:#F6F8FB;border:2px solid #D8E0EC;border-radius:12px;padding:14px 16px;font-size:15.5px;font-weight:600;color:#1D254B;cursor:pointer;transition:border-color .15s,background .15s;font-family:inherit}
+.ssq-opt:hover{border-color:#E19626}
+.ssq-opt.sel{border-color:#0A1C4E;background:#EEF2F8}
+
+.ssq-continue{margin-top:18px}
+.ssq-continue:disabled{opacity:.45;cursor:not-allowed}
+.ssq-back{background:none;border:0;color:#657D96;font-size:13px;cursor:pointer;margin-top:14px;padding:4px;font-family:inherit}
+.ssq-back:hover{color:#0A1C4E;text-decoration:underline}
+
+.ssq-loader{text-align:center;padding:36px 6px 30px}
+.ssq-spin{width:74px;height:74px;border-radius:50%;border:8px solid #F0EAD8;border-top-color:#E19626;margin:0 auto 26px;animation:ssqspin 1s linear infinite}
+@keyframes ssqspin{to{transform:rotate(360deg)}}
+.ssq-loadtitle{font-family:'Bitter',Georgia,serif;font-size:24px;font-weight:800;color:#0A1C4E;margin:0 0 12px}
+.ssq-wait{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E19626;margin:0}
+
+.ssq-res{text-align:center}
+.ssq-badge{display:inline-block;background:#0A1C4E;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:6px 14px;margin:0 0 10px}
+.ssq-restitle{font-family:'Bitter',Georgia,serif;font-size:22px;font-weight:800;line-height:1.2;color:#0A1C4E;margin:0 0 12px}
+.ssq-restitle b{color:#E19626}
+.ssq-panel{background:#EEF2F8;border-radius:12px;padding:12px 14px 8px;text-align:left;margin:0 0 10px}
+.ssq-panel h4{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0A1C4E;margin:0 0 6px}
+.ssq-row{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;padding:5px 0;border-top:1px solid #D8E0EC}
+.ssq-row:first-of-type{border-top:0}
+.ssq-row b{color:#1D254B;white-space:nowrap}
+.ssq-row span{color:#33415E;text-align:right}
+.ssq-est{background:#fff;border:2px solid #0A1C4E;border-radius:12px;padding:12px 14px;margin:0 0 10px}
+.ssq-est h4{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0A1C4E;margin:0 0 5px}
+.ssq-est .big{font-family:'Bitter',Georgia,serif;font-size:19px;font-weight:800;color:#0A1C4E;margin:0 0 6px}
+.ssq-est p{font-size:12px;line-height:1.5;color:#33415E;margin:0}
+.ssq-prod{position:relative;display:block;margin:0 0 8px}
+.ssq-prod img{width:100%;max-width:440px;display:block;margin:0 auto}
+.ssq-scarce{margin:0 0 10px;text-align:left}
+.ssq-scarce .bar{height:10px;background:#EEF2F8;border-radius:99px;overflow:hidden}
+.ssq-scarce .bar i{display:block;height:100%;width:82%;background:linear-gradient(90deg,#991B1B,#E19626);border-radius:99px}
+.ssq-scarce span{display:block;font-size:11.5px;font-weight:700;color:#991B1B;margin-top:5px}
+.ssq-ship{font-size:12.5px;color:#1D254B;margin:0 0 10px}
+.ssq-cta{animation:ssqpulse 1.6s ease-in-out infinite}
+@keyframes ssqpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.ssq-card.res .ssq-progress{display:none}
+.ssq-card.res{padding:26px 18px 18px}
+@media (max-width:480px){.ssq-card.res{padding:16px 12px 12px}.ssq-card.res .ssq-close{top:4px;right:8px}.ssq-card.res .ssq-restitle{font-size:16.5px;margin:0 0 6px}.ssq-card.res .ssq-badge{font-size:9.5px;padding:4px 10px;margin:0 0 6px}.ssq-card.res .ssq-row{font-size:11px;padding:3px 0;gap:8px}.ssq-card.res .ssq-panel{padding:8px 10px 5px;margin:0 0 7px}.ssq-card.res .ssq-panel h4{font-size:10px;margin:0 0 4px}.ssq-card.res .ssq-est{padding:8px 10px;margin:0 0 7px}.ssq-card.res .ssq-est h4{font-size:10px;margin:0 0 3px}.ssq-card.res .ssq-est .big{font-size:15px;margin:0 0 4px}.ssq-card.res .ssq-est p{font-size:10.5px;line-height:1.4}.ssq-card.res .ssq-prod{margin:0 0 5px}.ssq-card.res .ssq-prod img{max-width:300px}.ssq-card.res .ssq-scarce{margin:0 0 7px}.ssq-card.res .ssq-scarce .bar{height:8px}.ssq-card.res .ssq-scarce span{font-size:10.5px;margin-top:4px}.ssq-card.res .ssq-ship{margin:0 0 7px;font-size:11.5px}.ssq-card.res .ssq-cta{padding:14px 14px;font-size:15px;border-radius:8px}}
+@media (max-width:480px){.ssq-overlay{padding:10px 8px}.ssq-card{padding:24px 14px 18px;margin:0 auto}.ssq-q{font-size:20px}.ssq-restitle{font-size:20px}.ssq-prod img{max-width:360px}}
+
+@media (max-width:768px),(max-height:860px){
+  .ssq-overlay{padding:8px}
+  .ssq-card{margin:0 auto;padding:16px 14px 14px;border-radius:14px;max-width:520px}
+  .ssq-progress{height:6px;margin:0 0 12px}
+  .ssq-close{top:4px;right:8px;font-size:24px}
+  .ssq-kicker{font-size:11px;letter-spacing:.12em;margin:0 0 5px;padding-right:26px}
+  .ssq-q{font-size:18px;line-height:1.22;margin:0 0 4px;padding-right:26px}
+  .ssq-hint{font-size:12px;margin:0 0 9px}
+  .ssq-opts{gap:6px}
+  .ssq-opt{padding:8px 12px;font-size:14px;line-height:1.3;border-radius:9px}
+  .ssq-back{font-size:12px;margin-top:8px;padding:2px}
+  .ssq-loader{padding:26px 6px 22px}
+  .ssq-spin{width:58px;height:58px;border-width:6px;margin:0 auto 18px}
+  .ssq-loadtitle{font-size:20px;margin:0 0 8px}
+  .ssq-badge{font-size:10px;padding:5px 12px;margin:0 0 8px}
+  .ssq-restitle{font-size:19px;margin:0 0 8px}
+  .ssq-est{padding:10px 12px;margin:0 0 8px}
+  .ssq-est .big{font-size:17px;margin:0 0 4px}
+  .ssq-est p{font-size:11.5px;line-height:1.45}
+  .ssq-prod{margin:0 0 6px}
+  .ssq-prod img,.ssq-card.res .ssq-prod img{max-width:100%}
+  .ssq-scarce{margin:0 0 8px}
+  .ssq-scarce .bar{height:8px}
+  .ssq-scarce span{font-size:11px;margin-top:4px}
+  .ssq-ship{font-size:12px;margin:0 0 8px}
+  .ssq-continue{margin-top:12px}
+}
+@media (max-height:700px){
+  .ssq-card{padding:12px 12px 12px}
+  .ssq-progress{margin:0 0 9px}
+  .ssq-q{font-size:17px;margin:0 0 3px}
+  .ssq-hint{font-size:11.5px;margin:0 0 7px}
+  .ssq-opts{gap:5px}
+  .ssq-opt{padding:7px 11px;font-size:13.5px}
+  .cta,.ssq-continue,.ssq-cta{font-size:15px;padding:13px 16px}
+  .ssq-continue{margin-top:8px}
+}
+
+.ssq-opt{display:flex;align-items:center;gap:11px}
+.ssq-emo{flex:0 0 auto;width:1.35em;font-size:19px;line-height:1;text-align:center;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}
+.ssq-lbl{flex:1 1 auto;min-width:0}
+.ssq-opt.sel::after{content:'✓';margin-left:auto;flex:0 0 auto;color:#0A1C4E;font-weight:800}
+@media (max-width:768px),(max-height:860px){ .ssq-emo{font-size:17px} .ssq-opt{gap:9px} }
+@media (max-height:700px){ .ssq-emo{font-size:16px} }
+</style>
+<div class="ssq-overlay" id="ssqOverlay" role="dialog" aria-modal="true"> <div class="ssq-card"> <button class="ssq-close" id="ssqClose" aria-label="Close">×</button> <div class="ssq-progress" id="ssqProg"><i></i></div> <div id="ssqBody"></div> </div>
+</div>
+<script>
+(function(){
+  
+  var CHECKOUT_URL = 'https://slimsodapowder.com/cc2/dtc/pay/checkout.php?package=6b19&hid=b2lkPW9mZl81MDU4NzI1JmFpZD1hZmZfMDc5MTk4NiZ1aWQ9YmxfMTI2NjkzMg%3D%3D&affid=aff_0791986';
+
+  var QS=[
+    {k:'Step 1 of 5 – About You',e:['👩','👩‍🦰','👩‍🦱','👩‍🦳','👵'],q:'What is your age range?',multi:false,label:'Age',
+     o:['Under 35','35 to 44','45 to 54','55 to 64','65+']},
+    {k:'Step 2 of 5 – Symptoms',e:['😴','🫃','🍫','🌡️','😟','🔁','✅'],q:'Which of these do you currently experience?',multi:true,label:'Symptoms',
+     hint:'Select all that apply  to  then hit Continue',
+     o:['Fatigue & low energy','Belly bloating','Sugar cravings','Slow metabolism','Mood swings','Weight keeps coming back','None of the above']},
+    {k:'Step 3 of 5 – Your Body',e:['⬇️','↘️','➡️','↗️','⬆️'],q:'What is your current weight range?',multi:false,label:'Current weight',
+     o:['Under 140 lbs','140 to 169 lbs','170 to 199 lbs','200 to 229 lbs','230 lbs or more']},
+    {k:'Step 4 of 5 – Your Body',e:['🎯','🔥','💎','🚀'],q:'How much weight would you like to lose in 90 days?',multi:false,label:'Weight to lose',
+     o:['5 to 25 lbs','26 to 50 lbs','51 to 80 lbs','80+ lbs']},
+    {k:'Step 5 of 5 – Your Experience',e:['🥗','🏃‍♀️','🍬','🥤','💊','💉','🆕'],q:'What have you already tried?',multi:true,label:'Already tried',
+     hint:'Select all that apply  to  then hit Continue',
+     o:['Diet or calorie-counting programs','Exercise or workout plans','Gummies, teas, or fat burners','Baking soda water on its own','Berberine or another single ingredient','Weight-loss injections','Nothing yet']}
+  ];
+  var LOADERS=['Reviewing your profile\u2026','Calculating your dosage\u2026','Preparing your personalized formula\u2026'];
+  var PRODUCT_IMG='images/quiz-product.webp';
+
+  var ov=document.getElementById('ssqOverlay'),body=document.getElementById('ssqBody'),card=document.querySelector('.ssq-card'),
+      prog=document.querySelector('#ssqProg i'),answers=[],step=0;
+
+  function withParams(u){
+    try{
+      var qs=location.search.replace(/^\?/,'');
+      if(!qs||u==='#')return u;
+      return u+(u.indexOf('?')>-1?'&':'?')+qs;
+    }catch(e){return u;}
+  }
+  function open(){answers=[];step=0;ov.classList.add('open');document.body.style.overflow='hidden';card.classList.remove('res');render();}
+  function close(){ov.classList.remove('open');document.body.style.overflow='';}
+  function setProg(p){prog.style.width=p+'%';}
+
+  function render(){
+    var Q=QS[step],sel=[];
+    setProg(step/QS.length*100);
+    var h='<p class="ssq-kicker">'+Q.k+'</p><h3 class="ssq-q">'+Q.q+'</h3>';
+    h+=Q.hint?'<p class="ssq-hint">'+Q.hint+'</p>':'';
+    h+='<div class="ssq-opts">';
+    Q.o.forEach(function(o,i){h+='<button type="button" class="ssq-opt" data-i="'+i+'">'+(Q.e&&Q.e[i]?'<span class="ssq-emo">'+Q.e[i]+'</span>':'')+'<span class="ssq-lbl">'+o+'</span></button>';});
+    h+='</div>';
+    if(Q.multi)h+='<button type="button" class="ssq-continue" id="ssqCont" disabled>Continue \u2192</button>';
+    if(step>0)h+='<button type="button" class="ssq-back" id="ssqBack">\u2190 Back</button>';
+    body.innerHTML=h;
+    var cont=document.getElementById('ssqCont');
+    body.querySelectorAll('.ssq-opt').forEach(function(btn){
+      btn.onclick=function(){
+        var v=Q.o[+btn.dataset.i];
+        if(Q.multi){
+          btn.classList.toggle('sel');
+          var idx=sel.indexOf(v);
+          if(idx>-1)sel.splice(idx,1);else sel.push(v);
+          cont.disabled=!sel.length;
+        }else{
+          btn.classList.add('sel');
+          answers[step]=v;
+          setTimeout(next,220);
+        }
+      };
+    });
+    if(cont)cont.onclick=function(){answers[step]=sel.slice();next();};
+    var back=document.getElementById('ssqBack');
+    if(back)back.onclick=function(){step--;render();};
+  }
+  function next(){
+    step++;
+    if(step<QS.length)render();else loader(0);
+  }
+  function loader(i){
+    setProg(100);
+    body.innerHTML='<div class="ssq-loader"><div class="ssq-spin"></div><h3 class="ssq-loadtitle">'+LOADERS[i]+'</h3><p class="ssq-wait">Please wait</p></div>';
+    setTimeout(function(){ i+1<LOADERS.length?loader(i+1):result(); },1400);
+  }
+  function fmtDate(){
+    var d=new Date();d.setDate(d.getDate()+2);
+    var W=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+        M=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return W[d.getDay()]+', '+M[d.getMonth()]+' '+d.getDate();
+  }
+  function j(v){return Array.isArray(v)?v.join(', '):(v||',');}
+  function result(){
+    setProg(100);card.classList.add('res');
+    body.innerHTML=
+      '<div class="ssq-res">'+
+      '<span class="ssq-badge">\u2728 Congratulations , your plan is ready</span>'+
+      '<h3 class="ssq-restitle">You\u2019re a perfect match for <b>SlimSoda!</b></h3>'+
+            '<div class="ssq-est"><h4>\ud83d\udcca Your estimated results</h4>'+
+        '<p class="big">18 to 29 lbs in the first 30 days</p>'+
+        '<p>That\u2019s just month one. Women with your profile and commitment to the full SlimSoda protocol have lost <b>65+ lbs</b> , and kept it off for good.</p>'+
+      '</div>'+
+      '<div class="ssq-prod"><img src="'+PRODUCT_IMG+'" alt="SlimSoda"></div>'+
+      '<div class="ssq-scarce"><div class="bar"><i></i></div><span>\u26a0\ufe0f 82% of this allocation of 300 units already reserved</span></div>'+
+      '<p class="ssq-ship">\ud83d\ude9a Order now and it arrives by <b>'+fmtDate()+'</b></p>'+
+      '<a class="ssq-cta" href="'+CHECKOUT_URL+'">UNLOCK MY 3 FREE TUBS NOW \u2192</a>'+
+      '</div>';
+  }
+
+  document.querySelectorAll('a[href="#quiz"]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();open();});
+  });
+  document.getElementById('ssqClose').onclick=close;
+  ov.addEventListener('click',function(e){if(e.target===ov)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script> </body></html> 
